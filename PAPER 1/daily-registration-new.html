@@ -502,7 +502,7 @@
                 // Redirect to quiz after short delay
                 setTimeout(() => {
                     const testParam = TEST_MODE ? '&test=1' : '';
-                    const quizUrl = `quiz.html?mode=free&examFile=${examFile}&phone=${mobile}&date=${today}${testParam}`;
+                    const quizUrl = `quiz-free.html?mode=free&examFile=${examFile}&phone=${mobile}&date=${today}${testParam}`;
                     console.log('🔗 Redirecting to:', quizUrl);
                     window.location.href = quizUrl;
                 }, 1500);
