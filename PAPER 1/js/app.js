@@ -1,13 +1,12 @@
-// Firebase configuration template
-// Replace with your actual Firebase project config from Firebase Console
+// Firebase configuration — PAPER 1 (paper-1-31)
 const firebaseConfig = {
-    apiKey: "AIzaSyAVNHdNQWpSMRRPNCxC-81X0oV5XvGdEsQ",
-    authDomain: "a1-coaching-centre.firebaseapp.com",
-    projectId: "a1-coaching-centre",
-    storageBucket: "a1-coaching-centre.firebasestorage.app",
-    messagingSenderId: "64252282902",
-    appId: "1:64252282902:web:cdfd3779c56db163268d37",
-    measurementId: "G-FFHHDNNRY1"
+    apiKey: "AIzaSyBvqXvd5M9GvcLRLFNC7LXeRUWH5ldKvyY",
+    authDomain: "paper-1-31.firebaseapp.com",
+    databaseURL: "https://paper-1-31-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "paper-1-31",
+    storageBucket: "paper-1-31.firebasestorage.app",
+    messagingSenderId: "551864023812",
+    appId: "1:551864023812:web:a77cef841cf8d51f5eae51"
 };
 
 export default firebaseConfig;

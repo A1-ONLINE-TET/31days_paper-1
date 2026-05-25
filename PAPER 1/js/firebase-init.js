@@ -1,16 +1,15 @@
-// Firebase Initialization
+// Firebase Initialization — PAPER 1 (paper-1-31)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Your Firebase Config (நீங்கள் copy செய்தது)
 const firebaseConfig = {
-  apiKey: "AIzaSyAE3Ks7tQMThXIeY9AQclSF7aTdITHvm7k",
-  authDomain: "tamil-nanban.firebaseapp.com",
-  projectId: "tamil-nanban",
-  storageBucket: "tamil-nanban.firebasestorage.app",
-  messagingSenderId: "929268992673",
-  appId: "1:929268992673:web:fafdd77280e5e10aa1fee0",
-  measurementId: "G-L17B72Y9W5"
+  apiKey: "AIzaSyBvqXvd5M9GvcLRLFNC7LXeRUWH5ldKvyY",
+  authDomain: "paper-1-31.firebaseapp.com",
+  databaseURL: "https://paper-1-31-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "paper-1-31",
+  storageBucket: "paper-1-31.firebasestorage.app",
+  messagingSenderId: "551864023812",
+  appId: "1:551864023812:web:a77cef841cf8d51f5eae51"
 };
 
 // Initialize Firebase
