@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus - Tamil Nanban</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+Tamil:wght@400;700&family=Baloo+Thambi+2:wght@800&display=swap">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --bg-light: #f3f6ff;
+            --card-bg: #ffffff;
+            --text-dark: #334155;
+            --text-dim: #64748b;
+            --accent: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', 'Noto Sans Tamil', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        /* --- BRAND HEADER (Dashboard Style) --- */
+        .header-standard {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid #1e3a8a;
+            border-bottom: 1px solid #1e3a8a;
+        }
+        .brand-container {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .brand-main {
+            font-family: 'Baloo Thambi 2', cursive;
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #002d5b;
+            line-height: 0.9;
+            margin: 0;
+        }
+        .brand-sub {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #002d5b;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+        @media (max-width: 480px) {
+            .brand-main { font-size: 1.6rem; }
+            .brand-sub { font-size: 0.6rem; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #475569;
+            margin: 10px 0 20px;
+            padding-left: 5px;
+        }
+
+        /* --- CLASS/GRADE LIST (Dashboard Style) --- */
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #edf2f7;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: inherit;
+            width: 100%;
+        }
+
+        .item-card:active {
+            transform: scale(0.97);
+            background: #f8fafc;
+        }
+
+        .icon-wrapper {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-right: 18px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .item-info {
+            flex-grow: 1;
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-align: left;
+        }
+
+        .chevron {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* --- TERM SECTION --- */
+        .term-section { margin-bottom: 2rem; }
+        .term-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5px;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .term-header h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-family: 'Baloo Thambi 2';
+        }
+
+        /* --- TOPIC GRID (Standard Style) --- */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            border: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .topic-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+
+        .btn-group {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .topic-card.expanded .btn-group { display: grid; }
+        .topic-card.expanded .chevron { transform: rotate(180deg); }
+
+        .card-btn {
+            padding: 12px 5px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-align: center;
+            color: white;
+        }
+        .btn-notes { background: #0d9488; }
+        .btn-quiz { background: #1e3a8a; }
+
+        .topic-card.faded { opacity: 0.6; filter: grayscale(0.6); }
+
+        /* --- BOTTOM NAV (Dashboard Style) --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #64748b;
+            font-size: 0.75rem;
+            font-weight: 700;
+            gap: 4px;
+        }
+        .nav-item.active { color: #1e3a8a; }
+        .nav-icon { font-size: 1.4rem; }
+
+        @media (max-width: 600px) {
+            .topics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-standard">
+        <a href="index.html" class="brand-container">
+            <div class="brand-main">தமிழ் நண்பன்</div>
+            <div class="brand-sub">COACHING CENTER</div>
+        </a>
+    </header>
+
+    <main class="container">
+        <!-- Grade Selection Screen -->
+        <div id="gradeSelectionScreen">
+            <h2 class="section-title">வகுப்பைத் தேர்ந்தெடுக்கவும் (Choose Class)</h2>
+            <div class="item-list" id="gradeList">
+                <!-- Grade cards injected here -->
+            </div>
+        </div>
+
+        <!-- Term/Lesson Screen -->
+        <div id="lessonScreen" style="display: none;">
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <button onclick="showGrades()" style="background:none; border:none; color:var(--primary); font-size:1.5rem; cursor:pointer; margin-right:15px;">❮</button>
+                <h1 id="pageTitle" style="font-size: 1.5rem; font-family: 'Baloo Thambi 2'; color: var(--primary);">பாடம்</h1>
+            </div>
+            
+            <div id="syllabusContainer">
+                <!-- Terms and Lessons injected here -->
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="course.html" class="nav-item active">
+            <span class="nav-icon">📚</span>
+            <span>Course</span>
+        </a>
+        <a href="tel:6369371452" class="nav-item">
+            <span class="nav-icon">📞</span>
+            <span>Contact</span>
+        </a>
+        <a href="#" class="nav-item">
+            <span class="nav-icon">💳</span>
+            <span>Pay</span>
+        </a>
+        <a href="#" onclick="window.logout(); return false;" class="nav-item logout">
+            <span class="nav-icon">🚪</span>
+            <span>Logout</span>
+        </a>
+    </nav>
+
+    <script type="module">
+        (async () => {
+            const v = "standard_v11";
+            try {
+                const { checkAuth, waitForAuth } = await import(`./js/auth.js?v=${v}`);
+                await waitForAuth();
+                const { syllabusData } = await import(`./js/data/syllabus.js?v=${v}`);
+                const { extraSyllabusData } = await import(`./js/data/extraSyllabus.js?v=${v}`);
+
+                const params = new URLSearchParams(window.location.search);
+                const subject = params.get('id') || 'tamil';
+                const paper = params.get('paper');
+                const urlClass = params.get('class');
+
+                const titles = {
+                    'tamil': 'தமிழ் (Tamil)', 'english': 'English', 'maths': 'கணிதம் (Maths)',
+                    'science': paper === '1' ? 'சூழ்நிலையியல் (EVS)' : 'அறிவியல் (Science)',
+                    'social': paper === '1' ? 'சமூகவியல் (Social)' : 'சமூக அறிவியல் (Social)',
+                    'psychology': 'உளவியல் (Psychology)',
+                    'revision': 'திருப்புதல் தேர்வு (Revision)',
+                    'mocktest': 'மாதிரித்தேர்வு (Mock Exam)',
+                    'standard_6_7_8': '6, 7, 8 வகுப்புகள் (Exams)'
+                };
+
+                const gradeSelectionScreen = document.getElementById('gradeSelectionScreen');
+                const lessonScreen = document.getElementById('lessonScreen');
+                const gradeList = document.getElementById('gradeList');
+                const syllabusContainer = document.getElementById('syllabusContainer');
+                const pageTitle = document.getElementById('pageTitle');
+
+                let allowedClasses = ['1', '2', '3', '4', '5'];
+                let useData = syllabusData;
+
+                if (subject === 'psychology' || subject === 'revision' || subject === 'mocktest' || subject === 'standard_6_7_8') {
+                    allowedClasses = ['all'];
+                    useData = extraSyllabusData;
+                } else if (paper !== '1') {
+                    allowedClasses = ['6', '7', '8'];
+                }
+
+                const renderLessons = (cls) => {
+                    const data = useData[subject]?.[cls];
+                    if (!data || data.length === 0) {
+                        syllabusContainer.innerHTML = `<div style="text-align:center;padding:4rem;color:#64748b;">வகுப்பு ${cls} பாடங்கள் இன்னும் பதிவேற்றப்படவில்லை.</div>`;
+                        return;
+                    }
+
+                    let html = '';
+                    data.forEach(term => {
+                        const tTitle = (cls === 'all') ? term.term : (term.term === 'Annual' ? 'முழு ஆண்டு' : `பருவம் ${term.term}`);
+                        html += `
+                        <div class="term-section">
+                            <div class="term-header">
+                                <h2>${tTitle}</h2>
+                                <span class="chevron">▼</span>
+                            </div>
+                            <div class="topics-grid">`;
+                        
+                        term.units.forEach(unit => {
+                            unit.topics.forEach(topic => {
+                                const isReady = topic.isUpdated;
+                                const isMock = (subject === 'mocktest');
+                                html += `
+                                <div class="topic-card ${isReady ? '' : 'faded'}" ${isReady ? 'onclick="this.classList.toggle(\'expanded\')"' : ''}>
+                                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                                        <h3 style="font-size:1.1rem; font-weight:700;">${topic.title}</h3>
+                                        <span class="chevron" style="font-size:0.8rem;">${isReady ? '▼' : '🔒'}</span>
+                                    </div>
+                                    ${isReady ? `
+                                    <div class="btn-group" style="${isMock ? 'grid-template-columns: 1fr;' : ''}">
+                                        ${!isMock ? `<a href="material.html?subject=${subject}&class=${cls}&lesson=${encodeURIComponent(topic.code || topic.title)}${paper ? `&paper=${paper}` : ''}" class="card-btn btn-notes">பாடக்குறிப்புகள்</a>` : ''}
+                                        <a href="quiz.html?subject=${subject}&class=${cls}&lesson=${encodeURIComponent(topic.code || topic.title)}${paper ? `&paper=${paper}` : ''}" class="card-btn btn-quiz">தேர்வு</a>
+                                    </div>` : ''}
+                                </div>`;
+                            });
+                        });
+                        html += `</div></div>`;
+                    });
+                    syllabusContainer.innerHTML = html;
+                };
+
+                const selectGrade = (cls, isPop = false) => {
+                    gradeSelectionScreen.style.display = 'none';
+                    lessonScreen.style.display = 'block';
+                    pageTitle.innerText = `${titles[subject] || subject} - Class ${cls}`;
+                    renderLessons(cls);
+                    
+                    if (!isPop) {
+                        const url = new URL(window.location);
+                        url.searchParams.set('class', cls);
+                        window.history.pushState({ class: cls }, '', url);
+                    }
+                };
+
+                const showGrades = () => {
+                    gradeSelectionScreen.style.display = 'block';
+                    lessonScreen.style.display = 'none';
+                    const url = new URL(window.location);
+                    url.searchParams.delete('class');
+                    window.history.pushState({}, '', url);
+
+                    const icons = ['❶', '❷', '❸', '❹', '❺', '❻', '❼', '❽'];
+                    gradeList.innerHTML = allowedClasses.map((cls, idx) => `
+                        <div class="item-card" onclick="selectGrade('${cls}')">
+                            <div class="icon-wrapper">${icons[parseInt(cls)-1] || '🎓'}</div>
+                            <div class="item-info">வகுப்பு ${cls}</div>
+                            <div class="chevron">❯</div>
+                        </div>
+                    `).join('');
+                };
+
+                window.selectGrade = selectGrade;
+                window.showGrades = showGrades;
+
+                if (urlClass && allowedClasses.includes(urlClass)) {
+                    selectGrade(urlClass, true);
+                } else {
+                    showGrades();
+                }
+
+                window.addEventListener('popstate', (e) => {
+                    if (e.state && e.state.class) selectGrade(e.state.class, true);
+                    else showGrades();
+                });
+
+            } catch (err) {
+                console.error(err);
+            }
+        })();
+    </script>
+</body>
+</html>

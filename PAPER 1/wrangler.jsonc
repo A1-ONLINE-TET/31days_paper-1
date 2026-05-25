@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "paper1-exam",
+  "compatibility_date": "2025-09-27",
+  "main": "worker.js",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "DEVICE_SESSIONS",
+      "id": "YOUR_DEVICE_SESSIONS_KV_ID"
+    },
+    {
+      "binding": "RESULTS_KV",
+      "id": "YOUR_RESULTS_KV_ID"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "45 16 * * *"
+    ]
+  }
+}

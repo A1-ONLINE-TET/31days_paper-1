@@ -1,0 +1,150 @@
+{
+  "வகுப்பு": "Class 1",
+  "பருவம்": "Term 3",
+  "பாட_எண்": "2",
+  "பாட_தலைப்பு": "Unit 2: Time and Calendar",
+  "பாடக்குறிப்புகள்": [
+    {
+      "தலைப்பு": "1. Months in a Year (Poem)",
+      "விவரங்கள்": "There are twelve months in a year. The year starts with January and ends with December. The sequence: January, February, March, April, May, June, July, August, September, October, November, and December."
+    },
+    {
+      "தலைப்பு": "2. Distinguishing Day and Night",
+      "விவரங்கள்": "Day: Characterized by the sun, blue sky, clouds, birds flying, and flowers like sunflowers. Animals like the rooster are active. Night: Characterized by the moon, stars, and artificial light. Nocturnal animals like the bat and owl are active."
+    },
+    {
+      "தலைப்பு": "3. Harini’s Happy Week (Days of the Week)",
+      "விவரங்கள்": "Sunday: Met friend Kani. Monday: Father gave a cute puppy. Tuesday: New teacher told stories. Wednesday: Saw a pink rose. Thursday: Drew a picture. Friday: Hen had five yellow chicks. Saturday: Sang songs inside when it rained."
+    },
+    {
+      "தலைப்பு": "4. Phonics: Sound Blending (ph, th, ng)",
+      "விவரங்கள்": "'ph' sound: photo, phone, dolphin, graph. 'th' sound: thumb, moth, mouth, thing, thin, thick. 'ng' sound: ring, king, song, wing, sing, sang."
+    },
+    {
+      "தலைப்பு": "5. A Day at Home (Daily Routine)",
+      "விவரங்கள்": "Morning: Rooster crows, Grandpa walks, reading a book. Afternoon: Singing songs and having lunch. Evening: Playing with friends, helping parents, going to the market. Night: Having dinner, brushing teeth, and going to bed."
+    }
+  ],
+  "கேள்விகள்": [
+    {
+      "கேள்வி": "How many months are mentioned in the poem \"Months in a Year\"?",
+      "ஆப்ஷன்கள்": ["7", "10", "12", "30"],
+      "விடை": "12",
+      "விளக்கம்": "There are twelve months in a year as mentioned in the lesson."
+    },
+    {
+      "கேள்வி": "Which month marks the end of the year?",
+      "ஆப்ஷன்கள்": ["January", "June", "November", "December"],
+      "விடை": "December",
+      "விளக்கம்": "The year starts with January and ends with December."
+    },
+    {
+      "கேள்வி": "Name three things you see in the sky during the Day.",
+      "ஆப்ஷன்கள்": ["Moon, Stars, Bat", "Sun, Clouds, Birds", "Lamps, Owl, Stars", "Rain, Snow, Moon"],
+      "விடை": "Sun, Clouds, Birds",
+      "விளக்கம்": "During the day, we see the sun, blue sky, clouds, and birds flying."
+    },
+    {
+      "கேள்வி": "Which two nocturnal animals are shown in the Night scene?",
+      "ஆப்ஷன்கள்": ["Rooster and Dog", "Cat and Cow", "Bat and Owl", "Lion and Tiger"],
+      "விடை": "Bat and Owl",
+      "விளக்கம்": "Bats and Owls are nocturnal animals that are active at night."
+    },
+    {
+      "கேள்வி": "What is the name of Harini’s friend?",
+      "ஆப்ஷன்கள்": ["Meenu", "Kani", "Valli", "Iniya"],
+      "விடை": "Kani",
+      "விளக்கம்": "Harini met her friend Kani on Sunday."
+    },
+    {
+      "கேள்வி": "On which day did Harini’s father give her a puppy?",
+      "ஆப்ஷன்கள்": ["Sunday", "Monday", "Tuesday", "Friday"],
+      "விடை": "Monday",
+      "விளக்கம்": "On Monday, Harini's father gave her a cute puppy."
+    },
+    {
+      "கேள்வி": "What happened in Harini's class on Tuesday?",
+      "ஆப்ஷன்கள்": ["She drew a picture", "A new teacher told stories", "She met a friend", "She saw a rose"],
+      "விடை": "A new teacher told stories",
+      "விளக்கம்": "On Tuesday, a new teacher came to class and told many stories."
+    },
+    {
+      "கேள்வி": "What did Harini see in her garden on Wednesday?",
+      "ஆப்ஷன்கள்": ["A yellow chick", "A blue bird", "A pink rose", "A green leaf"],
+      "விடை": "A pink rose",
+      "விளக்கம்": "Harini saw a pink rose in her garden on Wednesday."
+    },
+    {
+      "கேள்வி": "Which day of the week comes after Thursday?",
+      "ஆப்ஷன்கள்": ["Wednesday", "Friday", "Saturday", "Sunday"],
+      "விடை": "Friday",
+      "விளக்கம்": "The day following Thursday is Friday."
+    },
+    {
+      "கேள்வி": "How many chicks did Harini's hen have on Friday?",
+      "ஆப்ஷன்கள்": ["Two", "Three", "Five", "Seven"],
+      "விடை": "Five",
+      "விளக்கம்": "Harini's hen had five yellow chicks on Friday."
+    },
+    {
+      "கேள்வி": "What did Harini and her friend do on Saturday when it rained?",
+      "ஆப்ஷன்கள்": ["Played outside", "Went to the market", "Sang songs inside", "Went to sleep"],
+      "விடை": "Sang songs inside",
+      "விளக்கம்": "When it rained on Saturday, they stayed inside and sang songs."
+    },
+    {
+      "கேள்வி": "Give an example of a word using the 'ph' sound.",
+      "ஆப்ஷன்கள்": ["Thumb", "Ring", "Photo", "Song"],
+      "விடை": "Photo",
+      "விளக்கம்": "'Photo' is an example of a word using the 'ph' blending sound."
+    },
+    {
+      "கேள்வி": "Which part of the body starting with 'th' is mentioned in phonics?",
+      "ஆப்ஷன்கள்": ["Thumb", "Shoulder", "Head", "Hand"],
+      "விடை": "Thumb",
+      "விளக்கம்": "The word 'thumb' starts with the 'th' sound."
+    },
+    {
+      "கேள்வி": "Identify a word that ends with the 'ng' sound.",
+      "ஆப்ஷன்கள்": ["Phone", "Thin", "King", "Thick"],
+      "விடை": "King",
+      "விளக்கம்": "The word 'king' ends with the 'ng' blending sound."
+    },
+    {
+      "கேள்வி": "According to the daily routine, when does the rooster crow?",
+      "ஆப்ஷன்கள்": ["Evening", "Night", "Afternoon", "Morning"],
+      "விடை": "Morning",
+      "விளக்கம்": "The rooster crows in the morning to wake everyone up."
+    },
+    {
+      "கேள்வி": "What activity does Grandpa do in the morning?",
+      "ஆப்ஷன்கள்": ["Goes to bed", "Walks", "Goes to market", "Has dinner"],
+      "விடை": "Walks",
+      "விளக்கம்": "In the morning routine, Grandpa is shown taking a walk."
+    },
+    {
+      "கேள்வி": "In which part of the day do the children have lunch?",
+      "ஆப்ஷன்கள்": ["Morning", "Afternoon", "Evening", "Night"],
+      "விடை": "Afternoon",
+      "விளக்கம்": "Lunch is typically eaten during the afternoon."
+    },
+    {
+      "கேள்வி": "Name one thing Harini does to help her parents in the evening.",
+      "ஆப்ஷன்கள்": ["Brushes teeth", "Goes to bed", "Goes to the market", "Crows like a rooster"],
+      "விடை": "Goes to the market",
+      "விளக்கம்": "Helping parents and going to the market are evening activities."
+    },
+    {
+      "கேள்வி": "What should you do before going to bed at night?",
+      "ஆப்ஷன்கள்": ["Play with friends", "Read a book", "Brush teeth", "Watch the sun"],
+      "விடை": "Brush teeth",
+      "விளக்கம்": "Brushing teeth is part of the night routine before going to bed."
+    },
+    {
+      "கேள்வி": "Which day of the week is considered the first day in Harini's week story?",
+      "ஆப்ஷன்கள்": ["Monday", "Friday", "Saturday", "Sunday"],
+      "விடை": "Sunday",
+      "விளக்கம்": "Harini's happy week starts with Sunday when she meets her friend Kani."
+    }
+  ]
+}

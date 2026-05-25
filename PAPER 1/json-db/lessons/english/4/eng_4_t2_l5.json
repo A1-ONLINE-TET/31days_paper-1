@@ -1,0 +1,667 @@
+{
+  "lesson_meta": {
+    "title": "SAVINGS (WHAT DO HUMANS SAVE? & GRAMMAR)",
+    "grade": "4",
+    "term": "2",
+    "unit": "5",
+    "type": "Lesson",
+    "language": "English",
+    "code": "eng_4_t2_l5"
+  },
+  "material": {
+    "sections": [
+      {
+        "title": "Summary",
+        "content": "This unit focuses on the theme of 'Savings'. It begins with an insightful poem titled 'What do humans save?', which beautifully illustrates how various living beings like ants, moles, crocodiles, squirrels, and leopards, as well as human farmers, save food for their future needs. The poem concludes with a thought-provoking question about human saving habits, stating that humans save everything nature gives. Additionally, the unit provides a comprehensive grammar section covering the Simple Past Tense (including action verbs and 'be' verbs like was/were) and Simple Future Tense (using shall/will). It also includes listening and speaking exercises related to banking scenarios, such as depositing money using a pay-in-slip.",
+        "type": "content"
+      },
+      {
+        "title": "Section 1: Poem - What do humans save?",
+        "content": [
+          "Ants pile food in the anthill and eat it during the winter's chill.",
+          "Moles dig long and winding tunnels to save worms in the channels.",
+          "Crocodiles are found in many countries and store food in their pantries.",
+          "Squirrels reserve food in a larder, storing a seven-course meal with a starter.",
+          "Leopards keep their prey on a tree and eat them when they are free.",
+          "Farmers store the harvest in a granary, which is soon to be packed in the cannery.",
+          "The poem asks, 'What do you save?' and answers, 'Everything that nature gave.'"
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Glossary",
+        "content": [
+          "pile : to collect",
+          "pantries : a storage room",
+          "prey : an animal that is hunted and killed by another for food",
+          "granary : a storehouse for threshed grain",
+          "cannery : a place where the food is packed in cans or tins"
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Section 2: Grammar - Simple Past Tense",
+        "content": [
+          "Simple past tense is used to describe an action that was over or has happened.",
+          "Verb forms include: Present (write), Past (wrote), Past Participle (written), Present Participle (writing).",
+          "Examples of Past Tense Action Verbs: went, ran, played, flew, visited, boiled, wrote.",
+          "Past Tense for 'be' form verbs (state of being):",
+          "- Present 'am' / 'is' changes to Past 'was'.",
+          "- Present 'are' changes to Past 'were'.",
+          "Examples of 'be' verbs: I was an engineer. He was a pilot. She was a soldier. It was a computer.",
+          "Examples of plural 'be' verbs: We were young. You were a patient. They were students."
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Section 3: Grammar - Simple Future Tense",
+        "content": [
+          "Simple future tense refers to an action or event that has not yet happened.",
+          "It uses the present form of the verb along with the auxiliaries 'shall' or 'will'.",
+          "'Shall' and 'Will' can be used for 'I' and 'We'.",
+          "'Will' is used for 'You', 'They', 'He', 'She', 'It'.",
+          "Examples: I shall/will meet him tomorrow. You will meet him tomorrow. The bus will reach Arcot by evening."
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Section 4: Let Us Speak & Listen (Bank Scenario)",
+        "content": [
+          "Structures for speaking in a bank: 'How can I help you?', 'I am here to deposit money.', 'Ok, let me fill the form for you.', 'Thanks sir. But I can fill it myself.', 'Let me check your pay-in-slip.', 'Which counter should I go to?', 'You can deposit your money in counter 3.'",
+          "Listening Context (Based on Selvamagal/Post Office Scheme): Number of accounts a parent can open (2), Maturity period (21 years), Minimum deposit, Income tax exemption under section 80C, Name of the savings scheme (Selvamagal)."
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Book Back Exercises (One Mark Questions)",
+        "content": [
+          "Match with their storing places (Implied from poem):",
+          "Ants - Anthill, Moles - Channels, Crocodiles - Pantries, Squirrels - Larder, Leopards - Tree, Farmers - Granary.",
+          "Fill in the blanks with rhyming words:",
+          "1. anthill - chill",
+          "2. save - gave",
+          "3. larder - starter",
+          "4. tree - free",
+          "Write 'was' or 'were' to complete the sentences:",
+          "1. Kavi was kind to me.",
+          "2. The bus was brand new.",
+          "3. They were friends.",
+          "4. Ragu was my junior in school.",
+          "Write the past form of the verbs:",
+          "1. read - read",
+          "2. sing - sang",
+          "3. sleep - slept",
+          "Complete the sentence with the simple past form of the given verbs:",
+          "1. It snowed (snow) last winter.",
+          "2. The rain continued (continue) all day.",
+          "3. I lost (lose) my balance.",
+          "4. We stood (stand) for hours.",
+          "5. Tom came (come) home from school.",
+          "Circle the sentences that are in simple future tense:",
+          "Answer: 'Kamal will meet you at the shop.' and 'It will rain tomorrow.'",
+          "Fill in the blanks with simple future tense of the verb:",
+          "1. Sakthi will earn (earn) a lot of money.",
+          "2. You will travel (travel) around the world.",
+          "3. Everybody will adore (adore) you.",
+          "4. Many people will serve (serve) you.",
+          "5. They will anticipate (anticipate) your wishes."
+        ],
+        "type": "content"
+      }
+    ]
+  },
+  "quiz": {
+    "questions": [
+      {
+        "question": "Where do ants pile their food according to the poem?",
+        "options": [
+          "In a larder",
+          "In a granary",
+          "In an anthill",
+          "In the pantries"
+        ],
+        "answer": 2,
+        "explanation": "The poem states: 'Ants pile food in the anthill'."
+      },
+      {
+        "question": "During which season do the ants eat their saved food?",
+        "options": [
+          "Summer's heat",
+          "Spring's bloom",
+          "Monsoon's rain",
+          "Winter's chill"
+        ],
+        "answer": 3,
+        "explanation": "The poem says: 'They eat it during the winter's chill'."
+      },
+      {
+        "question": "Which animal digs long and winding tunnels?",
+        "options": [
+          "Moles",
+          "Ants",
+          "Squirrels",
+          "Crocodiles"
+        ],
+        "answer": 0,
+        "explanation": "The poem mentions: 'Moles dig long and winding tunnels'."
+      },
+      {
+        "question": "What do moles save in their channels?",
+        "options": [
+          "Seeds",
+          "Worms",
+          "Leaves",
+          "Fruits"
+        ],
+        "answer": 1,
+        "explanation": "The poem clearly states moles 'save worms in the channels'."
+      },
+      {
+        "question": "Where do crocodiles store their food?",
+        "options": [
+          "In the channels",
+          "On a tree",
+          "In their pantries",
+          "In a larder"
+        ],
+        "answer": 2,
+        "explanation": "The poem states: 'Crocodiles... store food in their pantries'."
+      },
+      {
+        "question": "Where does a squirrel reserve its food?",
+        "options": [
+          "In an anthill",
+          "In a cannery",
+          "In a granary",
+          "In a larder"
+        ],
+        "answer": 3,
+        "explanation": "The poem notes: 'Squirrels reserve food in a larder'."
+      },
+      {
+        "question": "What kind of meal do squirrels store according to the poem?",
+        "options": [
+          "A three-course meal",
+          "A simple snack",
+          "A seven-course meal with starter",
+          "A raw diet"
+        ],
+        "answer": 2,
+        "explanation": "The poem uses a funny metaphor: 'They store a seven course meal with starter'."
+      },
+      {
+        "question": "Where do leopards keep their prey?",
+        "options": [
+          "In caves",
+          "Underground",
+          "On a tree",
+          "In pantries"
+        ],
+        "answer": 2,
+        "explanation": "The text explicitly says: 'Leopards keep their prey on a tree'."
+      },
+      {
+        "question": "When do leopards eat their prey?",
+        "options": [
+          "When they are hungry",
+          "When they are free",
+          "During the winter",
+          "Immediately after hunting"
+        ],
+        "answer": 1,
+        "explanation": "The poem says they keep it on a tree and 'eat them when they are free'."
+      },
+      {
+        "question": "Where do farmers store the harvest?",
+        "options": [
+          "In a cannery",
+          "In a larder",
+          "In a granary",
+          "In the fields"
+        ],
+        "answer": 2,
+        "explanation": "The poem states: 'Farmers store the harvest in a granary'."
+      },
+      {
+        "question": "Where is the harvest soon to be packed?",
+        "options": [
+          "In a granary",
+          "In a pantry",
+          "In a cannery",
+          "In an anthill"
+        ],
+        "answer": 2,
+        "explanation": "After the granary, the poem mentions it is 'Soon to be packed in the cannery'."
+      },
+      {
+        "question": "According to the final lines of the poem, what do humans save?",
+        "options": [
+          "Only money and gold",
+          "Only what they grow",
+          "Everything that nature gave",
+          "Only food for winter"
+        ],
+        "answer": 2,
+        "explanation": "The poem concludes: 'What do you save? Everything that nature gave'."
+      },
+      {
+        "question": "Match the following animal to its storing place based on the poem:\nAnimal: Crocodile\nStorage: ?",
+        "options": [
+          "Anthill",
+          "Granary",
+          "Tree",
+          "Pantries"
+        ],
+        "answer": 3,
+        "explanation": "Crocodiles store food in their pantries."
+      },
+      {
+        "question": "What is the meaning of the word 'pile'?",
+        "options": [
+          "To collect",
+          "To scatter",
+          "To hide",
+          "To eat"
+        ],
+        "answer": 0,
+        "explanation": "According to the glossary, 'pile' means to collect."
+      },
+      {
+        "question": "What does the word 'prey' mean in the glossary?",
+        "options": [
+          "An animal that hunts",
+          "A storehouse for grain",
+          "An animal that is hunted and killed by another for food",
+          "A storage room"
+        ],
+        "answer": 2,
+        "explanation": "Prey refers to an animal that is hunted and killed by another for food."
+      },
+      {
+        "question": "A place where food is packed in cans or tins is called a ________.",
+        "options": [
+          "Granary",
+          "Pantry",
+          "Cannery",
+          "Larder"
+        ],
+        "answer": 2,
+        "explanation": "The glossary defines 'cannery' as a place where food is packed in cans or tins."
+      },
+      {
+        "question": "Which of the following word pairs rhyme, based on the poem?",
+        "options": [
+          "Anthill - Save",
+          "Larder - Starter",
+          "Tree - Prey",
+          "Granary - Tunnels"
+        ],
+        "answer": 1,
+        "explanation": "In the poem, larder rhymes with starter."
+      },
+      {
+        "question": "What is the correct rhyming word for 'save' as used in the poem?",
+        "options": [
+          "gave",
+          "tree",
+          "free",
+          "chill"
+        ],
+        "answer": 0,
+        "explanation": "The poem ends with: 'What do you save? Everything that nature gave'."
+      },
+      {
+        "question": "Which tense is used to describe an action that was over?",
+        "options": [
+          "Simple Present Tense",
+          "Simple Future Tense",
+          "Present Continuous Tense",
+          "Simple Past Tense"
+        ],
+        "answer": 3,
+        "explanation": "The grammar section states: 'We use the past tense to talk about an action that was over'."
+      },
+      {
+        "question": "What is the past form of the verb 'write'?",
+        "options": [
+          "writes",
+          "written",
+          "wrote",
+          "writing"
+        ],
+        "answer": 2,
+        "explanation": "The past form of 'write' is 'wrote'."
+      },
+      {
+        "question": "What is the past tense form of 'am' and 'is'?",
+        "options": [
+          "are",
+          "were",
+          "been",
+          "was"
+        ],
+        "answer": 3,
+        "explanation": "'was' is the past form of the 'be' verbs 'am' and 'is'."
+      },
+      {
+        "question": "What is the past tense form of 'are'?",
+        "options": [
+          "was",
+          "is",
+          "were",
+          "been"
+        ],
+        "answer": 2,
+        "explanation": "'were' is the past form of the 'be' verb 'are'."
+      },
+      {
+        "question": "Complete the sentence with the correct 'be' verb: 'I ______ an engineer.'",
+        "options": [
+          "was",
+          "were",
+          "are",
+          "is"
+        ],
+        "answer": 0,
+        "explanation": "With the pronoun 'I', the correct past tense 'be' verb is 'was'."
+      },
+      {
+        "question": "Complete the sentence with the correct 'be' verb: 'They ______ students.'",
+        "options": [
+          "was",
+          "were",
+          "is",
+          "am"
+        ],
+        "answer": 1,
+        "explanation": "With the plural pronoun 'They', the correct past tense 'be' verb is 'were'."
+      },
+      {
+        "question": "Fill in the blank with the correct verb: 'Kavi ______ kind to me.'",
+        "options": [
+          "were",
+          "are",
+          "am",
+          "was"
+        ],
+        "answer": 3,
+        "explanation": "'Kavi' is a singular noun (He/She), so 'was' is used."
+      },
+      {
+        "question": "Fill in the blank with the correct verb: 'The bus ______ brand new.'",
+        "options": [
+          "were",
+          "are",
+          "was",
+          "am"
+        ],
+        "answer": 2,
+        "explanation": "'The bus' is singular (It), so 'was' is used."
+      },
+      {
+        "question": "Fill in the blank with the correct verb: 'Ragu ______ my junior in school.'",
+        "options": [
+          "were",
+          "are",
+          "was",
+          "am"
+        ],
+        "answer": 2,
+        "explanation": "'Ragu' is singular, requiring 'was'."
+      },
+      {
+        "question": "What is the past form of the verb 'sing'?",
+        "options": [
+          "singed",
+          "sang",
+          "sung",
+          "singing"
+        ],
+        "answer": 1,
+        "explanation": "The past tense of 'sing' is 'sang'."
+      },
+      {
+        "question": "What is the past form of the verb 'sleep'?",
+        "options": [
+          "sleeped",
+          "slept",
+          "sleeping",
+          "slumber"
+        ],
+        "answer": 1,
+        "explanation": "The past tense of 'sleep' is 'slept'."
+      },
+      {
+        "question": "Complete the sentence with the past form: 'It ________ (snow) last winter.'",
+        "options": [
+          "snows",
+          "snowing",
+          "snow",
+          "snowed"
+        ],
+        "answer": 3,
+        "explanation": "The past tense of the regular verb 'snow' is 'snowed'."
+      },
+      {
+        "question": "Complete the sentence with the past form: 'The rain ________ (continue) all day.'",
+        "options": [
+          "continues",
+          "continuing",
+          "continued",
+          "continue"
+        ],
+        "answer": 2,
+        "explanation": "The past tense of 'continue' is 'continued'."
+      },
+      {
+        "question": "Complete the sentence with the past form: 'I ________ (lose) my balance.'",
+        "options": [
+          "losed",
+          "lost",
+          "losing",
+          "loose"
+        ],
+        "answer": 1,
+        "explanation": "The past tense of the irregular verb 'lose' is 'lost'."
+      },
+      {
+        "question": "Complete the sentence with the past form: 'We ________ (stand) for hours.'",
+        "options": [
+          "standed",
+          "standing",
+          "stood",
+          "stands"
+        ],
+        "answer": 2,
+        "explanation": "The past tense of the irregular verb 'stand' is 'stood'."
+      },
+      {
+        "question": "Complete the sentence with the past form: 'Tom ________ (come) home from school.'",
+        "options": [
+          "comed",
+          "comes",
+          "came",
+          "coming"
+        ],
+        "answer": 2,
+        "explanation": "The past tense of 'come' is 'came'."
+      },
+      {
+        "question": "Which tense refers to an action or event that has not yet happened?",
+        "options": [
+          "Simple Past Tense",
+          "Simple Present Tense",
+          "Present Continuous Tense",
+          "Simple Future Tense"
+        ],
+        "answer": 3,
+        "explanation": "Simple future tense is used for actions that are yet to happen."
+      },
+      {
+        "question": "Which auxiliary verbs are used in the simple future tense?",
+        "options": [
+          "was and were",
+          "am and is",
+          "shall and will",
+          "has and have"
+        ],
+        "answer": 2,
+        "explanation": "The simple future tense uses 'shall' or 'will' along with the present form of the verb."
+      },
+      {
+        "question": "The auxiliary verb 'shall' can be primarily used with which pronouns?",
+        "options": [
+          "He, She, It",
+          "You, They",
+          "I, We",
+          "All pronouns"
+        ],
+        "answer": 2,
+        "explanation": "According to the grammar notes, 'shall' and 'will' are used for 'I' and 'We'."
+      },
+      {
+        "question": "Identify the sentence that is in the Simple Future Tense.",
+        "options": [
+          "They washed the van.",
+          "He ate many mangoes.",
+          "My dad helps me read.",
+          "Kamal will meet you at the shop."
+        ],
+        "answer": 3,
+        "explanation": "The presence of 'will meet' indicates the simple future tense."
+      },
+      {
+        "question": "Identify the sentence that is in the Simple Future Tense.",
+        "options": [
+          "It will rain tomorrow.",
+          "I boiled the water.",
+          "She played chess.",
+          "A monkey came down from the tree."
+        ],
+        "answer": 0,
+        "explanation": "'will rain' shows an action that has not yet happened."
+      },
+      {
+        "question": "Fill in the blank with the simple future tense: 'Sakthi _________ (earn) a lot of money.'",
+        "options": [
+          "earned",
+          "earns",
+          "will earn",
+          "is earning"
+        ],
+        "answer": 2,
+        "explanation": "The simple future tense of earn for a third-person noun is 'will earn'."
+      },
+      {
+        "question": "Fill in the blank with the simple future tense: 'Everybody _________ (adore) you.'",
+        "options": [
+          "adores",
+          "adored",
+          "will adore",
+          "adoring"
+        ],
+        "answer": 2,
+        "explanation": "The simple future tense uses 'will' + present verb form (adore)."
+      },
+      {
+        "question": "Fill in the blank with the simple future tense: 'They _________ (anticipate) your wishes.'",
+        "options": [
+          "anticipates",
+          "anticipated",
+          "will anticipate",
+          "anticipating"
+        ],
+        "answer": 2,
+        "explanation": "Using 'will' + present verb form 'anticipate' creates the future tense."
+      },
+      {
+        "question": "In a bank scenario, what do you usually hand over to deposit money at the counter?",
+        "options": [
+          "Withdrawal slip",
+          "Cheque book request",
+          "Pay-in-slip",
+          "Account opening form"
+        ],
+        "answer": 2,
+        "explanation": "The bank dialogue refers to checking the 'pay-in-slip' before depositing money."
+      },
+      {
+        "question": "Assertion (A): Leopards keep their dead prey high up on a tree.\nReason (R): It helps them eat it peacefully when they are free, away from ground scavengers.",
+        "options": [
+          "Both A and R are true, and R is the correct explanation of A",
+          "Both A and R are true, but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explanation": "The poem states they 'keep their prey on a tree and eat them when they are free'."
+      },
+      {
+        "question": "Assertion (A): The word 'were' is used as the past tense for singular pronouns like 'He' and 'She'.\nReason (R): 'Were' is the past form of the 'be' verb 'are'.",
+        "options": [
+          "Both A and R are true",
+          "Both A and R are false",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 3,
+        "explanation": "'Were' is used for plural pronouns (We, You, They). For He/She, 'was' is used."
+      },
+      {
+        "question": "Complete the analogy based on the poem.\nFarmer : Granary :: Squirrel : __________",
+        "options": [
+          "Tree",
+          "Larder",
+          "Anthill",
+          "Pantries"
+        ],
+        "answer": 1,
+        "explanation": "Just as farmers store harvest in a granary, squirrels reserve food in a larder."
+      },
+      {
+        "question": "Find the odd one out based on the verb forms.",
+        "options": [
+          "wrote",
+          "ran",
+          "flew",
+          "writing"
+        ],
+        "answer": 3,
+        "explanation": "Wrote, ran, and flew are simple past tense forms. 'Writing' is a present participle."
+      },
+      {
+        "question": "HOTS: Why do you think the poet mentions that humans save 'Everything that nature gave'?",
+        "options": [
+          "Because humans have very small pantries.",
+          "Because humans only need grain.",
+          "To highlight that unlike animals who save only food for survival, humans exploit and horde all natural resources.",
+          "Because humans do not know how to build tunnels."
+        ],
+        "answer": 2,
+        "explanation": "Animals save specific items purely for survival (worms, prey), whereas humans tend to accumulate every resource provided by nature beyond basic needs."
+      },
+      {
+        "question": "HOTS: If you were to trace the journey of a farmer's crop as described in the poem, what would be the correct order of locations?",
+        "options": [
+          "Cannery then Granary",
+          "Granary then Cannery",
+          "Larder then Pantries",
+          "Anthill then Tree"
+        ],
+        "answer": 1,
+        "explanation": "The poem says farmers store the harvest in a 'granary', which is 'soon to be packed in the cannery'."
+      },
+      {
+        "question": "HOTS: In the phrase 'We shall meet him tomorrow', why is the verb 'meet' in the present form even though the action is in the future?",
+        "options": [
+          "Because it is a mistake in grammar.",
+          "Because the auxiliary verb 'shall' already carries the future tense marker.",
+          "Because the action is happening right now.",
+          "Because 'we' is a plural pronoun."
+        ],
+        "answer": 1,
+        "explanation": "In simple future tense, the auxiliaries 'shall/will' indicate the future timeline, allowing the main verb to remain in its base (present) form."
+      }
+    ]
+  }
+}

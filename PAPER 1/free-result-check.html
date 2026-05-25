@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தேர்வு முடிவுகள் - தமிழ் நண்பன்</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&family=Baloo+Thambi+2:wght@800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', 'Noto Sans Tamil', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; padding: 20px; padding-bottom: 60px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header { text-align: center; color: white; margin-bottom: 25px; }
+        .header h1 { font-family: 'Baloo Thambi 2', cursive; font-size: 2.3rem; margin-bottom: 8px; }
+        .header p { font-size: 1rem; opacity: 0.95; }
+        .control-panel { background: white; border-radius: 20px; padding: 22px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); margin-bottom: 20px; }
+        .control-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 15px; }
+        .control-row label { display: block; font-weight: 700; color: #334155; margin-bottom: 6px; font-size: 0.85rem; }
+        .control-row input, .control-row select { width: 100%; padding: 12px 14px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 0.95rem; font-family: inherit; }
+        .control-row input:focus, .control-row select:focus { outline: none; border-color: #667eea; }
+        .mode-tabs { display: flex; gap: 10px; margin-bottom: 15px; }
+        .mode-tab { flex: 1; padding: 12px; text-align: center; font-weight: 700; cursor: pointer; border-radius: 10px; border: 2px solid #e2e8f0; background: #f8fafc; color: #475569; font-family: inherit; font-size: 0.9rem; }
+        .mode-tab.active { background: #667eea; color: white; border-color: #667eea; }
+        .btn-load { width: 100%; padding: 14px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; font-family: inherit; }
+        .error-msg { background: #fef2f2; color: #991b1b; padding: 12px; border-radius: 8px; margin-top: 12px; font-size: 0.9rem; text-align: center; display: none; }
+        .individual-result { display: none; }
+        .result-hero { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); margin-bottom: 15px; }
+        .result-name { text-align: center; font-size: 1.5rem; font-weight: 800; color: #1e3a8a; margin-bottom: 4px; }
+        .result-meta { text-align: center; color: #64748b; font-size: 0.9rem; margin-bottom: 20px; }
+        .passfail-banner { text-align: center; padding: 20px; border-radius: 15px; margin-bottom: 20px; color: white; }
+        .passfail-banner.pass { background: linear-gradient(135deg, #10b981, #059669); }
+        .passfail-banner.fail { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .passfail-banner .big { font-size: 2.2rem; font-weight: 800; margin-bottom: 5px; }
+        .passfail-banner .sub { font-size: 0.95rem; opacity: 0.95; }
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-bottom: 20px; }
+        .score-item { background: #f8fafc; padding: 16px 8px; border-radius: 12px; text-align: center; }
+        .score-item .icon { font-size: 1.5rem; margin-bottom: 4px; }
+        .score-item .value { font-size: 1.4rem; font-weight: 800; color: #1e3a8a; }
+        .score-item .label { font-size: 0.68rem; color: #64748b; text-transform: uppercase; margin-top: 2px; }
+        .detail-table { width: 100%; border-top: 1px solid #e2e8f0; padding-top: 12px; }
+        .detail-row2 { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.9rem; }
+        .detail-row2 .l { color: #64748b; }
+        .detail-row2 .v { font-weight: 700; color: #1e293b; }
+        .full-list { display: none; }
+        .stats-bar { background: white; border-radius: 15px; padding: 18px; margin-bottom: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        .stat .value { font-size: 1.4rem; font-weight: 800; color: #1e3a8a; }
+        .stat .label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; }
+        .toolbar { background: white; border-radius: 15px; padding: 14px; margin-bottom: 15px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .toolbar input.search { flex: 1; min-width: 160px; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: inherit; }
+        .toolbar input.search:focus { outline: none; border-color: #667eea; }
+        .btn-toggle { padding: 10px 14px; background: #f1f5f9; color: #475569; border: 2px solid #e2e8f0; border-radius: 8px; font-weight: 700; cursor: pointer; font-family: inherit; font-size: 0.88rem; }
+        .btn-toggle.active { background: #667eea; color: white; border-color: #667eea; }
+        .btn-pdf { padding: 10px 14px; background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-family: inherit; font-size: 0.88rem; }
+        .table-wrap { background: white; border-radius: 15px; padding: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        th { background: #f1f5f9; padding: 11px 8px; text-align: left; font-weight: 700; color: #1e293b; font-size: 0.78rem; }
+        td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+        tr:hover { background: #fafbfc; }
+        tr.me-row { background: #fef3c7; }
+        .rank-cell { font-weight: 800; text-align: center; }
+        .rank-1 { color: #f59e0b; } .rank-2 { color: #94a3b8; } .rank-3 { color: #d97706; }
+        .name-cell { font-weight: 600; color: #1e293b; }
+        .comm-cell { text-align: center; font-weight: 700; color: #7c3aed; font-size: 0.82rem; }
+        .score-cell { font-weight: 700; color: #10b981; text-align: center; }
+        .pct-cell { color: #64748b; text-align: center; }
+        .result-cell { text-align: center; font-weight: 800; font-size: 0.8rem; }
+        .result-pass { color: #059669; }
+        .result-fail { color: #dc2626; }
+        .loading { text-align: center; color: white; padding: 40px 20px; }
+        .spinner { border: 4px solid rgba(255,255,255,0.3); border-top: 4px solid white; border-radius: 50%; width: 40px; height: 40px; margin: 0 auto 15px; animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .empty-state { text-align: center; padding: 50px 20px; color: white; }
+        .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+        .btn-back { display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: 700; margin-top: 20px; border: 2px solid rgba(255,255,255,0.4); }
+        @media (max-width: 600px) {
+            .control-row { grid-template-columns: 1fr; }
+            table { font-size: 0.8rem; } th, td { padding: 8px 5px; }
+            .header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 தேர்வு முடிவுகள்</h1>
+            <p>இலவச தேர்வு - ஆசிரியர் தகுதி தேர்வு</p>
+        </div>
+
+        <div class="control-panel">
+            <div class="mode-tabs">
+                <button class="mode-tab active" id="modeIndividual" onclick="setMode('individual')">👤 எனது முடிவு</button>
+                <button class="mode-tab" id="modeFull" onclick="setMode('full')">📋 முழு பட்டியல்</button>
+            </div>
+
+            <div class="control-row">
+                <div>
+                    <label>📅 தேர்வு தேதி (நாள்/மாதம்/ஆண்டு)</label>
+                    <input type="text" id="examDate" inputmode="numeric" placeholder="25/05/2026" maxlength="10" readonly>
+                </div>
+                <div>
+                    <label>📄 தேர்வு பேப்பர்</label>
+                    <select id="paperSelect">
+                        <option value="paper1">📘 கணிதம் + அறிவியல்</option>
+                        <option value="paper2">📗 சமூக அறிவியல்</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-row" id="mobileRow" style="grid-template-columns:1fr;">
+                <div>
+                    <label>📱 உங்கள் மொபைல் எண் (10 இலக்கம்)</label>
+                    <input type="tel" id="mobileInput" placeholder="9876543210" maxlength="10">
+                </div>
+            </div>
+
+            <button class="btn-load" onclick="loadResults()">🔍 முடிவுகள் காண்பி</button>
+            <div class="error-msg" id="errorMsg"></div>
+        </div>
+
+        <div id="loadingBox" class="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>முடிவுகள் ஏற்றப்படுகின்றன...</p>
+        </div>
+
+        <div class="individual-result" id="individualResult">
+            <div class="result-hero">
+                <div class="result-name" id="indName">—</div>
+                <div class="result-meta" id="indMeta">—</div>
+                <div class="passfail-banner" id="passfailBanner">
+                    <div class="big" id="pfText">—</div>
+                    <div class="sub" id="pfSub">—</div>
+                </div>
+                <div class="score-grid">
+                    <div class="score-item"><div class="icon">🏆</div><div class="value" id="indRank">—</div><div class="label">Rank</div></div>
+                    <div class="score-item"><div class="icon">📝</div><div class="value" id="indScore">—</div><div class="label">மதிப்பெண்</div></div>
+                    <div class="score-item"><div class="icon">📊</div><div class="value" id="indPct">—</div><div class="label">சதவீதம்</div></div>
+                </div>
+                <div class="detail-table">
+                    <div class="detail-row2"><span class="l">இனப்பிரிவு:</span><span class="v" id="indComm">—</span></div>
+                    <div class="detail-row2"><span class="l">தேர்ச்சி குறைந்தபட்சம்:</span><span class="v" id="indCutoff">—</span></div>
+                    <div class="detail-row2"><span class="l">சரியான பதில்கள்:</span><span class="v" id="indCorrect" style="color:#059669;">—</span></div>
+                    <div class="detail-row2"><span class="l">தவறான பதில்கள்:</span><span class="v" id="indWrong" style="color:#dc2626;">—</span></div>
+                    <div class="detail-row2"><span class="l">விடை எழுதாதவை:</span><span class="v" id="indUnans">—</span></div>
+                    <div class="detail-row2"><span class="l">மொத்த பங்கேற்பாளர்கள்:</span><span class="v" id="indTotal">—</span></div>
+                </div>
+
+                <button onclick="downloadMyPDF()" style="width:100%;margin-top:18px;padding:14px;background:linear-gradient(135deg,#10b981,#059669);color:white;border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit;">
+                    📥 எனது முடிவை PDF-ஆ பதிவிறக்கு
+                </button>
+                <button onclick="toggleAnswerKey()" id="answerKeyBtn" style="width:100%;margin-top:10px;padding:14px;background:linear-gradient(135deg,#f59e0b,#d97706);color:white;border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit;">
+                    📖 விடைகளை சரிபார்க்க (Answer Key)
+                </button>
+            </div>
+
+            <!-- Answer Key Section -->
+            <div id="answerKeySection" style="display:none;margin-top:15px;">
+                <div style="background:white;border-radius:20px;padding:20px;box-shadow:0 10px 40px rgba(0,0,0,0.2);">
+                    <h2 style="color:#1e3a8a;text-align:center;margin-bottom:5px;">📖 விடைக்குறிப்பு (Answer Key)</h2>
+                    <p style="text-align:center;color:#64748b;font-size:0.85rem;margin-bottom:18px;">சரியான விடைகள் & விளக்கம்</p>
+                    <div id="answerKeyLoading" style="text-align:center;padding:30px;color:#64748b;display:none;">
+                        <div class="spinner" style="border-color:rgba(102,126,234,0.2);border-top-color:#667eea;"></div>
+                        <p style="margin-top:10px;">கேள்விகள் ஏற்றப்படுகின்றன...</p>
+                    </div>
+                    <div id="answerKeyContent"></div>
+                </div>
+            </div>
+
+        <div class="full-list" id="fullList">
+            <div class="stats-bar">
+                <div class="stat"><div class="value" id="totalCount">0</div><div class="label">மொத்தம்</div></div>
+                <div class="stat"><div class="value" id="passCount">0</div><div class="label">தேர்ச்சி</div></div>
+                <div class="stat"><div class="value" id="topScore">0</div><div class="label">அதிக மதிப்பெண்</div></div>
+                <div class="stat"><div class="value" id="topperName" style="font-size:0.9rem;">—</div><div class="label">டாப்பர்</div></div>
+            </div>
+            <div class="toolbar">
+                <input type="text" class="search" id="searchInput" placeholder="🔍 பெயர் தேடு...">
+                <button class="btn-toggle active" id="btnAZ" onclick="setSort('az')">A-Z</button>
+                <button class="btn-toggle" id="btnRank" onclick="setSort('rank')">Rank</button>
+                <button class="btn-pdf" onclick="downloadPDF()">📥 PDF</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:50px;text-align:center;">Rank</th>
+                            <th>பெயர்</th>
+                            <th style="width:55px;text-align:center;">இனம்</th>
+                            <th style="width:70px;text-align:center;">மதிப்பெண்</th>
+                            <th style="width:50px;text-align:center;">%</th>
+                            <th style="width:60px;text-align:center;">முடிவு</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="empty-state" id="emptyState" style="display:none;">
+            <div class="icon">📭</div>
+            <h3 id="emptyTitle">இந்த தேதிக்கு முடிவுகள் இல்லை</h3>
+            <p style="margin-top:8px;opacity:0.85;" id="emptyDesc">தேர்வு முடிந்து 15 நிமிடம் கடந்த பிறகு முடிவுகள் தயாராகும்</p>
+        </div>
+
+        <div style="text-align:center;">
+            <a href="index.html" class="btn-back">← முகப்புப் பக்கம்</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.0/jspdf.plugin.autotable.min.js"></script>
+
+    <script>
+        const CUTOFFS = { 'OC': 60, 'GENERAL': 60, 'BC': 50, 'BCM': 50, 'MBC': 50, 'DNC': 50, 'SC': 40, 'SCA': 40, 'ST': 40, 'PWD': 40 };
+        function getCutoff(cat) { return CUTOFFS[(cat || 'OC').toUpperCase()] ?? 60; }
+
+        // 🔤 Tamil font for jsPDF (Noto Sans Tamil) — loaded once, cached
+        let _tamilFontB64 = null;
+        let _tamilFontLoaded = false;
+        async function ensureTamilFont(doc) {
+            try {
+                if (!_tamilFontB64) {
+                    const url = 'https://cdn.jsdelivr.net/gh/google/fonts/ofl/notosanstamil/NotoSansTamil%5Bwdth%2Cwght%5D.ttf';
+                    const res = await fetch(url);
+                    if (!res.ok) throw new Error('font fetch failed');
+                    const buf = await res.arrayBuffer();
+                    // arraybuffer → base64
+                    let binary = '';
+                    const bytes = new Uint8Array(buf);
+                    for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+                    _tamilFontB64 = btoa(binary);
+                }
+                doc.addFileToVFS('NotoTamil.ttf', _tamilFontB64);
+                doc.addFont('NotoTamil.ttf', 'NotoTamil', 'normal');
+                _tamilFontLoaded = true;
+                return true;
+            } catch (e) {
+                console.warn('Tamil font load failed, using English fallback:', e);
+                _tamilFontLoaded = false;
+                return false;
+            }
+        }
+
+        let currentData = null;
+        let currentSort = 'az';
+        let currentSearch = '';
+        let currentMode = 'individual';
+        let myPhone = '';
+
+        // 📅 Result date: ALWAYS today (DD/MM/YYYY display, locked)
+        const defaultDate = new Date();
+        const dateEl = document.getElementById('examDate');
+        const todayISO = defaultDate.toISOString().split('T')[0]; // YYYY-MM-DD for fetch
+        const dd = String(defaultDate.getDate()).padStart(2,'0');
+        const mm = String(defaultDate.getMonth()+1).padStart(2,'0');
+        const yyyy = defaultDate.getFullYear();
+        dateEl.value = `${dd}/${mm}/${yyyy}`;  // DD/MM/YYYY display
+
+        const savedMobile = localStorage.getItem('studentMobile');
+        if (savedMobile && /^[0-9]{10}$/.test(savedMobile)) {
+            document.getElementById('mobileInput').value = savedMobile;
+        }
+
+        document.getElementById('mobileInput').addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.getElementById('modeIndividual').classList.toggle('active', mode === 'individual');
+            document.getElementById('modeFull').classList.toggle('active', mode === 'full');
+            document.getElementById('mobileRow').style.display = mode === 'individual' ? 'grid' : 'none';
+            document.getElementById('individualResult').style.display = 'none';
+            document.getElementById('fullList').style.display = 'none';
+            document.getElementById('emptyState').style.display = 'none';
+        }
+
+        function showError(msg) {
+            const el = document.getElementById('errorMsg');
+            el.textContent = msg;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 5000);
+        }
+
+        async function loadResults() {
+            const examDateRaw = document.getElementById('examDate').value.trim();
+            // Convert DD/MM/YYYY → YYYY-MM-DD for file fetch
+            let examDate = todayISO; // fallback
+            const parts = examDateRaw.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+            if (parts) examDate = `${parts[3]}-${parts[2]}-${parts[1]}`;
+            const paperKey = document.getElementById('paperSelect').value;
+            if (!examDateRaw) { showError('தேதி இல்லை!'); return; }
+
+            if (currentMode === 'individual') {
+                myPhone = document.getElementById('mobileInput').value.trim();
+                if (!/^[0-9]{10}$/.test(myPhone)) {
+                    showError('சரியான 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்!');
+                    return;
+                }
+            }
+
+            document.getElementById('individualResult').style.display = 'none';
+            document.getElementById('fullList').style.display = 'none';
+            document.getElementById('emptyState').style.display = 'none';
+            document.getElementById('loadingBox').style.display = 'block';
+
+            const fileName = `${paperKey}_results_${examDate}.json`;
+            const url = `results/${fileName}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    document.getElementById('loadingBox').style.display = 'none';
+                    showError('முடிவுகள் இன்னும் வெளியிடப்படவில்லை! இரவு 10:15 மணிக்கு பிறகு மீண்டும் பார்க்கவும்.');
+                    return;
+                }
+                const data = await response.json();
+                currentData = data;
+                document.getElementById('loadingBox').style.display = 'none';
+
+                if (!data.results || data.results.length === 0) {
+                    document.getElementById('emptyState').style.display = 'block';
+                    return;
+                }
+
+                if (currentMode === 'individual') renderIndividual();
+                else renderFullList();
+            } catch (err) {
+                document.getElementById('loadingBox').style.display = 'none';
+                document.getElementById('emptyState').style.display = 'block';
+                console.warn('Load error:', err.message);
+            }
+        }
+
+        let myResult = null;
+        function renderIndividual() {
+            const me = currentData.results.find(r => r.phone === myPhone);
+            if (!me) {
+                document.getElementById('emptyTitle').textContent = 'உங்கள் முடிவு கிடைக்கவில்லை';
+                document.getElementById('emptyDesc').textContent = 'இந்த மொபைல் எண்ணில் இந்த தேர்வுக்கு பதிவு இல்லை';
+                document.getElementById('emptyState').style.display = 'block';
+                return;
+            }
+            myResult = me;
+            const cutoff = me.cutoff ?? getCutoff(me.category);
+            const passed = me.passed ?? (me.percentage >= cutoff);
+
+            document.getElementById('indName').textContent = me.name || 'மாணவர்';
+            document.getElementById('indMeta').textContent = `${currentData.examTitle || ''} • ${currentData.examDate}`;
+
+            const banner = document.getElementById('passfailBanner');
+            banner.className = 'passfail-banner ' + (passed ? 'pass' : 'fail');
+            document.getElementById('pfText').textContent = passed ? '✅ தேர்ச்சி (PASS)' : '❌ தேர்ச்சி இல்லை (FAIL)';
+            document.getElementById('pfSub').textContent = passed
+                ? `வாழ்த்துக்கள்! நீங்கள் ${cutoff}% தாண்டியுள்ளீர்கள்`
+                : `தேவையான ${cutoff}% அடையவில்லை`;
+
+            document.getElementById('indRank').textContent = me.rank || '—';
+            document.getElementById('indScore').textContent = `${me.score}/${me.total}`;
+            document.getElementById('indPct').textContent = `${(me.percentage || 0).toFixed(1)}%`;
+            document.getElementById('indComm').textContent = me.category || 'OC';
+            document.getElementById('indCutoff').textContent = `${cutoff}%`;
+            document.getElementById('indCorrect').textContent = me.correct || 0;
+            document.getElementById('indWrong').textContent = me.wrong || 0;
+            document.getElementById('indUnans').textContent = me.unanswered || 0;
+            document.getElementById('indTotal').textContent = currentData.totalStudents || currentData.results.length;
+
+            document.getElementById('individualResult').style.display = 'block';
+        }
+
+        function renderFullList() {
+            const results = currentData.results;
+            const passCount = results.filter(r => r.passed).length;
+            const topper = results.find(r => r.rank === 1) || results[0];
+
+            document.getElementById('totalCount').textContent = results.length;
+            document.getElementById('passCount').textContent = passCount;
+            document.getElementById('topScore').textContent = topper?.score || 0;
+            document.getElementById('topperName').textContent = topper?.name || '—';
+
+            let display = [...results];
+            if (currentSearch) {
+                const q = currentSearch.toLowerCase();
+                display = display.filter(r => (r.name || '').toLowerCase().includes(q));
+            }
+            if (currentSort === 'az') display.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'ta'));
+            else display.sort((a, b) => a.rank - b.rank);
+
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = display.map(r => {
+                const rankClass = r.rank === 1 ? 'rank-1' : r.rank === 2 ? 'rank-2' : r.rank === 3 ? 'rank-3' : '';
+                const medal = r.rank === 1 ? '🥇' : r.rank === 2 ? '🥈' : r.rank === 3 ? '🥉' : r.rank;
+                const isMe = myPhone && r.phone === myPhone;
+                return `<tr class="${isMe ? 'me-row' : ''}">
+                    <td class="rank-cell ${rankClass}">${medal}</td>
+                    <td class="name-cell">${r.name || 'மாணவர்'}${isMe ? ' ⭐' : ''}</td>
+                    <td class="comm-cell">${r.category || 'OC'}</td>
+                    <td class="score-cell">${r.score}/${r.total}</td>
+                    <td class="pct-cell">${(r.percentage || 0).toFixed(1)}%</td>
+                    <td class="result-cell ${r.passed ? 'result-pass' : 'result-fail'}">${r.passed ? 'PASS' : 'FAIL'}</td>
+                </tr>`;
+            }).join('');
+
+            document.getElementById('fullList').style.display = 'block';
+        }
+
+        function setSort(mode) {
+            currentSort = mode;
+            document.getElementById('btnAZ').classList.toggle('active', mode === 'az');
+            document.getElementById('btnRank').classList.toggle('active', mode === 'rank');
+            renderFullList();
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearch = e.target.value.trim();
+            renderFullList();
+        });
+
+        // 📄 Individual student's own result PDF (small, single page)
+        // ═══════════════════════════════════════════════════════
+        // 📖 Answer Key — paper JSON-ல் இருந்து சரியான விடைகள் காட்டு
+        // ═══════════════════════════════════════════════════════
+        let answerKeyLoaded = false;
+        async function toggleAnswerKey() {
+            const section = document.getElementById('answerKeySection');
+            const btn = document.getElementById('answerKeyBtn');
+            if (section.style.display === 'none' || !section.style.display) {
+                section.style.display = 'block';
+                btn.textContent = '📖 விடைக்குறிப்பை மறை (Hide)';
+                if (!answerKeyLoaded) await loadAnswerKey();
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                section.style.display = 'none';
+                btn.textContent = '📖 விடைகளை சரிபார்க்க (Answer Key)';
+            }
+        }
+
+        async function loadAnswerKey() {
+            const paperKey = document.getElementById('paperSelect').value;
+            const loading = document.getElementById('answerKeyLoading');
+            const content = document.getElementById('answerKeyContent');
+            loading.style.display = 'block';
+            content.innerHTML = '';
+            try {
+                // Load the question paper JSON (same file used in exam)
+                const res = await fetch(`json-db/free-exams/${paperKey}.json`);
+                if (!res.ok) throw new Error('Paper not found');
+                const paper = await res.json();
+
+                // Flatten all questions from sections
+                let allQuestions = [];
+                if (paper.sections && paper.sections.length) {
+                    paper.sections.forEach(sec => {
+                        (sec.questions || []).forEach(q => allQuestions.push(q));
+                    });
+                } else if (paper.questions) {
+                    allQuestions = paper.questions;
+                }
+
+                content.innerHTML = allQuestions.map((q, idx) => {
+                    const opts = q.options || {};
+                    const optArr = Array.isArray(opts) ? opts : Object.values(opts);
+                    // correct answer: "A"/"B".. or index
+                    let correctIdx = -1;
+                    const ans = (q.correctAnswer || q.answer || '').toString().trim().toUpperCase();
+                    if (ans.length === 1 && /^[A-D]$/.test(ans)) correctIdx = ans.charCodeAt(0) - 65;
+                    else if (typeof q.correctAnswer === 'number') correctIdx = q.correctAnswer;
+
+                    const optsHtml = optArr.map((opt, oi) => {
+                        const isCorrect = oi === correctIdx;
+                        return `<div style="padding:8px 12px;margin:4px 0;border-radius:8px;font-size:0.9rem;${
+                            isCorrect
+                                ? 'background:#dcfce7;border:2px solid #10b981;color:#065f46;font-weight:700;'
+                                : 'background:#f8fafc;border:1px solid #e2e8f0;color:#475569;'
+                        }">${String.fromCharCode(65 + oi)}. ${opt}${isCorrect ? '  ✅' : ''}</div>`;
+                    }).join('');
+
+                    const explanation = q.explanation
+                        ? `<div style="margin-top:8px;padding:10px 12px;background:#fef3c7;border-radius:8px;font-size:0.85rem;color:#92400e;"><strong>விளக்கம்:</strong> ${q.explanation}</div>`
+                        : '';
+
+                    return `
+                        <div style="border-bottom:1px solid #e2e8f0;padding:16px 0;">
+                            <div style="font-weight:700;color:#1e293b;margin-bottom:10px;font-size:0.95rem;">
+                                ${idx + 1}. ${q.question || ''}
+                            </div>
+                            ${optsHtml}
+                            ${explanation}
+                        </div>
+                    `;
+                }).join('');
+
+                answerKeyLoaded = true;
+            } catch (err) {
+                content.innerHTML = `<p style="text-align:center;color:#dc2626;padding:20px;">விடைக்குறிப்பு ஏற்ற முடியவில்லை: ${err.message}</p>`;
+            } finally {
+                loading.style.display = 'none';
+            }
+        }
+
+        async function downloadMyPDF() {
+            if (!myResult) { alert('முதலில் முடிவை load பண்ணுங்கள்'); return; }
+            const me = myResult;
+            const cutoff = me.cutoff ?? getCutoff(me.category);
+            const passed = me.passed ?? (me.percentage >= cutoff);
+            const examT = currentData.paper === 'paper1'
+                ? 'பேப்பர் 1 - தமிழ் + கற்பித்தல் முறை'
+                : 'பேப்பர் 1 - குழந்தை மேம்பாடு';
+            const rows = [
+                ['தரவரிசை (Rank)', me.rank || '-'],
+                ['மதிப்பெண் (Score)', `${me.score} / ${me.total}`],
+                ['சதவீதம் (Percentage)', `${(me.percentage || 0).toFixed(1)}%`],
+                ['சமூகம் (Community)', me.category || 'OC'],
+                ['தேர்ச்சி வரம்பு (Cutoff)', `${cutoff}%`],
+                ['சரியான விடைகள்', me.correct || 0],
+                ['தவறான விடைகள்', me.wrong || 0],
+                ['விடையளிக்காதவை', me.unanswered || 0],
+                ['மொத்த பங்கேற்பாளர்கள்', currentData.totalStudents || currentData.results.length]
+            ];
+            const rowsHtml = rows.map(([k,v]) => `
+                <tr>
+                    <td style="background:#eef2ff;color:#3730a3;font-weight:700;padding:10px 14px;border:1px solid #e2e8f0;">${k}</td>
+                    <td style="background:#fff;color:#1e293b;font-weight:700;padding:10px 14px;border:1px solid #e2e8f0;text-align:center;">${v}</td>
+                </tr>`).join('');
+
+            const html = `
+                <div style="font-family:'Noto Sans Tamil','Segoe UI',sans-serif;width:600px;margin:0 auto;padding:0;">
+                    <!-- Header -->
+                    <div style="background:#4338ca;padding:22px 20px 16px;text-align:center;border-radius:12px 12px 0 0;">
+                        <div style="color:#fff;font-size:22px;font-weight:800;margin-bottom:4px;">தமிழ் நண்பன் கோச்சிங் சென்டர்</div>
+                        <div style="color:#fde68a;font-size:14px;font-weight:700;margin-bottom:4px;">மெகா டெஸ்ட் சீரியஸ்</div>
+                        <div style="color:#fff;font-size:11px;">Mobile: 63 69 37 14 52</div>
+                        <div style="color:#c7d2fe;font-size:11px;margin-top:4px;">${examT} | ${currentData.examDate}</div>
+                    </div>
+                    <!-- PASS/FAIL -->
+                    <div style="background:${passed?'#16a34a':'#dc2626'};padding:14px;text-align:center;">
+                        <span style="color:#fff;font-size:20px;font-weight:800;">
+                            ${passed ? '✅ தேர்ச்சி (PASS)' : '❌ தேர்ச்சியில்லை (FAIL)'}
+                        </span>
+                    </div>
+                    <!-- Name -->
+                    <div style="text-align:center;padding:16px;background:#f8fafc;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;">
+                        <div style="font-size:20px;font-weight:800;color:#1e293b;">${me.name || 'Student'}</div>
+                    </div>
+                    <!-- Table -->
+                    <table style="width:100%;border-collapse:collapse;">
+                        ${rowsHtml}
+                    </table>
+                    <!-- Footer -->
+                    <div style="background:#f1f5f9;padding:10px;text-align:center;border-radius:0 0 12px 12px;border:1px solid #e2e8f0;border-top:none;">
+                        <span style="color:#64748b;font-size:10px;">உருவாக்கியது: ${new Date().toLocaleString('ta-IN')} | தமிழ் நண்பன்</span>
+                    </div>
+                </div>`;
+
+            // Create temp element
+            const el = document.createElement('div');
+            el.innerHTML = html;
+            el.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:640px;';
+            document.body.appendChild(el);
+
+            await html2pdf().set({
+                margin: 10,
+                filename: `my_result_${me.phone}_${currentData.paper}_${currentData.examDate}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            }).from(el).save();
+
+            document.body.removeChild(el);
+        }
+
+        async function downloadPDF() {
+            if (!currentData || !currentData.results.length) { alert('முதலில் முடிவுகளை load பண்ணுங்கள்'); return; }
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const pageWidth = doc.internal.pageSize.width;
+
+            const hasTamil = await ensureTamilFont(doc);
+            const TF = hasTamil ? 'NotoTamil' : 'helvetica';
+
+            doc.setFillColor(67, 56, 202);
+            doc.rect(0, 0, pageWidth, 38, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont(TF, 'normal');
+            doc.setFontSize(20);
+            doc.text(hasTamil ? 'தமிழ் நண்பன் கோச்சிங் சென்டர்' : 'TAMIL NANBAN COACHING CENTER', pageWidth / 2, 13, { align: 'center' });
+            doc.setFontSize(12);
+            doc.setTextColor(254, 215, 102);
+            doc.text(hasTamil ? 'மெகா டெஸ்ட் சீரியஸ்' : 'MEGA TEST SERIES', pageWidth / 2, 21, { align: 'center' });
+            doc.setFontSize(10);
+            doc.setTextColor(255, 255, 255);
+            doc.text('Mobile: 63 69 37 14 52', pageWidth / 2, 28, { align: 'center' });
+            const titleText = hasTamil
+                ? (currentData.paper === 'paper1' ? 'பேப்பர் 1 - தமிழ் + கற்பித்தல் முறை' : 'பேப்பர் 1 - குழந்தை மேம்பாடு')
+                : (currentData.paper === 'paper1' ? 'Paper 2 - Mathematics + Science' : 'Paper 1 - Child Development');
+            doc.setTextColor(220, 230, 255);
+            doc.setFontSize(9);
+            doc.text(titleText, pageWidth / 2, 34, { align: 'center' });
+
+            doc.setFillColor(254, 243, 199);
+            doc.rect(0, 38, pageWidth, 8, 'F');
+            doc.setTextColor(120, 53, 15);
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'bold');
+            doc.text(`Exam Date: ${currentData.examDate}`, 15, 43.5);
+            doc.text(`Total Students: ${currentData.totalStudents}`, pageWidth - 15, 43.5, { align: 'right' });
+
+            const sortedData = currentSort === 'az'
+                ? [...currentData.results].sort((a,b) => (a.name||'').localeCompare(b.name||''))
+                : [...currentData.results].sort((a,b) => a.rank - b.rank);
+
+            const tableData = sortedData.map(r => [
+                r.rank, r.name || 'Student', r.category || 'OC',
+                `${r.score}/${r.total}`, r.correct || 0, r.wrong || 0,
+                `${(r.percentage || 0).toFixed(1)}%`, r.passed ? 'PASS' : 'FAIL'
+            ]);
+
+            doc.autoTable({
+                head: [['Rank', 'Name', 'Comm.', 'Score', 'Correct', 'Wrong', '%', 'Result']],
+                body: tableData,
+                startY: 50,
+                styles: { fontSize: 8.5, cellPadding: 2.5, lineColor: [200,200,200], lineWidth: 0.15, textColor: [30,41,59] },
+                headStyles: { fillColor: [67,56,202], textColor: 255, fontStyle: 'bold', halign: 'center', fontSize: 9 },
+                columnStyles: {
+                    0: { halign:'center', cellWidth:13, fillColor:[254,240,138], textColor:[113,63,18], fontStyle:'bold' },
+                    1: { cellWidth:46, fillColor:[219,234,254], textColor:[30,58,138], fontStyle:'bold' },
+                    2: { halign:'center', cellWidth:20, fillColor:[243,232,255], textColor:[88,28,135], fontStyle:'bold' },
+                    3: { halign:'center', cellWidth:22, fillColor:[209,250,229], textColor:[6,78,59], fontStyle:'bold' },
+                    4: { halign:'center', cellWidth:18, fillColor:[220,252,231], textColor:[22,101,52] },
+                    5: { halign:'center', cellWidth:16, fillColor:[254,226,226], textColor:[153,27,27] },
+                    6: { halign:'center', cellWidth:18, fillColor:[254,215,170], textColor:[124,45,18], fontStyle:'bold' },
+                    7: { halign:'center', cellWidth:18, fontStyle:'bold' }
+                },
+                didParseCell: function(cd) {
+                    const row = sortedData[cd.row.index];
+                    if (cd.section !== 'body') return;
+                    if (cd.column.index === 0) {
+                        if (row?.rank === 1) { cd.cell.styles.fillColor=[251,191,36]; cd.cell.styles.textColor=[120,53,15]; }
+                        else if (row?.rank === 2) { cd.cell.styles.fillColor=[203,213,225]; cd.cell.styles.textColor=[30,41,59]; }
+                        else if (row?.rank === 3) { cd.cell.styles.fillColor=[217,119,6]; cd.cell.styles.textColor=[255,255,255]; }
+                    }
+                    if (cd.column.index === 7) {
+                        if (row?.passed) { cd.cell.styles.fillColor=[34,197,94]; cd.cell.styles.textColor=[255,255,255]; }
+                        else { cd.cell.styles.fillColor=[239,68,68]; cd.cell.styles.textColor=[255,255,255]; }
+                    }
+                },
+                didDrawPage: (hd) => {
+                    const pc = doc.internal.getNumberOfPages();
+                    doc.setFontSize(8);
+                    doc.setTextColor(100);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(`Page ${hd.pageNumber} / ${pc}  |  Generated: ${new Date().toLocaleString('en-IN')}  |  Tamil Nanban`,
+                        pageWidth/2, doc.internal.pageSize.height - 6, { align: 'center' });
+                }
+            });
+            doc.save(`${currentData.paper}_results_${currentData.examDate}.pdf`);
+        }
+    </script>
+</body>
+</html>

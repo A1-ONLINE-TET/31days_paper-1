@@ -1,0 +1,643 @@
+{
+  "lesson_meta": {
+    "title": "AFFECTION (A TRUE FRIEND, ADVERTISEMENT & BIOGRAPHY WRITING)",
+    "grade": "4",
+    "term": "2",
+    "unit": "3",
+    "type": "Lesson",
+    "language": "English",
+    "code": "eng_4_t2_l3"
+  },
+  "material": {
+    "sections": [
+      {
+        "title": "Summary",
+        "content": "This section of Unit 1 ('Affection') features a story titled 'A True Friend', highlighting the beautiful bond between two childhood friends, Nandhini and Pandi. It explores themes of friendship, empathy, and making others happy. When Nandhini is unusually sad and silent because she lost two front teeth, Pandi tries his best to make her smile, eventually succeeding with a rubber frog. The text also includes a reading comprehension activity based on a TV advertisement and a writing exercise to draft a biographical paragraph about the prominent leader Kamarajar.",
+        "type": "content"
+      },
+      {
+        "title": "Section 1: A True Friend (Supplementary Story)",
+        "content": [
+          "Nandhini and Pandi were good friends since childhood and lived on the same street.",
+          "They walked to school together, chatting, playing, and sometimes racing home.",
+          "They participated in school activities together and helped each other with lessons.",
+          "One day, Nandhini looked very upset and sad. When Pandi asked why or if her parents scolded her, she only shook her head.",
+          "Pandi tried to cheer her up by grabbing her bag and saying, 'Catch me if you can', but she did not respond.",
+          "In class, Nandhini sat with her head bowed down, her eyes glued to the ground, and didn't answer her friends.",
+          "When the teacher called for attendance, Nandhini did not answer, making the teacher annoyed.",
+          "The teacher called her name louder. Nandhini raised her hand but still didn't answer.",
+          "The teacher touched her forehead to check for a fever because her cheeks were red. Nandhini just shook her head to indicate she didn't have a fever.",
+          "Her friends pestered her with a hundred questions about her family, house, shoes, and pets. She answered every question only by shaking her head.",
+          "Pandi desperately wanted to make her smile. He thought for hours and finally came up with an idea.",
+          "He took something from his bag, ran towards her, tumbled, and the object flew towards Nandhini.",
+          "Nandhini caught it with a 'THUD!'. It was a big green frog.",
+          "Everyone else ran away scared, but Nandhini's eyes opened wide with surprise, and she burst into laughter.",
+          "It was a rubber frog!",
+          "When she laughed, everyone finally knew the reason for her sadness and silence: Two of her front teeth were missing!"
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Section 2: Let Us Read Aloud (Advertisement Comprehension)",
+        "content": [
+          "The section includes an advertisement for 'Bright Vision Televisions'.",
+          "The offer is named 'WATCH & CLICK OFFER'.",
+          "If you buy an LED TV, you get a CAMERA FREE."
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Section 3: Let Us Write - Biographical Sketch",
+        "content": [
+          "Information provided to write a narrative paragraph on Kamarajar:",
+          "Name: Kamarajar",
+          "Known as: King maker, Karma veerar",
+          "Birth Date: 15th July 1903",
+          "Place of birth: Virudhunagar, Tamilnadu",
+          "Position held: Chief minister of Tamil Nadu",
+          "Achievements: Midday Meal Scheme, Reforms in Education",
+          "Honour/Award: 'Bharat Ratna' (1976)",
+          "Death Date: 2nd October 1975"
+        ],
+        "type": "content"
+      },
+      {
+        "title": "Book Back Exercises (One Mark Questions)",
+        "content": [
+          "A. Name the character or speaker:",
+          "1. 'Do you have a fever?' -> The teacher",
+          "2. 'Did someone scold you?' -> One of her friends (also asked by Pandi earlier)",
+          "3. 'Why does Nandhini look so sad?' -> Her friends",
+          "4. 'Are you alright?' -> (Implied concern from the teacher who asked 'Are you feeling okay?')",
+          "B. Number the actions of Pandi and Nandhini in order:",
+          "1. Nandhini and Pandi were friends. (1)",
+          "2. Nandhini looked terribly upset one day. (2)",
+          "3. She did not respond to Pandi's play. (3)",
+          "4. Friends pestered her why she was upset. (4)",
+          "5. She did not respond to the attendance. (5)",
+          "6. Pandi threw a rubber frog on her. (6)",
+          "7. She burst into laughter and all know the reason. (7)",
+          "C. Let Us Read Aloud (Advertisement Questions):",
+          "1. What is the advertisement about? -> Bright Vision Televisions (LED TV).",
+          "2. What is free, for LED TV? -> A Camera.",
+          "(Note: Questions 3, 4, 5 depend on visual details in the ad image that are not fully transcribed in the text snippet, but the main points are covered above)."
+        ],
+        "type": "content"
+      }
+    ]
+  },
+  "quiz": {
+    "questions": [
+      {
+        "question": "Who are the two main friends in the story?",
+        "options": [
+          "Ramu and Somu",
+          "Nandhini and Pandi",
+          "Meena and Pandi",
+          "Nandhini and Meena"
+        ],
+        "answer": 1,
+        "explanation": "The story begins by introducing Nandhini and Pandi as good friends since childhood."
+      },
+      {
+        "question": "How long have Nandhini and Pandi been friends?",
+        "options": [
+          "Since yesterday",
+          "For a few months",
+          "Since childhood",
+          "Since they joined middle school"
+        ],
+        "answer": 2,
+        "explanation": "The text states they were good friends since childhood."
+      },
+      {
+        "question": "Where did Nandhini and Pandi live?",
+        "options": [
+          "In different villages",
+          "On the same street",
+          "In different cities",
+          "Near the sea"
+        ],
+        "answer": 1,
+        "explanation": "The text mentions, 'They lived in the same street, so they were always together.'"
+      },
+      {
+        "question": "What did Pandi do every day on the way to school?",
+        "options": [
+          "He bought chocolates",
+          "He stopped at Nandhini's home",
+          "He took a bus",
+          "He played with a dog"
+        ],
+        "answer": 1,
+        "explanation": "Every day Pandi would stop at her home on the way to school."
+      },
+      {
+        "question": "How did they usually travel to school?",
+        "options": [
+          "By bicycle",
+          "By school bus",
+          "Walking, chatting and playing",
+          "Their parents dropped them"
+        ],
+        "answer": 2,
+        "explanation": "The text says, 'Both would walk to school chatting and playing.'"
+      },
+      {
+        "question": "What did Pandi ask Nandhini when she looked upset initially?",
+        "options": [
+          "Have you lost your pen?",
+          "Why are you sad?",
+          "Do you want to play?",
+          "Are you hungry?"
+        ],
+        "answer": 1,
+        "explanation": "When he noticed she was upset, he directly asked, 'Why are you sad?'"
+      },
+      {
+        "question": "How did Nandhini respond to Pandi's initial questions?",
+        "options": [
+          "She cried loudly",
+          "She explained everything",
+          "She only shook her head",
+          "She ran away"
+        ],
+        "answer": 2,
+        "explanation": "She did not answer him verbally; instead, she shook her head."
+      },
+      {
+        "question": "What playful thing did Pandi do to try and get Nandhini to respond on the way to school?",
+        "options": [
+          "He hid her lunchbox",
+          "He sang a song",
+          "He grabbed her bag and said 'Catch me if you can'",
+          "He told a joke"
+        ],
+        "answer": 2,
+        "explanation": "He grabbed her bag excitedly hoping she would chase him and play."
+      },
+      {
+        "question": "How did Nandhini walk into the classroom?",
+        "options": [
+          "Running fast",
+          "Slowly, with eyes glued to the ground",
+          "Jumping happily",
+          "Talking loudly"
+        ],
+        "answer": 1,
+        "explanation": "The text describes her walking slowly into the classroom with her eyes glued to the ground."
+      },
+      {
+        "question": "Who asked Nandhini, 'Did someone scold you?' in the classroom?",
+        "options": [
+          "The Principal",
+          "The teacher",
+          "One of her friends",
+          "Her mother"
+        ],
+        "answer": 2,
+        "explanation": "In the classroom, one of her friends asked this question."
+      },
+      {
+        "question": "Why did the teacher get annoyed during attendance?",
+        "options": [
+          "Because Nandhini was talking",
+          "Because Nandhini did not answer when her name was called",
+          "Because Pandi was shouting",
+          "Because Nandhini was sleeping"
+        ],
+        "answer": 1,
+        "explanation": "The teacher was annoyed when Nandhini failed to answer the attendance call."
+      },
+      {
+        "question": "What did Nandhini do when the teacher called her name louder?",
+        "options": [
+          "She stood up",
+          "She raised her hand but did not answer",
+          "She started crying",
+          "She ran out of the class"
+        ],
+        "answer": 1,
+        "explanation": "She acknowledged her presence by raising her hand, but still remained silent."
+      },
+      {
+        "question": "Why did the teacher think Nandhini might have a fever?",
+        "options": [
+          "Because she was coughing",
+          "Because her cheeks were red",
+          "Because she was shivering",
+          "Because she asked for medicine"
+        ],
+        "answer": 1,
+        "explanation": "The teacher touched her forehead because her cheeks were red, making it look like she had a fever."
+      },
+      {
+        "question": "What did the teacher offer to do when she thought Nandhini was sick?",
+        "options": [
+          "Give her medicine",
+          "Call her parents",
+          "Send her to the library",
+          "Give her a chocolate"
+        ],
+        "answer": 1,
+        "explanation": "The teacher asked, 'Do you have a fever? Shall I call your parents?'"
+      },
+      {
+        "question": "What kind of questions did Nandhini's friends pester her with?",
+        "options": [
+          "Questions about math problems",
+          "Questions about her family, house, shoes, and street pets",
+          "Questions about the upcoming exam",
+          "Questions about what she ate for lunch"
+        ],
+        "answer": 1,
+        "explanation": "Her friends pestered her with a hundred questions about everything, including her family, house, shoes, and pets."
+      },
+      {
+        "question": "Why did Pandi want an idea?",
+        "options": [
+          "To finish his homework",
+          "To win a race",
+          "To make Nandhini smile",
+          "To trick the teacher"
+        ],
+        "answer": 2,
+        "explanation": "Pandi had never seen her so dull and wanted an idea to make her smile."
+      },
+      {
+        "question": "What flew straight towards Nandhini from Pandi's hands?",
+        "options": [
+          "A paper plane",
+          "A real frog",
+          "A rubber frog",
+          "A ball"
+        ],
+        "answer": 2,
+        "explanation": "When Pandi tumbled, a rubber frog slipped from his hands and flew towards her."
+      },
+      {
+        "question": "What was Nandhini's initial reaction when she saw the object flying towards her?",
+        "options": [
+          "She laughed",
+          "She ignored it",
+          "She screamed with fear",
+          "She ran away"
+        ],
+        "answer": 2,
+        "explanation": "She saw something flying towards her and screamed with fear."
+      },
+      {
+        "question": "Why did everyone else in the class run away?",
+        "options": [
+          "The bell rang",
+          "The teacher told them to",
+          "They were scared of the big green frog",
+          "There was a loud noise"
+        ],
+        "answer": 2,
+        "explanation": "Everyone ran away as they were scared of the frog, thinking it was real."
+      },
+      {
+        "question": "What was the actual reason Nandhini was sad and silent all day?",
+        "options": [
+          "She forgot her homework",
+          "She had a toothache",
+          "Two of her front teeth were missing",
+          "She had a fight with Pandi"
+        ],
+        "answer": 2,
+        "explanation": "When she finally laughed at the rubber frog, everyone saw that two of her front teeth were missing, which is why she didn't want to open her mouth."
+      },
+      {
+        "question": "In the advertisement provided, what is the name of the dealer selling televisions?",
+        "options": [
+          "Smart Vision",
+          "Bright Vision Televisions",
+          "Clear View Electronics",
+          "Mega Televisions"
+        ],
+        "answer": 1,
+        "explanation": "The text at the top of the advertisement clearly states 'Bright Vision Televisions'."
+      },
+      {
+        "question": "According to the advertisement, what free gift do you get when you buy an LED TV?",
+        "options": [
+          "A mobile phone",
+          "A camera",
+          "A DVD player",
+          "A speaker"
+        ],
+        "answer": 1,
+        "explanation": "The advertisement boldly says 'GET A CAMERA FREE'."
+      },
+      {
+        "question": "What scheme is Kamarajar famous for introducing in schools?",
+        "options": [
+          "Free Laptop Scheme",
+          "Free Uniform Scheme",
+          "Midday Meal Scheme",
+          "Free Bicycle Scheme"
+        ],
+        "answer": 2,
+        "explanation": "Under the 'Achievements' section for writing his biography, 'Midday Meal Scheme' is listed."
+      },
+      {
+        "question": "When was Kamarajar born?",
+        "options": [
+          "2nd October 1975",
+          "15th August 1947",
+          "15th July 1903",
+          "26th January 1950"
+        ],
+        "answer": 2,
+        "explanation": "The 'Birth' detail provided is 15th July 1903."
+      },
+      {
+        "question": "What is the birthplace of Kamarajar?",
+        "options": [
+          "Chennai",
+          "Madurai",
+          "Virudhunagar",
+          "Coimbatore"
+        ],
+        "answer": 2,
+        "explanation": "The details state his place of birth is Virudhunagar, Tamilnadu."
+      },
+      {
+        "question": "By what titles was Kamarajar known?",
+        "options": [
+          "Iron Man and King maker",
+          "King maker and Karma veerar",
+          "Netaji and King maker",
+          "Karma veerar and Chacha"
+        ],
+        "answer": 1,
+        "explanation": "The text lists 'Known as' as 'King maker' and 'Karma veerar'."
+      },
+      {
+        "question": "What prestigious honour was awarded to Kamarajar in 1976?",
+        "options": [
+          "Padma Vibhushan",
+          "Padma Shri",
+          "Bharat Ratna",
+          "Param Vir Chakra"
+        ],
+        "answer": 2,
+        "explanation": "The details mention 'Honour' as 'Bharat Ratna' (1976)."
+      },
+      {
+        "question": "Which position did Kamarajar hold according to the text?",
+        "options": [
+          "Prime Minister of India",
+          "President of India",
+          "Chief minister of Tamil Nadu",
+          "Governor of Tamil Nadu"
+        ],
+        "answer": 2,
+        "explanation": "The 'Position held' is listed as Chief minister of Tamil Nadu."
+      },
+      {
+        "question": "Assertion (A): The teacher touched Nandhini's forehead.\nReason (R): Nandhini had red cheeks and the teacher suspected she might have a fever.",
+        "options": [
+          "Both A and R are true, and R is the correct explanation of A",
+          "Both A and R are true, but R is not the correct explanation of A",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 0,
+        "explanation": "The teacher observed her red cheeks and touched her forehead to check for a fever."
+      },
+      {
+        "question": "Assertion (A): Pandi intentionally threw a real frog at Nandhini to scare her.\nReason (R): Pandi was angry that she was ignoring him all day.",
+        "options": [
+          "Both A and R are true",
+          "Both A and R are false",
+          "A is true but R is false",
+          "A is false but R is true"
+        ],
+        "answer": 1,
+        "explanation": "The frog was a rubber frog, not real. Pandi threw it (or it slipped) to make her smile, not out of anger."
+      },
+      {
+        "question": "Who is the speaker of these words: 'Catch me if you can.'?",
+        "options": [
+          "The teacher",
+          "Nandhini",
+          "Pandi",
+          "A friend in class"
+        ],
+        "answer": 2,
+        "explanation": "Pandi said this when he grabbed her bag to try and playfully cheer her up."
+      },
+      {
+        "question": "What sound did Nandhini make when she caught the frog?",
+        "options": [
+          "SPLAT!",
+          "THUD!",
+          "CRASH!",
+          "BOOM!"
+        ],
+        "answer": 1,
+        "explanation": "The text describes her catching it with a 'THUD!'."
+      },
+      {
+        "question": "Complete the analogy based on Kamarajar's biographical details.\nBirth : 15th July 1903 :: Death : ________",
+        "options": [
+          "2nd October 1976",
+          "15th July 1975",
+          "2nd October 1975",
+          "15th August 1975"
+        ],
+        "answer": 2,
+        "explanation": "The detail for his death is given as 2nd October 1975."
+      },
+      {
+        "question": "Find the odd one out among Kamarajar's details.",
+        "options": [
+          "King maker",
+          "Karma veerar",
+          "Bharat Ratna",
+          "Virudhunagar"
+        ],
+        "answer": 3,
+        "explanation": "King maker and Karma veerar are titles. Bharat Ratna is an award. Virudhunagar is a place name."
+      },
+      {
+        "question": "What does the phrase 'eyes glued to the ground' mean in the context of Nandhini walking?",
+        "options": [
+          "She was looking for a dropped coin",
+          "She had literal glue on her face",
+          "She was looking down continuously, feeling shy or sad",
+          "She was trying to avoid stepping on bugs"
+        ],
+        "answer": 2,
+        "explanation": "It's an idiom meaning she kept her gaze fixed downwards because she was upset and hiding."
+      },
+      {
+        "question": "How did Nandhini react to all the pestering questions from her friends?",
+        "options": [
+          "She got angry and yelled",
+          "She ran to the teacher",
+          "She answered only by shaking her head",
+          "She answered them quietly"
+        ],
+        "answer": 2,
+        "explanation": "She didn't want to open her mouth, so she answered each question just by shaking her head."
+      },
+      {
+        "question": "Match the event to the order it happened in the story:\nA) Pandi threw a rubber frog on her.\nB) She did not respond to the attendance.\nC) Nandhini looked terribly upset one day.",
+        "options": [
+          "A-3, B-2, C-1",
+          "A-1, B-2, C-3",
+          "A-2, B-3, C-1",
+          "A-3, B-1, C-2"
+        ],
+        "answer": 0,
+        "explanation": "First she looked upset (C), later in class she didn't respond to attendance (B), and finally Pandi threw the frog (A)."
+      },
+      {
+        "question": "According to the story, what did Nandhini and Pandi sometimes do on their way home?",
+        "options": [
+          "Buy ice cream",
+          "Race home from school",
+          "Go to the park",
+          "Visit the library"
+        ],
+        "answer": 1,
+        "explanation": "The text states, 'Sometimes, they would race home from school.'"
+      },
+      {
+        "question": "HOTS: Why do you think Nandhini chose to remain silent the whole day just because her teeth were missing?",
+        "options": [
+          "She wanted to trick the teacher.",
+          "She felt embarrassed or self-conscious about her appearance without her front teeth.",
+          "She was angry at Pandi.",
+          "She forgot how to speak."
+        ],
+        "answer": 1,
+        "explanation": "Children often feel embarrassed when they lose their front teeth because it changes their smile visibly."
+      },
+      {
+        "question": "HOTS: What does Pandi's effort to make Nandhini smile tell us about his character?",
+        "options": [
+          "He is very annoying and likes to trouble people.",
+          "He doesn't care about the teacher's rules.",
+          "He is an observant and caring friend who goes out of his way to help a friend in distress.",
+          "He is scared of frogs."
+        ],
+        "answer": 2,
+        "explanation": "He thought for hours just to find a way to break her sadness, demonstrating deep empathy and true friendship."
+      },
+      {
+        "question": "HOTS: The title is 'A True Friend'. Who is the primary 'true friend' being referred to in the context of solving the problem in the story?",
+        "options": [
+          "Nandhini",
+          "The teacher",
+          "Pandi",
+          "The friend who asked 'Did someone scold you?'"
+        ],
+        "answer": 2,
+        "explanation": "While they are both friends, the story highlights Pandi's persistent effort to cheer Nandhini up, embodying the qualities of a true friend."
+      },
+      {
+        "question": "If you are writing a biography of Kamarajar based on the given points, under which heading would you place 'Reforms in Education'?",
+        "options": [
+          "Early Life",
+          "Awards",
+          "Achievements",
+          "Titles"
+        ],
+        "answer": 2,
+        "explanation": "The text categorizes 'Reforms in Education' alongside the Midday Meal Scheme under 'Achievements'."
+      },
+      {
+        "question": "What caused the students to realize the real reason for Nandhini's silence?",
+        "options": [
+          "The teacher forced her to speak",
+          "She wrote it on the blackboard",
+          "She burst into laughter, opening her mouth",
+          "Pandi guessed it loud"
+        ],
+        "answer": 2,
+        "explanation": "When the surprise of the rubber frog made her laugh out loud, everyone could finally see her missing teeth."
+      },
+      {
+        "question": "In the sequence of actions, what happens immediately after Nandhini does not respond to Pandi's playful attempt with the bag?",
+        "options": [
+          "Pandi throws a frog.",
+          "They walk silently to the school.",
+          "The teacher gets annoyed.",
+          "Friends pester her."
+        ],
+        "answer": 1,
+        "explanation": "After she doesn't respond to 'Catch me if you can', Pandi gives the bag back and they walk silently to school."
+      },
+      {
+        "question": "Why did the teacher call Nandhini's name louder during attendance?",
+        "options": [
+          "Because the class was noisy",
+          "Because Nandhini didn't answer the first time",
+          "Because it was a special announcement",
+          "Because she was sitting at the back"
+        ],
+        "answer": 1,
+        "explanation": "The teacher was annoyed when Nandhini didn't answer the first time, so she called her name louder the second time."
+      },
+      {
+        "question": "HOTS: If Pandi hadn't used the rubber frog, what might have happened for the rest of the day?",
+        "options": [
+          "Nandhini would have started dancing.",
+          "Nandhini would have likely remained silent and sad, and her friends would have kept worrying.",
+          "The teacher would have expelled her.",
+          "Pandi would have gone home."
+        ],
+        "answer": 1,
+        "explanation": "Since she was determined not to show her teeth, only a sudden, genuine surprise could break her conscious effort to stay silent."
+      },
+      {
+        "question": "Which action shows that Nandhini was trying to catch the object flying towards her despite being scared?",
+        "options": [
+          "She ran out the door",
+          "She hid under the desk",
+          "She closed her eyes and tried to catch it",
+          "She hit it with a book"
+        ],
+        "answer": 2,
+        "explanation": "The text states: 'She closed her eyes and tried to catch it. THUD! She caught it.'"
+      },
+      {
+        "question": "What is the primary message of the story 'A True Friend'?",
+        "options": [
+          "Frogs make good pets.",
+          "Always answer the teacher loudly.",
+          "A true friend notices your sadness and tries hard to make you happy again.",
+          "Don't lose your front teeth."
+        ],
+        "answer": 2,
+        "explanation": "The story emphasizes Pandi's concern and his successful effort to cheer up his distressed friend."
+      },
+      {
+        "question": "HOTS: Compare the reactions of the other students and Nandhini to the flying frog. What is the difference?",
+        "options": [
+          "Everyone laughed, but Nandhini cried.",
+          "Everyone ran away scared, but Nandhini caught it and eventually laughed.",
+          "Everyone caught it, but Nandhini ran away.",
+          "There was no difference; everyone laughed immediately."
+        ],
+        "answer": 1,
+        "explanation": "The others assumed it was real and fled, whereas Nandhini, who was the target, reflexively caught it and then realized the joke."
+      },
+      {
+        "question": "Based on the TV advertisement details provided, what is the 'Watch & Click' offer implying?",
+        "options": [
+          "You watch the TV and click the remote.",
+          "You watch TV (by buying one) and click photos (with the free camera).",
+          "You watch an ad and click a link online.",
+          "You click your fingers to turn on the TV."
+        ],
+        "answer": 1,
+        "explanation": "The offer combines watching (Televisions) with clicking (getting a Camera free)."
+      }
+    ]
+  }
+}

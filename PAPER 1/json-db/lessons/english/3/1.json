@@ -1,0 +1,602 @@
+{
+  "class_details": {
+    "class": "Class 3",
+    "term": "Term 3",
+    "unit_number": "Unit 1",
+    "unit_title": "Our Leafy Friends (Trees)"
+  },
+  "study_notes": [
+    {
+      "title": "Complete Summary of the Lesson",
+      "details": "This lesson explains the importance of trees and the need to protect nature through two stories and a poem. The poem 'Wonderful tree' describes how a seed grows into a tree with the help of the sun and rain. The story 'The Coconut Grove' is about a little girl named Iniya and her family, whose livelihood depends on a lake and a coconut grove. The story teaches that we should only take what we need from nature and not be greedy. The supplementary story 'The King and the Angel' is about a king who wants to cut down a huge neem tree to build a palace. The tree's angel appears in his dream, explains the benefits of trees, and changes the king's mind. Additionally, the lesson covers English grammar focusing on Object Pronouns (me, him, her, us) and Phonics with 'ce', 'ci', and 'cy' sounds."
+    },
+    {
+      "title": "Names of Important Trees",
+      "details": "1. Coconut tree, 2. Peepal tree, 3. Tamarind tree, 4. Jack tree, 5. Fig tree, 6. Banyan tree, 7. Palm tree, 8. Neem tree, 9. Mango tree, 10. Plantain tree."
+    },
+    {
+      "title": "Poem: Wonderful tree",
+      "details": "A tiny seed lies buried deep in the soil, fast asleep. The sun looks at it and says, 'Wake up, rise and shine'. The rain tells it to 'Wake up, so we may sustain'. Hearing this, the little plant rises to see how wonderful the outside world is."
+    },
+    {
+      "title": "Story 1: The Coconut Grove",
+      "details": "Iniya is a little girl with big brown eyes. She lives with her parents in a coconut grove next to a blue lake. Her father usually goes fishing, and her mother washes clothes by the lake. Iniya often saves turtles that get stuck in the fishing nets. One day, Iniya asks her father what would happen if there were no fish left in the lake. That night, her mother dreams that the lake has no fish and the family is suffering. The wind tells her, 'The water and the land have always taken care of your family, so you have to take care of them in return.' The next day, the father takes a smaller basket, saying they will only catch the fish they need. The mother starts making soap and oil using only the fallen coconuts. Iniya makes coconut fibre packs and carves tiny turtles out of fallen coconut shells. The core message is to use only what nature freely gives without destroying it."
+    },
+    {
+      "title": "Supplementary Story: The King and the Angel",
+      "details": "A king wanted to build a big palace with wooden pillars. He ordered his men to cut the biggest neem tree in the town. The people begged him not to cut it, as it saved them from falling sick. That night, the tree's angel appeared in the king's dream and said, 'I am home to many birds and small trees. If you must cut me, do it when it rains and in three parts: first my leaves, then my branches, and finally my trunk. If I fall all at once, I will crush the birds and small trees.' Hearing this, the king felt bad, changed his mind, and decided to build his palace with rocks instead of wood."
+    },
+    {
+      "title": "Phonics: 'ce', 'ci', 'cy' sounds (/s/ sound)",
+      "details": "In English, when the letter 'c' is followed by e, i, or y, it makes the soft /s/ sound.\n'ce' words: cereal, cement, cent, twice, voice, ceramic, mice, slice, nice, spice.\n'ci' words: city, circus, recipe, decide, medicine, circle, cider, pencil, civil.\n'cy' words: cyclone, cycle, fancy, mercy, spicy, cyber, icy."
+    },
+    {
+      "title": "Grammar: Pronouns (me, him, her, us)",
+      "details": "When a person or thing receives an action, we use object pronouns like me, him, her, and us.\nI -> me.\nHe -> him.\nShe -> her.\nWe -> us.\nExamples: Teacher (he) becomes him. Jayanthi (she) becomes her. Class (we) becomes us."
+    },
+    {
+      "title": "New Words and Action Words (Word Wall)",
+      "details": "Action words: climb, sprout, water, plant, pluck.\nWord wall: wooden, pillar, angel, shade, palace, round, dark, past, road, instead, either, held, town, park."
+    },
+    {
+      "title": "Remember & Let's Talk (Conversational Practice)",
+      "details": "Question format to check availability: 'Do you have a pencil?'\nAnswer: 'Yes, I have a pencil.' or 'No, I do not have.'\nUsing 'When' to ask questions about time: 'When does he get up?', 'When do we celebrate Independence day?'"
+    },
+    {
+      "title": "Book Back 1-Mark Questions",
+      "details": "1. Iniya was a little girl with big brown eyes.\n2. Iniya's father was fishing.\n3. Iniya's mother was making soap and oil.\n4. Circle the odd pair: flower, tree, man (Answer: man, the rest are related to trees).\n5. Choose the correct pronoun: David sings to her. Don't lie to me! The teacher called him. The bus driver took us home. Mom and dad take us to the park.\n6. Fill in the blanks: I saw him. Tom plays with her. We like our cat. We hope the cat likes us. I know Raju. He knows me.\n7. The king wants to build a palace. The tree angel came in the king's dream."
+    }
+  ],
+  "quiz_questions": [
+    {
+      "question": "What is the name of the girl in the story 'The Coconut Grove'?",
+      "options": [
+        "Kavi",
+        "Janu",
+        "Iniya",
+        "Selvi"
+      ],
+      "answer": "Iniya",
+      "explanation": "The little girl in the story is named Iniya. She has big brown eyes."
+    },
+    {
+      "question": "Where did Iniya and her parents live?",
+      "options": [
+        "In a big city",
+        "In a coconut grove next to a lake",
+        "Inside a dense forest",
+        "Near a mountain"
+      ],
+      "answer": "In a coconut grove next to a lake",
+      "explanation": "Iniya's family lived in a beautiful coconut grove situated next to a blue lake."
+    },
+    {
+      "question": "Which animal often got stuck in the fishing net?",
+      "options": [
+        "Crab",
+        "Turtle",
+        "Frog",
+        "Crocodile"
+      ],
+      "answer": "Turtle",
+      "explanation": "Turtles frequently got stuck in the fishing nets, and Iniya always hurried to save them."
+    },
+    {
+      "question": "In the poem 'Wonderful tree', who said 'Rise and shine' to the seed?",
+      "options": [
+        "The Rain",
+        "The Sun",
+        "The Wind",
+        "The Moon"
+      ],
+      "answer": "The Sun",
+      "explanation": "In the poem, the sun asks the buried seed to 'Wake up' and 'Rise and shine'."
+    },
+    {
+      "question": "Match the following: \n1. Father - a. Making soap\n2. Mother - b. Big brown eyes\n3. Iniya - c. Fishing",
+      "options": [
+        "1-c, 2-a, 3-b",
+        "1-a, 2-b, 3-c",
+        "1-b, 2-a, 3-c",
+        "1-c, 2-b, 3-a"
+      ],
+      "answer": "1-c, 2-a, 3-b",
+      "explanation": "The father went fishing, the mother made soap and oil from coconuts, and Iniya was the girl with big brown eyes."
+    },
+    {
+      "question": "Why did Iniya's father bring a smaller basket for fishing the next day?",
+      "options": [
+        "Because the big basket was broken",
+        "Because they wanted to catch only what they needed",
+        "Because there were no fish in the lake",
+        "Because the small basket was lighter to carry"
+      ],
+      "answer": "Because they wanted to catch only what they needed",
+      "explanation": "Realizing the importance of protecting nature from the mother's dream, the father decided to catch only enough fish to fit in a small basket."
+    },
+    {
+      "question": "What did Iniya make using fallen coconut shells?",
+      "options": [
+        "Soap and oil",
+        "Wooden pillars",
+        "Tiny turtles",
+        "Fishing nets"
+      ],
+      "answer": "Tiny turtles",
+      "explanation": "Iniya loved to carve fallen coconut shells and made tiny turtles out of them."
+    },
+    {
+      "question": "Assertion (A): Iniya's mother told her not to pluck coconuts from the tree. \nReason (R): We should only use what the tree freely gives us, like the fallen coconuts.",
+      "options": [
+        "Assertion is true, Reason is false",
+        "Assertion is false, Reason is true",
+        "Both Assertion and Reason are true",
+        "Both Assertion and Reason are false"
+      ],
+      "answer": "Both Assertion and Reason are true",
+      "explanation": "Iniya's mother advised her not to pluck coconuts because we should respect nature and only utilize what it naturally provides."
+    },
+    {
+      "question": "Which of the following word contains the 'ce' sound?",
+      "options": [
+        "City",
+        "Cycle",
+        "Cement",
+        "Circus"
+      ],
+      "answer": "Cement",
+      "explanation": "Among the options, 'Cement' contains the 'ce' spelling. City and Circus use 'ci', and Cycle uses 'cy'."
+    },
+    {
+      "question": "Choose the correct pronoun: Janu likes to play with ______ (Raju).",
+      "options": [
+        "her",
+        "him",
+        "me",
+        "us"
+      ],
+      "answer": "him",
+      "explanation": "Raju is a male (He). When acting as the object in a sentence, 'he' becomes 'him'."
+    },
+    {
+      "question": "The bus driver took ______ home. (Select the correct pronoun for 'We')",
+      "options": [
+        "me",
+        "her",
+        "us",
+        "him"
+      ],
+      "answer": "us",
+      "explanation": "When 'We' is the receiver of the action, it changes to the object pronoun 'us'."
+    },
+    {
+      "question": "What kind of tree did the king want to cut for his new palace?",
+      "options": [
+        "Banyan tree",
+        "Neem tree",
+        "Mango tree",
+        "Peepal tree"
+      ],
+      "answer": "Neem tree",
+      "explanation": "The king ordered his men to cut the biggest neem tree in the town to build his palace."
+    },
+    {
+      "question": "Why did the people request the king not to cut the Neem tree?",
+      "options": [
+        "It was very short",
+        "It gave them sweet fruits",
+        "It was the oldest tree and saved them from falling sick",
+        "It belonged to the angels"
+      ],
+      "answer": "It was the oldest tree and saved them from falling sick",
+      "explanation": "The neem tree was the oldest in town and had medicinal properties that saved the people from falling sick."
+    },
+    {
+      "question": "Who came in the king's dream?",
+      "options": [
+        "The people of the town",
+        "The Angel of the tree",
+        "A little girl named Iniya",
+        "A fisherman"
+      ],
+      "answer": "The Angel of the tree",
+      "explanation": "The Angel of the tree appeared in the king's dream to request him not to cut the tree."
+    },
+    {
+      "question": "How did the Angel ask the king to cut the tree if he must?",
+      "options": [
+        "Cut it from the root at once",
+        "Cut it in three parts: leaves, branches, and trunk",
+        "Burn the tree",
+        "Cut only the branches"
+      ],
+      "answer": "Cut it in three parts: leaves, branches, and trunk",
+      "explanation": "The angel requested to be cut in three parts so that it wouldn't crush all the birds and small trees at once when it falls."
+    },
+    {
+      "question": "What did the king finally decide to build his palace with?",
+      "options": [
+        "Wooden pillars",
+        "Mud and clay",
+        "Rocks",
+        "Coconut leaves"
+      ],
+      "answer": "Rocks",
+      "explanation": "Realizing the value of trees, the king decided not to cut the tree and chose to build his palace with rocks."
+    },
+    {
+      "question": "Complete the analogy: \nArif (I) : me :: Class (We) : ______",
+      "options": [
+        "her",
+        "us",
+        "him",
+        "them"
+      ],
+      "answer": "us",
+      "explanation": "Just as 'I' changes to 'me', 'We' changes to 'us' when acting as an object pronoun."
+    },
+    {
+      "question": "Circle the odd pair among the following.",
+      "options": [
+        "Tree",
+        "Flower",
+        "Man",
+        "Leaf"
+      ],
+      "answer": "Man",
+      "explanation": "Tree, Flower, and Leaf are parts of nature/plants. 'Man' is a human being and therefore the odd one out."
+    },
+    {
+      "question": "Which action word relates to 'a seed growing out of the soil'?",
+      "options": [
+        "Pluck",
+        "Sprout",
+        "Climb",
+        "Water"
+      ],
+      "answer": "Sprout",
+      "explanation": "The process of a seed beginning to grow and putting out shoots is called 'sprouting'."
+    },
+    {
+      "question": "Choose the word that has a different phonics sound compared to the others.",
+      "options": [
+        "Spicy",
+        "Fancy",
+        "Mercy",
+        "Pencil"
+      ],
+      "answer": "Pencil",
+      "explanation": "Spicy, Fancy, and Mercy all end with the 'cy' spelling. Pencil has the 'ci' spelling."
+    },
+    {
+      "question": "Fill in the blank: Abu got ______ a toy! (referring to myself)",
+      "options": [
+        "us",
+        "her",
+        "me",
+        "him"
+      ],
+      "answer": "me",
+      "explanation": "When referring to oneself as the receiver of an action, we use the pronoun 'me'."
+    },
+    {
+      "question": "Situational Question: You are walking in a park and see beautiful flowers blooming. What should you do?",
+      "options": [
+        "Pluck the flowers",
+        "Admire the flowers without plucking them",
+        "Step on the flowers",
+        "Uproot the plant"
+      ],
+      "answer": "Admire the flowers without plucking them",
+      "explanation": "The lesson teaches us to appreciate nature without causing harm. We should enjoy the beauty of flowers without plucking them."
+    },
+    {
+      "question": "Identify the tree from the clue: 'I give you tender coconut and my leaves are used to weave mats'.",
+      "options": [
+        "Mango tree",
+        "Tamarind tree",
+        "Coconut tree",
+        "Fig tree"
+      ],
+      "answer": "Coconut tree",
+      "explanation": "The coconut tree gives tender coconuts, and its leaves are traditionally woven into mats."
+    },
+    {
+      "question": "What did Iniya's mother use to add fragrance to the soap she made?",
+      "options": [
+        "Rose flowers",
+        "Jasmine flowers",
+        "Sandalwood",
+        "Neem leaves"
+      ],
+      "answer": "Jasmine flowers",
+      "explanation": "Iniya's mother placed jasmine flowers inside the soap she made to give it a pleasant fragrance."
+    },
+    {
+      "question": "The wind spoke to Iniya's mother in her dream. What did the wind say?",
+      "options": [
+        "Catch more fish to become rich",
+        "Leave the village immediately",
+        "Take care of the water and land in return",
+        "Cut down the coconut trees"
+      ],
+      "answer": "Take care of the water and land in return",
+      "explanation": "The wind reminded them that since nature (water and land) takes care of them, they must take care of nature in return."
+    },
+    {
+      "question": "Fill in the blank with the correct word containing 'ci'. \nI saw the circus in the ______.",
+      "options": [
+        "cycle",
+        "city",
+        "cement",
+        "voice"
+      ],
+      "answer": "city",
+      "explanation": "In the context of the sentence, 'city' fits perfectly (I saw the circus in the city)."
+    },
+    {
+      "question": "What is the meaning of the action word 'Pluck'?",
+      "options": [
+        "To pour water",
+        "To plant a seed",
+        "To pick or pull off (like a flower or fruit)",
+        "To climb up"
+      ],
+      "answer": "To pick or pull off (like a flower or fruit)",
+      "explanation": "Plucking means quickly removing something from its place, like picking a flower or a fruit from a tree."
+    },
+    {
+      "question": "Choose the correct pronoun: I know Raju. He knows ______ from the dance school.",
+      "options": [
+        "me",
+        "him",
+        "us",
+        "it"
+      ],
+      "answer": "me",
+      "explanation": "Since 'I' am the one he knows, the object pronoun should be 'me'."
+    },
+    {
+      "question": "Find the word with 'cy' letters.",
+      "options": [
+        "Medicine",
+        "Cyclone",
+        "Ceramic",
+        "Recipe"
+      ],
+      "answer": "Cyclone",
+      "explanation": "Among the choices, 'Cyclone' is the only word that begins with the letters 'cy'."
+    },
+    {
+      "question": "In the poem, what did the rain say to the little seed?",
+      "options": [
+        "Rise and shine",
+        "So, we may sustain",
+        "Go back to sleep",
+        "Grow tall"
+      ],
+      "answer": "So, we may sustain",
+      "explanation": "The rain tells the plant to wake up 'So, we may sustain', highlighting how water supports life."
+    },
+    {
+      "question": "Choose the correct question format for the answer: 'Yes, I have a pen.'",
+      "options": [
+        "Do you have a pen?",
+        "When do you have a pen?",
+        "Where is your pen?",
+        "What is a pen?"
+      ],
+      "answer": "Do you have a pen?",
+      "explanation": "To check if someone possesses something, we use the structure 'Do you have...?'"
+    },
+    {
+      "question": "Which of the following is NOT a tree mentioned in the lesson?",
+      "options": [
+        "Plantain tree",
+        "Banyan tree",
+        "Apple tree",
+        "Fig tree"
+      ],
+      "answer": "Apple tree",
+      "explanation": "The apple tree is not mentioned in the textbook's list. Mango, Plantain, Fig, and Banyan are included."
+    },
+    {
+      "question": "Fill in the blank: The cyclone takes the ______.",
+      "options": [
+        "city",
+        "cycle",
+        "cement",
+        "mice"
+      ],
+      "answer": "cycle",
+      "explanation": "This is a phonics practice sentence from the book: 'The cyclone takes the cycle.'"
+    },
+    {
+      "question": "Match the pronouns: \n1. Teacher (He) - a. her\n2. Jayanthi (She) - b. us\n3. Class (We) - c. him",
+      "options": [
+        "1-b, 2-c, 3-a",
+        "1-c, 2-a, 3-b",
+        "1-a, 2-b, 3-c",
+        "1-c, 2-b, 3-a"
+      ],
+      "answer": "1-c, 2-a, 3-b",
+      "explanation": "'He' becomes 'him', 'She' becomes 'her', and 'We' becomes 'us'."
+    },
+    {
+      "question": "How did Iniya's father wash the clothes? (Identify the incorrect statement)",
+      "options": [
+        "Her father did not wash clothes, her mother did.",
+        "Her father washed clothes on a stone.",
+        "Her father used a washing machine.",
+        "Her father washed clothes with jasmine soap."
+      ],
+      "answer": "Her father did not wash clothes, her mother did.",
+      "explanation": "According to the story, the mother washed the clothes on a stone next to the lake while the father went fishing."
+    },
+    {
+      "question": "What did Iniya make when she grew older to pot plants?",
+      "options": [
+        "Plastic bags",
+        "Coconut fibre packs",
+        "Wooden pots",
+        "Mud pots"
+      ],
+      "answer": "Coconut fibre packs",
+      "explanation": "As Iniya grew older, she made packs out of coconut fibre that could be used as eco-friendly pots for plants."
+    },
+    {
+      "question": "Which is the oldest tree in the town according to the supplementary story?",
+      "options": [
+        "Peepal tree",
+        "Neem tree",
+        "Palm tree",
+        "Jack tree"
+      ],
+      "answer": "Neem tree",
+      "explanation": "The neem tree the king wanted to cut was known to be the oldest tree in the town."
+    },
+    {
+      "question": "Choose the correct spelling from the options.",
+      "options": [
+        "Medisine",
+        "Medicine",
+        "Medesine",
+        "Medecine"
+      ],
+      "answer": "Medicine",
+      "explanation": "The correct spelling for the word containing the 'ci' phonics sound is 'Medicine'."
+    },
+    {
+      "question": "We like our cat. We hope the cat likes ______.",
+      "options": [
+        "me",
+        "I",
+        "us",
+        "we"
+      ],
+      "answer": "us",
+      "explanation": "Since the first sentence uses 'We', the object pronoun referring back to the same group in the next sentence should be 'us'."
+    },
+    {
+      "question": "What condition did the tree angel put forth to the king to cut it?",
+      "options": [
+        "Cut me when the sun is bright",
+        "Cut me when it rains",
+        "Cut me during the night",
+        "Do not cut me at all"
+      ],
+      "answer": "Cut me when it rains",
+      "explanation": "The angel asked the king to cut it when it rains and to do so in three stages."
+    },
+    {
+      "question": "Assertion (A): We must not cut down trees unnecessarily. \nReason (R): Trees serve as homes for many birds and small animals.",
+      "options": [
+        "Assertion is false, Reason is true",
+        "Assertion is true, Reason is false",
+        "Both Assertion and Reason are false",
+        "Both Assertion and Reason are true"
+      ],
+      "answer": "Both Assertion and Reason are true",
+      "explanation": "Trees provide shelter and habitat for a variety of wildlife, which is a primary reason we shouldn't cut them down."
+    },
+    {
+      "question": "Select the correct Object Pronoun: Selvi brought delicious food for ______ (I).",
+      "options": [
+        "me",
+        "her",
+        "him",
+        "us"
+      ],
+      "answer": "me",
+      "explanation": "When referring to oneself as the recipient of the food, 'I' transforms into the object pronoun 'me'."
+    },
+    {
+      "question": "What is the meaning of 'Palace' from the word wall?",
+      "options": [
+        "Park",
+        "A large, grand residence of a king or royalty",
+        "City",
+        "Road"
+      ],
+      "answer": "A large, grand residence of a king or royalty",
+      "explanation": "A palace is a grand house or residence where a king or a queen lives."
+    },
+    {
+      "question": "Find the odd one out based on phonics.",
+      "options": [
+        "Cent",
+        "Twice",
+        "Voice",
+        "Circle"
+      ],
+      "answer": "Circle",
+      "explanation": "Cent, Twice, and Voice all feature the 'ce' letter cluster. Circle has the 'ci' letter cluster."
+    },
+    {
+      "question": "Situational Question: You are fishing in the ocean. A sea turtle gets caught in your net along with the fish. What should you do?",
+      "options": [
+        "Take the turtle home as a pet",
+        "Carefully free the turtle from the net and release it back into the sea",
+        "Sell the turtle in the market",
+        "Leave it stuck in the net"
+      ],
+      "answer": "Carefully free the turtle from the net and release it back into the sea",
+      "explanation": "Just as Iniya hurried to save the turtles trapped in her father's nets, we should also protect marine life."
+    },
+    {
+      "question": "Identify the question word used to ask about time or when an event happens.",
+      "options": [
+        "Who...?",
+        "When...?",
+        "Where...?",
+        "Which...?"
+      ],
+      "answer": "When...?",
+      "explanation": "'When' is used to ask questions regarding time, such as 'When does the school reopen?'"
+    },
+    {
+      "question": "Who helped Iniya's father to carry the fish?",
+      "options": [
+        "No one, they put it in a big basket",
+        "Her mother carried the fish",
+        "Iniya balanced an empty basket on her head to collect fish",
+        "A fisherman helped them"
+      ],
+      "answer": "Iniya balanced an empty basket on her head to collect fish",
+      "explanation": "Every day, Iniya would carry a big empty basket balanced on her head to help collect the fish her father caught."
+    },
+    {
+      "question": "Why did the king feel bad in the end?",
+      "options": [
+        "Because he lost his money",
+        "Because the angel explained how the tree protects lives",
+        "Because the tree was very small",
+        "Because the people fought with him"
+      ],
+      "answer": "Because the angel explained how the tree protects lives",
+      "explanation": "The king felt remorse after the angel revealed how the tree acted as a home and protector for so many living beings."
+    },
+    {
+      "question": "David sings to ______. (Jayanthi)",
+      "options": [
+        "me",
+        "him",
+        "her",
+        "us"
+      ],
+      "answer": "her",
+      "explanation": "Since Jayanthi is female, the correct object pronoun to use is 'her'."
+    },
+    {
+      "question": "HOTS Question: When Iniya asked what would happen if the fish ran out, her father later switched to a smaller basket. What is the deep moral lesson we learn from this?",
+      "options": [
+        "Small baskets are easier for fishing",
+        "We should only use natural resources according to our needs and avoid greed",
+        "Big baskets are too expensive",
+        "All the fish in the lake had already died"
+      ],
+      "answer": "We should only use natural resources according to our needs and avoid greed",
+      "explanation": "The core lesson emphasizes sustainable living; we must take only what we genuinely need to ensure nature is not depleted."
+    }
+  ]
+}

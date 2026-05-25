@@ -1,0 +1,619 @@
+{
+  "lesson_meta": {
+    "title": "A LESSON TO SAVE (SAVINGS)",
+    "grade": "4",
+    "term": "2",
+    "unit": "4",
+    "type": "Lesson",
+    "language": "English",
+    "code": "eng_4_t2_l4"
+  },
+  "material": {
+    "sections": [
+      {
+        "title": "பாடத்தின் சுருக்கம் (Summary of the Lesson)",
+        "content": "இப்பாடம் 'A Lesson to save' என்ற தலைப்பில் சேமிப்பின் அவசியத்தை உணர்த்துகிறது. அமீர் என்ற சிறுவன் மைதானத்திற்குச் செல்லும் வழியில் ஒரு மோல் (mole - எலி போன்ற விலங்கு) மற்றும் ஒரு இலைவெட்டி எறும்பை (leafcutter ant) சந்திக்கிறான். அந்த விலங்குகளும் பூச்சிகளும் குளிர்காலத்திற்காக எவ்வாறு உணவைச் சேமிக்கின்றன என்பதை அவன் அறிந்துகொள்கிறான். இதன் மூலம் பணம் மட்டுமின்றி தண்ணீர், உணவு, மின்சாரம், காடுகள் மற்றும் எரிபொருள் போன்ற இயற்கை வளங்களையும் எதிர்காலச் சந்ததியினருக்காக நாம் சேமிக்க வேண்டும் என்ற விழிப்புணர்வை அமீர் பெறுகிறான்.",
+        "type": "content"
+      },
+      {
+        "title": "பட அகராதி (My Little Pictionary)",
+        "content": "1. Fungus (பூஞ்சை): spongy living things that live on other living things (மற்ற உயிரினங்களில் வாழும் பஞ்சுபோன்ற உயிரினங்கள்). \n2. Larder (உணவறை): a room or large cupboard for storing food (உணவை சேமித்து வைக்கும் அறை அல்லது அலமாரி). \n3. Granary (களஞ்சியம்): place where grains are stored (தானியங்கள் சேமிக்கப்படும் இடம்). \n4. Burrow (வளை): a hole or tunnel dug by a small animal (சிறிய விலங்குகளால் தோண்டப்பட்ட துளை அல்லது சுரங்கம்). \n5. Piggy Bank (உண்டியல்): a money box, shaped like a pig (பன்றி வடிவில் உள்ள பணம் சேமிக்கும் பெட்டி).",
+        "type": "content"
+      },
+      {
+        "title": "அருஞ்சொற்பொருள் (Glossary)",
+        "content": "1. digging - break up and move earth (மண்ணைத் தோண்டுதல்). \n2. trap - enclosure designed to catch and retain animals (விலங்குகளைப் பிடிக்க அமைக்கப்பட்ட பொறி). \n3. paralyze - incapable of movement (நகர முடியாதபடி முடக்குதல்). \n4. sap - plant fluid (தாவரச் சாறு).",
+        "type": "content"
+      },
+      {
+        "title": "கதை மாந்தர்கள் மற்றும் முக்கிய குறிப்புகள்",
+        "content": "மோல் (Mole): மண்புழுக்களைப் (earthworms) பிடிப்பதற்காக சுரங்கங்களில் புழுப்பொறிகளை (worm traps) தோண்டுகிறது. புழுக்களைக் கடித்து முடக்கி (paralyze) குளிர்காலத்திற்காக உணவாகச் சேமிக்கிறது. \nஇலைவெட்டி எறும்பு (Leafcutter ant): தன் எடையை விட 20 மடங்கு (twenty times) எடையுள்ள இலைகளைத் தூக்கிச் செல்லும். அவை இலைகளைச் சாப்பிடுவதில்லை; மாறாக இலையின் சாற்றைக் (leaf sap) குடிக்கின்றன. மேலும், அந்த இலைகளைக் கொண்டு பூஞ்சைகளை (fungus) வளர்த்து, அதனைத் தங்கள் குஞ்சுகளுக்கு (babies) உணவாக அளிக்கின்றன.",
+        "type": "content"
+      },
+      {
+        "title": "இலக்கணம்: முன்னொட்டுகள் (Grammar: Prefixes - un, re, dis, pre)",
+        "content": "Prefix என்பது ஒரு சொல்லின் தொடக்கத்தில் சேர்க்கப்பட்டு அச்சொல்லுக்குப் புதிய பொருளைத் தரும் எழுத்துக்களாகும். \n1. un - எதிர்மறைப் பொருள் (opposite meaning). உ-ம்: unwanted, unfortunate. \n2. dis - எதிர்மறைப் பொருள் (opposite meaning). உ-ம்: disconnect, disagree. \n3. re - மீண்டும் (again) என்ற பொருளைத் தரும். உ-ம்: rewrite, repaint, rearrange. \n4. pre - முன்பே/முன்னதாக (before) என்ற பொருளைத் தரும். உ-ம்: pre-school, preview.",
+        "type": "content"
+      },
+      {
+        "title": "A. Say whether the statements are True or False",
+        "content": "1. In early days, Amir left the tap opened. - True (சரி)\n2. Amir switched off the fan when he walked out. - False (தவறு - ஆரம்பத்தில் அவர் விசிறியை அணைக்கவில்லை)\n3. Moles trap worms and store them. - True (சரி)\n4. Leafcutter ants grow fungus. - True (சரி)\n5. Amir realised his mistakes. - True (சரி)",
+        "type": "content"
+      },
+      {
+        "title": "B. Choose the correct option",
+        "content": "1. Moles dig ___________ to catch earth worms. விடை: a. worm trap \n2. Leafcutter ants can carry leaves that weigh _______ times of their body weight. விடை: b. twenty \n3. Moles bite and ___________ the earth worms. விடை: c. paralyze \n4. Leafcutter ants drink ___________. விடை: a. leaf sap \n5. Humans give importance to save ___________. விடை: b. money",
+        "type": "content"
+      },
+      {
+        "title": "Prefix Exercises: Match the following",
+        "content": "1. pre - view (preview) \n2. dis - continue (discontinue) \n3. un - familiar (unfamiliar) \n4. re - open (reopen) \n(குறிப்பு: புத்தகத்தில் உள்ள சொற்களைப் பொருத்தி புதிய சொல் உருவாக்கப்பட்டுள்ளது)",
+        "type": "content"
+      },
+      {
+        "title": "Prefix Exercises: Tick the correct prefix",
+        "content": "1. honest -> dishonest (prefix: dis) \n2. happy -> unhappy (prefix: un) \n3. mix -> remix (prefix: re) \n4. read -> reread (prefix: re) \n(அல்லது சூழலைப் பொறுத்து unread என்றும் வரலாம், ஆனால் re என்ற prefix 'மீண்டும்' என்ற பொருளில் பரவலாகப் பயன்படும்).",
+        "type": "content"
+      },
+      {
+        "title": "C. Add a prefix to match the new definition",
+        "content": "1. Making sure the things are correct - recheck \n2. A person who got no luck - unlucky \n3. Do not approve - disapprove \n4. A chance to view before - preview",
+        "type": "content"
+      }
+    ]
+  },
+  "quiz": {
+    "questions": [
+      {
+        "question": "What is the meaning of the word 'Fungus' according to the Pictionary?",
+        "options": [
+          "A room for storing food",
+          "Spongy living things that live on other living things",
+          "A place where grains are stored",
+          "A hole dug by a small animal"
+        ],
+        "answer": 1,
+        "explanation": "பூஞ்சை (Fungus) என்பது மற்ற உயிரினங்களின் மீது வாழும் ஒரு பஞ்சுபோன்ற உயிரினமாகும்."
+      },
+      {
+        "question": "Choose the correct meaning for 'Larder'.",
+        "options": [
+          "A place to store money",
+          "A hole or tunnel",
+          "A room or large cupboard for storing food",
+          "Plant fluid"
+        ],
+        "answer": 2,
+        "explanation": "Larder என்பது உணவைச் சேமித்து வைப்பதற்கான ஒரு அறை அல்லது பெரிய அலமாரியைக் குறிக்கும்."
+      },
+      {
+        "question": "Where are grains stored?",
+        "options": [
+          "Burrow",
+          "Piggy Bank",
+          "Granary",
+          "Trap"
+        ],
+        "answer": 2,
+        "explanation": "தானியங்களைச் சேமித்து வைக்கும் இடத்திற்கு 'களஞ்சியம்' (Granary) என்று பெயர்."
+      },
+      {
+        "question": "What is a 'Burrow'?",
+        "options": [
+          "A hole or tunnel dug by a small animal",
+          "A money box",
+          "A worm trap",
+          "A plant sap"
+        ],
+        "answer": 0,
+        "explanation": "சிறிய விலங்குகளால் தோண்டப்படும் வளை அல்லது சுரங்கத்தை 'Burrow' என்று அழைப்பார்கள்."
+      },
+      {
+        "question": "What does a 'Piggy Bank' look like?",
+        "options": [
+          "A rat",
+          "A pig",
+          "An ant",
+          "A mole"
+        ],
+        "answer": 1,
+        "explanation": "Piggy Bank என்பது பன்றி (pig) வடிவில் அமைக்கப்பட்ட ஒரு பணம் சேர்க்கும் உண்டியல் ஆகும்."
+      },
+      {
+        "question": "What does the word 'paralyze' mean in the glossary?",
+        "options": [
+          "Break up earth",
+          "Incapable of movement",
+          "Plant fluid",
+          "Enclosure to catch animals"
+        ],
+        "answer": 1,
+        "explanation": "paralyze என்றால் நகர முடியாதபடி முடக்குதல் அல்லது செயலிழக்கச் செய்தல் என்பதாகும்."
+      },
+      {
+        "question": "Find the meaning of 'sap'.",
+        "options": [
+          "Animal skin",
+          "Earthworm",
+          "Plant fluid",
+          "Fungus"
+        ],
+        "answer": 2,
+        "explanation": "sap என்பது தாவரங்களில் காணப்படும் திரவம் (சாறு) ஆகும்."
+      },
+      {
+        "question": "Which creature did Amir meet first near the pit?",
+        "options": [
+          "Leafcutter ant",
+          "Earthworm",
+          "Mole",
+          "Snake"
+        ],
+        "answer": 2,
+        "explanation": "அமீர் முதலில் எலி போன்ற விலங்கான மோலைச் (mole) சந்திக்கிறான்."
+      },
+      {
+        "question": "Why was the mole digging a burrow?",
+        "options": [
+          "To hide from Amir",
+          "To catch earthworms and save them for the winter",
+          "To sleep safely",
+          "To grow fungus"
+        ],
+        "answer": 1,
+        "explanation": "குளிர்காலத்திற்காக மண்புழுக்களைப் பிடித்துச் சேமித்து வைப்பதற்காகவே மோல் வளையைத் தோண்டியது."
+      },
+      {
+        "question": "What kind of traps does the mole dig along the tunnels?",
+        "options": [
+          "Ant traps",
+          "Mouse traps",
+          "Worm traps",
+          "Leaf traps"
+        ],
+        "answer": 2,
+        "explanation": "மண்புழுக்களைப் பிடிப்பதற்காக சுரங்கங்களில் 'worm traps' எனப்படும் புழுப்பொறிகளை மோல் அமைக்கிறது."
+      },
+      {
+        "question": "What does the mole do to the earthworms after they fall into the trap?",
+        "options": [
+          "It eats them immediately.",
+          "It bites and paralyzes them.",
+          "It plays with them.",
+          "It throws them out."
+        ],
+        "answer": 1,
+        "explanation": "மண்புழுக்களைக் கடித்து முடக்கி (paralyze), பின்னர் உண்பதற்காகத் தனது வளைக்குள் சேமித்து வைப்பதாக மோல் கூறுகிறது."
+      },
+      {
+        "question": "Who was carrying a big leaf?",
+        "options": [
+          "The mole",
+          "Amir",
+          "An earthworm",
+          "A leafcutter ant"
+        ],
+        "answer": 3,
+        "explanation": "ஒரு சிறிய இலைவெட்டி எறும்பு (leafcutter ant) ஒரு பெரிய இலையைத் தூக்கிச் சென்றதை அமீர் பார்க்கிறான்."
+      },
+      {
+        "question": "How much weight can a leafcutter ant carry compared to its own weight?",
+        "options": [
+          "Ten times",
+          "Twenty times",
+          "Two times",
+          "Thirty times"
+        ],
+        "answer": 1,
+        "explanation": "இலைவெட்டி எறும்புகள் தங்களின் உடல் எடையை விட 20 மடங்கு (twenty times) அதிக எடையைத் தூக்கக்கூடியவை."
+      },
+      {
+        "question": "Do leafcutter ants eat the leaves they carry?",
+        "options": [
+          "Yes, they eat the whole leaf.",
+          "No, they drink the leaf sap.",
+          "Yes, they eat only green leaves.",
+          "No, they give it to the mole."
+        ],
+        "answer": 1,
+        "explanation": "இலைவெட்டி எறும்புகள் இலைகளைச் சாப்பிடுவதில்லை; இலைகளின் சாற்றை (leaf sap) மட்டுமே குடிக்கின்றன."
+      },
+      {
+        "question": "Why do the leafcutter ants use the leaves to grow fungus?",
+        "options": [
+          "To decorate their burrow",
+          "To feed their babies",
+          "To make medicine",
+          "To trap other insects"
+        ],
+        "answer": 1,
+        "explanation": "தங்கள் குஞ்சுகளுக்கு (babies) உணவாக அளிக்கவே, இலைகளைப் பயன்படுத்திப் பூஞ்சையை (fungus) வளர்க்கின்றன."
+      },
+      {
+        "question": "According to Amir, where do humans save food?",
+        "options": [
+          "In burrows",
+          "In banks",
+          "In granaries",
+          "In larders only"
+        ],
+        "answer": 2,
+        "explanation": "மனிதர்கள் தானியக் களஞ்சியங்களில் (granaries) உணவைச் சேமிப்பதாக அமீர் கூறுகிறான்."
+      },
+      {
+        "question": "What do humans usually give more importance to save, according to Amir?",
+        "options": [
+          "Leaves",
+          "Earthworms",
+          "Money",
+          "Water"
+        ],
+        "answer": 2,
+        "explanation": "உணவுப் பொருட்களை வாங்கப் பணம் தேவைப்படுவதால், மனிதர்கள் பொதுவாகப் பணத்தைச் (money) சேமிப்பதற்கே அதிக முக்கியத்துவம் தருகின்றனர்."
+      },
+      {
+        "question": "Apart from money and food, what else did Amir's mom ask him to save?",
+        "options": [
+          "Water, electricity, forest, and fuel",
+          "Only toys and clothes",
+          "Only fungus and sap",
+          "Only books and pens"
+        ],
+        "answer": 0,
+        "explanation": "தண்ணீர், மின்சாரம், காடு மற்றும் எரிபொருளைச் சேமிக்க வேண்டும் என்று தன் அம்மா கூறியதாக அமீர் நினைவுகூர்கிறான்."
+      },
+      {
+        "question": "Why should we save resources like water, food, and fuel?",
+        "options": [
+          "To sell them later",
+          "For future generations to use",
+          "Because animals need them",
+          "To show off our wealth"
+        ],
+        "answer": 1,
+        "explanation": "எதிர்காலச் சந்ததியினர் (future generations) பயன்படுத்துவதற்காக இயற்கை வளங்களைச் சேமிக்க வேண்டும்."
+      },
+      {
+        "question": "True or False: In early days, Amir left the tap opened.",
+        "options": [
+          "True",
+          "False",
+          "Not mentioned",
+          "Only sometimes"
+        ],
+        "answer": 0,
+        "explanation": "ஆரம்பத்தில் அமீர் குழாயை இறுக்கமாக மூடாமல் தண்ணீர் சொட்டும்படி விட்டுவிடுவான் என்று பாடத்தில் குறிப்பிடப்பட்டுள்ளது."
+      },
+      {
+        "question": "True or False: Amir switched off the fan when he walked out initially.",
+        "options": [
+          "True",
+          "False",
+          "He never used a fan",
+          "His mom switched it off"
+        ],
+        "answer": 1,
+        "explanation": "ஆரம்பத்தில் அவன் அறையை விட்டு வெளியேறும்போது மின்விசிறியை அணைக்காமல் விட்டுவிடுவான். எனவே இந்தக் கூற்று தவறு."
+      },
+      {
+        "question": "True or False: Moles trap worms and store them.",
+        "options": [
+          "True",
+          "False",
+          "Only during summer",
+          "They don't store worms"
+        ],
+        "answer": 0,
+        "explanation": "மோல் விலங்குகள் மண்புழுக்களைப் பிடித்துச் சேமிக்கின்றன என்பது பாடத்தில் கூறப்பட்ட உண்மை."
+      },
+      {
+        "question": "Which prefix gives the meaning of 'opposite'?",
+        "options": [
+          "re",
+          "pre",
+          "un",
+          "Both re and pre"
+        ],
+        "answer": 2,
+        "explanation": "un மற்றும் dis ஆகிய முன்னொட்டுகள் (prefixes) எதிர்மறை அல்லது எதிரான (opposite) பொருளைத் தரும்."
+      },
+      {
+        "question": "What does the prefix 're' mean?",
+        "options": [
+          "Before",
+          "Again",
+          "Opposite",
+          "Never"
+        ],
+        "answer": 1,
+        "explanation": "re என்ற முன்னொட்டு 'மீண்டும்' (again) என்ற பொருளைத் தருகிறது. உ-ம்: rewrite (மீண்டும் எழுது)."
+      },
+      {
+        "question": "What is the meaning of the prefix 'pre'?",
+        "options": [
+          "Before",
+          "After",
+          "Again",
+          "Opposite"
+        ],
+        "answer": 0,
+        "explanation": "pre என்ற முன்னொட்டு 'முன்பே' அல்லது 'முன்னதாக' (before) என்ற பொருளைத் தரும்."
+      },
+      {
+        "question": "Match the prefix to the word: 'pre' + ________ = preview",
+        "options": [
+          "view",
+          "continue",
+          "open",
+          "happy"
+        ],
+        "answer": 0,
+        "explanation": "முன்பே பார்ப்பது என்ற பொருளில் pre+view = preview எனப் பொருந்தும்."
+      },
+      {
+        "question": "Match the prefix to the word: 'dis' + ________ = discontinue",
+        "options": [
+          "open",
+          "continue",
+          "familiar",
+          "read"
+        ],
+        "answer": 1,
+        "explanation": "தொடரமுடியாது அல்லது நிறுத்துவது என்ற பொருளில் dis+continue = discontinue எனப் பொருந்தும்."
+      },
+      {
+        "question": "Match the prefix to the word: 'un' + ________ = unfamiliar",
+        "options": [
+          "view",
+          "familiar",
+          "open",
+          "continue"
+        ],
+        "answer": 1,
+        "explanation": "பழக்கமில்லாத என்ற பொருளில் un+familiar = unfamiliar எனப் பொருந்தும்."
+      },
+      {
+        "question": "Match the prefix to the word: 're' + ________ = reopen",
+        "options": [
+          "view",
+          "familiar",
+          "open",
+          "mix"
+        ],
+        "answer": 2,
+        "explanation": "மீண்டும் திறப்பது என்ற பொருளில் re+open = reopen எனப் பொருந்தும்."
+      },
+      {
+        "question": "Select the correct prefix for 'honest' to make its opposite.",
+        "options": [
+          "un",
+          "dis",
+          "re",
+          "pre"
+        ],
+        "answer": 1,
+        "explanation": "honest (நேர்மையான) என்பதன் எதிர்ச்சொல் dishonest ஆகும்."
+      },
+      {
+        "question": "Select the correct prefix for 'happy' to make its opposite.",
+        "options": [
+          "dis",
+          "re",
+          "un",
+          "pre"
+        ],
+        "answer": 2,
+        "explanation": "happy (மகிழ்ச்சி) என்பதன் எதிர்ச்சொல் unhappy ஆகும்."
+      },
+      {
+        "question": "Add the correct prefix to the word 'mix' to mean 'mix again'.",
+        "options": [
+          "un",
+          "pre",
+          "dis",
+          "re"
+        ],
+        "answer": 3,
+        "explanation": "மீண்டும் என்பதை உணர்த்த 're' என்ற முன்னொட்டைச் சேர்த்து 'remix' என உருவாக்க வேண்டும்."
+      },
+      {
+        "question": "Which prefixed word matches the definition: 'Making sure the things are correct'?",
+        "options": [
+          "recheck",
+          "unlucky",
+          "disapprove",
+          "preview"
+        ],
+        "answer": 0,
+        "explanation": "ஒரு விஷயத்தைச் சரிபார்ப்பதை 'மீண்டும் சரிபார்த்தல்' (recheck) என்று கூறுவோம்."
+      },
+      {
+        "question": "Which prefixed word matches the definition: 'A person who got no luck'?",
+        "options": [
+          "recheck",
+          "unlucky",
+          "disapprove",
+          "preview"
+        ],
+        "answer": 1,
+        "explanation": "அதிர்ஷ்டம் இல்லாத ஒருவரை unlucky என்று குறிப்பிடுவோம்."
+      },
+      {
+        "question": "Which prefixed word matches the definition: 'Do not approve'?",
+        "options": [
+          "disapprove",
+          "unlucky",
+          "recheck",
+          "preview"
+        ],
+        "answer": 0,
+        "explanation": "ஒப்புதல் அளிக்க மறுப்பதை disapprove என்போம்."
+      },
+      {
+        "question": "Which prefixed word matches the definition: 'A chance to view before'?",
+        "options": [
+          "recheck",
+          "unlucky",
+          "disapprove",
+          "preview"
+        ],
+        "answer": 3,
+        "explanation": "முன்பே பார்ப்பதற்கான வாய்ப்பை preview என்று அழைக்கிறோம்."
+      },
+      {
+        "question": "Assertion (A): Leafcutter ants carry large leaves because they eat them entirely. \nReason (R): Leafcutter ants drink leaf sap and use the leaves to grow fungus.",
+        "options": [
+          "A is true, R is false.",
+          "A is false, R is true.",
+          "Both A and R are true.",
+          "Both A and R are false."
+        ],
+        "answer": 1,
+        "explanation": "கூற்று காரணம் வினா: எறும்புகள் இலைகளை முழுமையாக உண்பதில்லை, எனவே கூற்று தவறு. அவை சாற்றைக் குடித்து பூஞ்சை வளர்க்கவே இலைகளைப் பயன்படுத்துகின்றன, எனவே காரணம் சரி."
+      },
+      {
+        "question": "Life Scenario Question: You see water dripping from a public tap. What should you do based on what Amir learned?",
+        "options": [
+          "Ignore it and walk away.",
+          "Let the water drip for the birds.",
+          "Close the tap tightly to save water.",
+          "Break the tap."
+        ],
+        "answer": 2,
+        "explanation": "வாழ்க்கைச் சூழல் வினா: நீரைச் சேமிக்க வேண்டும் என்ற அமீரின் படிப்பினையின்படி, குழாயை இறுக்கமாக மூட வேண்டும்."
+      },
+      {
+        "question": "Analogy Question: Granary : Grains :: Larder : _________",
+        "options": [
+          "Money",
+          "Food",
+          "Animals",
+          "Water"
+        ],
+        "answer": 1,
+        "explanation": "ஒப்புமை வினா: தானியங்களைச் சேமிக்கும் இடம் களஞ்சியம் (Granary) என்பது போல, உணவைச் சேமிக்கும் அறை Larder ஆகும்."
+      },
+      {
+        "question": "Match the following prefixes with their meanings: \n1. re - a. before \n2. un - b. again \n3. pre - c. opposite meaning",
+        "options": [
+          "1-b, 2-c, 3-a",
+          "1-a, 2-b, 3-c",
+          "1-c, 2-a, 3-b",
+          "1-b, 2-a, 3-c"
+        ],
+        "answer": 0,
+        "explanation": "பொருத்துக: re என்றால் மீண்டும் (again - b), un என்றால் எதிர்மறை (opposite meaning - c), pre என்றால் முன்பே (before - a)."
+      },
+      {
+        "question": "Which creature says, 'I am a mole'?",
+        "options": [
+          "A rat-like creature",
+          "An insect",
+          "A bird",
+          "A fish"
+        ],
+        "answer": 0,
+        "explanation": "பாடத்தில், அமீர் குழியருகே பார்த்த ஒரு எலி போன்ற உயிரினம் (rat-like creature) தன்னை 'மோல்' என அறிமுகப்படுத்திக்கொள்கிறது."
+      },
+      {
+        "question": "Why was the ant irritated when Amir was near the mole's burrow?",
+        "options": [
+          "Amir tried to catch the ant.",
+          "Amir was standing in its way.",
+          "Amir took its leaf.",
+          "Amir stepped on its burrow."
+        ],
+        "answer": 1,
+        "explanation": "அமீரின் கால்களைச் சுற்றிச் செல்ல அதிக நேரம் ஆகும் என்பதால், வழியை விட்டு விலகுமாறு எறும்பு கத்தியது."
+      },
+      {
+        "question": "What changed Amir's attitude towards saving resources?",
+        "options": [
+          "His teacher scolding him.",
+          "His interaction with the mole and the ant.",
+          "Reading a book about savings.",
+          "Losing his money."
+        ],
+        "answer": 1,
+        "explanation": "மோல் மற்றும் எறும்பின் செயல்களைப் பார்த்ததும், அவற்றுடனான உரையாடலுமே அமீரின் சிந்தனையை மாற்றியது."
+      },
+      {
+        "question": "What happens when an earthworm crosses the 'worm traps'?",
+        "options": [
+          "It escapes easily.",
+          "It falls into it.",
+          "It builds a new tunnel.",
+          "It eats the trap."
+        ],
+        "answer": 1,
+        "explanation": "மண்புழுக்கள் பொறிகளைக் கடக்கும்போது அதனுள் விழுந்துவிடும் என்று மோல் கூறுகிறது."
+      },
+      {
+        "question": "How many earthworms does the mole plan to store?",
+        "options": [
+          "Only ten",
+          "As many as it can get",
+          "None, it eats them all",
+          "Only one"
+        ],
+        "answer": 1,
+        "explanation": "கிடைக்கும் அனைத்து மண்புழுக்களையும் சேமிக்க விரும்புவதாக மோல் கூறுகிறது."
+      },
+      {
+        "question": "What does a leafcutter ant do to support its colony during winter?",
+        "options": [
+          "It sleeps in the burrow.",
+          "It moves to a warmer place.",
+          "It stores leaves for the winter.",
+          "It stops growing fungus."
+        ],
+        "answer": 2,
+        "explanation": "குளிர்காலத் தேவைக்காகவும் இலைவெட்டி எறும்புகள் இலைகளைச் சேமித்து வைக்கின்றன."
+      },
+      {
+        "question": "What higher-order thought does the lesson 'A Lesson to save' intend to impart?",
+        "options": [
+          "Only animals need to save for the future.",
+          "Money is the only thing humans need to survive.",
+          "Humans must learn from nature to conserve all resources for future generations.",
+          "We should kill insects that dig our grounds."
+        ],
+        "answer": 2,
+        "explanation": "உயர்தர சிந்தனை வினா: இயற்கையிடமிருந்தும் சிறிய உயிரினங்களிடமிருந்தும் மனிதர்கள் சேமிப்பின் அவசியத்தைக் கற்று, அனைத்து வளங்களையும் எதிர்காலத்திற்காகப் பாதுகாக்க வேண்டும் என்பதே பாடத்தின் உயரிய கருத்தாகும்."
+      },
+      {
+        "question": "If a word has 'pre' added to it, like 'preschool', what does it generally imply?",
+        "options": [
+          "A school you go to after college.",
+          "A school you go to before regular school.",
+          "A school you dislike.",
+          "A school that is reopened."
+        ],
+        "answer": 1,
+        "explanation": "pre என்றால் முன்பே/முன்னதாக. எனவே preschool என்பது வழக்கமான பள்ளிக் கல்விக்கு முந்தைய கல்வியைக் குறிக்கிறது."
+      },
+      {
+        "question": "Assertion (A): Humans save food in granaries. \nReason (R): Humans don't need money to buy food.",
+        "options": [
+          "Both A and R are true.",
+          "A is true, R is false.",
+          "A is false, R is true.",
+          "Both A and R are false."
+        ],
+        "answer": 1,
+        "explanation": "கூற்று காரணம் வினா: மனிதர்கள் தானியக் களஞ்சியங்களில் உணவைச் சேமிப்பது உண்மை (கூற்று சரி). ஆனால் உணவை வாங்கப் பணம் தேவை, எனவே பணம் தேவையில்லை என்ற காரணம் (R) தவறு."
+      },
+      {
+        "question": "What conclusion did Amir reach at the end of the lesson?",
+        "options": [
+          "He always cares and saves the resources around him.",
+          "He decides to become an ant.",
+          "He starts wasting more water.",
+          "He stops going to the playground."
+        ],
+        "answer": 0,
+        "explanation": "கதையின் முடிவில், அமீர் தன்னைச் சுற்றியுள்ள வளங்கள் மீது அக்கறை கொண்டு அவற்றைச் சேமிக்கத் தொடங்குகிறான்."
+      }
+    ]
+  }
+}

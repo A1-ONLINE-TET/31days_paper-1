@@ -1,0 +1,589 @@
+{
+  "lesson_meta": {
+    "title": "AFFECTION (PROSE: APPA & GRAMMAR: PUNCTUATION)",
+    "grade": "4",
+    "term": "2",
+    "unit": "1",
+    "type": "Lesson",
+    "language": "English",
+    "code": "eng_4_t2_l1"
+  },
+  "material": {
+    "sections": [
+      {
+        "title": "முழுமையான சுருக்கம்",
+        "content": "This lesson 'Appa' highlights the theme of affection, resilience, and humanity during a natural disaster (Tsunami). The story is set in Keeraikuppam, a small coastal village near Nagapattinam. On a pleasant Sunday morning in December, the villagers were doing their routine fishing tasks. Meena's father had sailed into the sea. Suddenly, the village bell caretaker noticed the seawater receding just before the bell was about to strike eight times. People gathered out of curiosity. Soon, a massive wave roared towards the shore. Sensing danger, Meena's mother grabbed her hand and ran, but the powerful wave crushed the village. Meena was separated from her mother and banged against a coconut tree, which she hugged firmly before fainting. She woke up in a hospital and was later moved to a rehabilitation centre housing 99 children. A kind-hearted official and his wife frequently visited the centre, showering love on the children, especially little Meena. The children affectionately called them 'Amma' and 'Appa'. Even after being transferred three years later, the official continued to visit for the next five years. Years passed. Meena, now in 12th standard, was attending her English class. She suddenly heard a familiar voice calling her 'Meenu'. It was the official. Overwhelmed with emotion, tears rolled down her cheeks, and she ran towards him calling 'Appa!'. The grammar section covers 'Punctuation', focusing on the usage of Capital Letters (for the beginning of sentences, proper nouns, and abbreviations), Full Stops (at the end of sentences), Commas (to separate three or more items in a list), and Question Marks (at the end of interrogative sentences).",
+        "type": "content"
+      },
+      {
+        "title": "கூடுதல் பகுதிகள் மற்றும் குறிப்புகள்",
+        "content": "1. Disasters and Human Bond: The story subtly explains the Tsunami of December 2004 without explicitly naming it, focusing on its impact on coastal villages. 2. Rehabilitation: It sheds light on how orphans and affected individuals are cared for in rehabilitation centres. 3. Importance of Punctuation: Just as Ramu corrected Somu's joke ('Can we eat grandpa?' vs 'Can we eat, grandpa?'), punctuation changes the entire meaning of a sentence. 4. Proper Nouns and Abbreviations: Always start proper nouns (names of people, places like Bharathi, Kumar, India) and abbreviations (ATM, MBBS, NCC) with capital letters.",
+        "type": "content"
+      },
+      {
+        "title": "நினைவில் கொள்க மற்றும் ஒரு மதிப்பெண் பகுதிகள்",
+        "content": "Important Facts to Remember: \n- Village Name: Keeraikuppam.\n- Location: Near Nagapattinam.\n- Day and Month: Sunday, December.\n- Bell strikes: 8 times.\n- What happened first: Seawater receded.\n- Tree Meena hugged: Coconut tree trunk.\n- Number of kids in the rehab centre: 99 boys and girls.\n- Time the official stayed before transfer: 3 years.\n- Time the official visited after transfer: 5 years.\n- Meena's current grade: 12th Standard.\n- Glossary/Meanings: \n  * Tumbled: to fall. \n  * Whirled: to spin or rotate rapidly. \n  * Scream: to cry / shout loudly with strong emotions. \n  * Grab: hold or catch. \n  * Wipe: clean or dry something by rubbing. \n  * Recede: go or move back. \n  * Massive: large or heavy. \n  * Bang: to strike forcefully and noisily. \n  * Faint: to lose consciousness. \n  * Rehabilitation: the action of restoring someone after a damage. \n  * Blankly: without expression.",
+        "type": "content"
+      },
+      {
+        "title": "புத்தக மதிப்பீட்டு வினாக்கள்",
+        "content": "A. Fill in the blanks:\n1. Meena's village was hit by waves on a [Sunday].\n2. Meena was transferred to a [rehabilitation centre].\n3. The official's family visited the rehabilitation centre for [five] years.\n4. The official and his wife liked [Meena].\n5. Meena studied in [twelfth] standard.\n\nB. Write whether the statements are True or False:\n1. Meena's father was a fisherman. [True]\n2. People ran off when the seawater receded. [False - they gathered along the shore]\n3. Three waves hit the village. [False - two waves are mentioned]\n4. The official visited the rehabilitation centre daily. [False - he often visited, and later once a year]\n5. The official was transferred. [True]\n\nC. Answer the following questions (Notes format):\n1. Keeraikuppam is located near Nagapattinam.\n2. The people were excited about the seawater receding a few hundred metres and a big wave forming far away.\n3. The disaster that hit the village was a massive sea wave (Tsunami).\n4. A kind-hearted official of the centre and his wife showed love and care to the children.\n5. Meena called the official 'Appa' because he showered her with fatherly love and care when she lost her parents. No, we do not need to be related by blood to care for others; love and humanity bind us together.\n\nD. Rewrite the sentences with correct punctuation marks:\n1. Where is my cat?\n2. Jain ate an apple.\n3. The book is on the table.\n4. Ravi wants book, pen and pencil.\n5. Do you play football?\n6. My favourite colour is blue.\n7. Leema is a good singer.\n8. Do you like pet animals?\n9. He likes shirt, pants and shorts.\n10. How are you?",
+        "type": "content"
+      }
+    ]
+  },
+  "quiz": {
+    "questions": [
+      {
+        "question": "Where was the small coastal village Keeraikuppam located?",
+        "options": [
+          "Near Chennai",
+          "Near Kanyakumari",
+          "Near Nagapattinam",
+          "Near Thoothukudi"
+        ],
+        "answer": 2,
+        "explanation": "The text clearly states, 'Keeraikuppam was a small coastal village near Nagapatinam.'"
+      },
+      {
+        "question": "On which day of the week did the massive waves hit the village?",
+        "options": [
+          "Monday",
+          "Saturday",
+          "Friday",
+          "Sunday"
+        ],
+        "answer": 3,
+        "explanation": "The story mentions, 'It was a pleasant Sunday morning in December.'"
+      },
+      {
+        "question": "What was the profession of the villagers in Keeraikuppam?",
+        "options": [
+          "Farming",
+          "Fishing",
+          "Weaving",
+          "Trading"
+        ],
+        "answer": 1,
+        "explanation": "The text says 'the people in the village toiled in the sea every day' and mentions 'fishing boats'."
+      },
+      {
+        "question": "How many times was the village bell about to strike when the seawater receded?",
+        "options": [
+          "Six times",
+          "Eight times",
+          "Ten times",
+          "Twelve times"
+        ],
+        "answer": 1,
+        "explanation": "The text says, 'The village bell was about to strike eight times.'"
+      },
+      {
+        "question": "What did the people do when they saw the seawater recede?",
+        "options": [
+          "They started running towards the sea.",
+          "They hid inside their houses.",
+          "They climbed the trees.",
+          "They ran towards the hills."
+        ],
+        "answer": 0,
+        "explanation": "When the seawater receded, out of excitement and curiosity, 'All the children and the villagers started running towards the sea.'"
+      },
+      {
+        "question": "Who felt a sudden fear gripping her when looking at the wave far away?",
+        "options": [
+          "Meena",
+          "The official's wife",
+          "Meena's mother",
+          "The bell caretaker"
+        ],
+        "answer": 2,
+        "explanation": "The story says, 'Gazing at the wave far away, Meena’s mother felt a sudden fear gripping her.'"
+      },
+      {
+        "question": "What did Meena hug firmly to save herself from the waves?",
+        "options": [
+          "A wooden boat",
+          "Her mother",
+          "A floating door",
+          "The trunk of a coconut tree"
+        ],
+        "answer": 3,
+        "explanation": "Meena wrestled with the wave and 'firmly hugged the tree' (a coconut tree) before fainting."
+      },
+      {
+        "question": "Where did Meena find herself when she woke up after fainting?",
+        "options": [
+          "In her hut",
+          "In a hospital",
+          "On the beach",
+          "In a school"
+        ],
+        "answer": 1,
+        "explanation": "The text states, 'When she woke up, she was in a hospital.'"
+      },
+      {
+        "question": "How many boys and girls were housed in the rehabilitation centre?",
+        "options": [
+          "90",
+          "99",
+          "100",
+          "109"
+        ],
+        "answer": 1,
+        "explanation": "The centre housed nearly '99 boys and girls'."
+      },
+      {
+        "question": "What did the children at the rehabilitation centre call the official and his wife?",
+        "options": [
+          "Sir and Madam",
+          "Uncle and Aunt",
+          "Amma and Appa",
+          "Brother and Sister"
+        ],
+        "answer": 2,
+        "explanation": "Because of their love, 'All children used to call them Amma and Appa.'"
+      },
+      {
+        "question": "After how many years was the kind-hearted official transferred?",
+        "options": [
+          "Two years",
+          "Three years",
+          "Four years",
+          "Five years"
+        ],
+        "answer": 1,
+        "explanation": "The text explicitly states, 'After three years the official was transferred.'"
+      },
+      {
+        "question": "For how many years did the official continue to visit the centre once a year after his transfer?",
+        "options": [
+          "Three years",
+          "Five years",
+          "Seven years",
+          "Ten years"
+        ],
+        "answer": 1,
+        "explanation": "He and his family continued to visit the centre once a year for the 'next five years'."
+      },
+      {
+        "question": "In which standard was Meena studying when the official visited her at school?",
+        "options": [
+          "Tenth standard",
+          "Eleventh standard",
+          "Twelfth standard",
+          "Eighth standard"
+        ],
+        "answer": 2,
+        "explanation": "The story mentions, 'Meena was good at studies and now was in the twelfth standard.'"
+      },
+      {
+        "question": "Which subject class was going on when Meena heard a familiar voice?",
+        "options": [
+          "Maths class",
+          "Science class",
+          "Tamil class",
+          "English class"
+        ],
+        "answer": 3,
+        "explanation": "The text says Meena wiped her cheeks to get ready for her 'English class'."
+      },
+      {
+        "question": "What does the word 'recede' mean?",
+        "options": [
+          "To come forward rapidly",
+          "To strike forcefully",
+          "Go or move back",
+          "To lose consciousness"
+        ],
+        "answer": 2,
+        "explanation": "According to the glossary, recede means to 'go or move back'."
+      },
+      {
+        "question": "What is the meaning of the word 'massive'?",
+        "options": [
+          "Small and light",
+          "Large or heavy",
+          "Spinning round",
+          "Without expression"
+        ],
+        "answer": 1,
+        "explanation": "According to the glossary, massive means 'large or heavy'."
+      },
+      {
+        "question": "Identify the meaning of 'whirl':",
+        "options": [
+          "To move rapidly round and round",
+          "To fall down suddenly",
+          "To shout loudly",
+          "To dry something"
+        ],
+        "answer": 0,
+        "explanation": "Whirl means 'to move rapidly round and round'."
+      },
+      {
+        "question": "What does 'rehabilitation' mean?",
+        "options": [
+          "Striking something loudly",
+          "The action of restoring someone after a damage",
+          "Losing consciousness",
+          "Spinning around"
+        ],
+        "answer": 1,
+        "explanation": "Rehabilitation is defined as 'the action of restoring someone after a damage'."
+      },
+      {
+        "question": "Choose the correct meaning for 'faint':",
+        "options": [
+          "To strike forcefully",
+          "Without expression",
+          "To lose consciousness",
+          "To cry loudly"
+        ],
+        "answer": 2,
+        "explanation": "The glossary defines faint as 'to lose consciousness'."
+      },
+      {
+        "question": "Choose the correct punctuation mark that must be used at the beginning of a proper noun.",
+        "options": [
+          "Full stop",
+          "Comma",
+          "Question mark",
+          "Capital letter"
+        ],
+        "answer": 3,
+        "explanation": "The grammar section states: 'I come in the beginning of proper noun and in the abbreviations' referring to the Capital Letter."
+      },
+      {
+        "question": "Which punctuation mark is used to separate words in a list of three or more things?",
+        "options": [
+          "Capital letter",
+          "Question mark",
+          "Comma",
+          "Full stop"
+        ],
+        "answer": 2,
+        "explanation": "The comma rule says: 'You must use me to separate words in a list of three or more things.'"
+      },
+      {
+        "question": "Which punctuation mark comes at the end of interrogative sentences?",
+        "options": [
+          "Full stop",
+          "Comma",
+          "Question mark",
+          "Capital letter"
+        ],
+        "answer": 2,
+        "explanation": "A question mark is used 'at the end of interrogative sentences'."
+      },
+      {
+        "question": "Identify the sentence with the correct punctuation.",
+        "options": [
+          "where is my cat?",
+          "Where is my cat",
+          "Where is my cat?",
+          "where is my cat."
+        ],
+        "answer": 0,
+        "explanation": "The sentence must start with a Capital letter 'W' and end with a Question mark '?' because it is asking a question."
+      },
+      {
+        "question": "Identify the correctly punctuated sentence.",
+        "options": [
+          "Ravi wants book pen and pencil.",
+          "Ravi wants book, pen and pencil.",
+          "ravi wants book, pen and pencil.",
+          "Ravi wants, book pen and pencil."
+        ],
+        "answer": 1,
+        "explanation": "Starts with a capital letter, uses a comma to separate items in a list, and ends with a full stop."
+      },
+      {
+        "question": "Which of the following abbreviations is punctuated correctly according to the rules in the book?",
+        "options": [
+          "mbbs",
+          "Mbbs",
+          "MBBS",
+          "mBbs"
+        ],
+        "answer": 0,
+        "explanation": "Abbreviations must be in capital letters, e.g., MBBS, ATM, NCC."
+      },
+      {
+        "question": "What was the name the official called Meena when he visited her school?",
+        "options": [
+          "Meena",
+          "Meenamma",
+          "Meenu",
+          "Kutti"
+        ],
+        "answer": 2,
+        "explanation": "She heard a familiar voice calling her, 'Meenu'."
+      },
+      {
+        "question": "How did Meena react immediately when she saw the official at her school?",
+        "options": [
+          "She ran away.",
+          "She started laughing.",
+          "She stared at him blankly for a few seconds.",
+          "She fainted."
+        ],
+        "answer": 2,
+        "explanation": "The text says, 'She stared at him blankly for a few seconds, with tears rolling down her cheeks.'"
+      },
+      {
+        "question": "Match the following: \n1. Tumbled - a) hold or catch \n2. Scream - b) clean by rubbing \n3. Grab - c) to fall \n4. Wipe - d) cry loudly",
+        "options": [
+          "1-c, 2-d, 3-a, 4-b",
+          "1-a, 2-b, 3-c, 4-d",
+          "1-d, 2-c, 3-b, 4-a",
+          "1-c, 2-a, 3-d, 4-b"
+        ],
+        "answer": 0,
+        "explanation": "Tumbled means to fall; Scream means cry loudly; Grab means to hold; Wipe means clean by rubbing."
+      },
+      {
+        "question": "Assertion (A): Meena's mother caught Meena's hand and started running towards their home.\nReason (R): She felt a sudden fear gazing at the wave far away, sensing something was wrong.",
+        "options": [
+          "Both A and R are true, and R is the correct explanation of A.",
+          "Both A and R are true, but R is NOT the correct explanation of A.",
+          "A is true, but R is false.",
+          "A is false, but R is true."
+        ],
+        "answer": 0,
+        "explanation": "Meena's mother ran precisely because she saw the wave and her instincts told her something was terribly wrong."
+      },
+      {
+        "question": "In the sentence 'Bharathi is a Tamil poet.', why is the letter 'B' capitalized?",
+        "options": [
+          "Because it is an abbreviation.",
+          "Because it is the end of the sentence.",
+          "Because it is the beginning of a proper noun.",
+          "Because it is a question."
+        ],
+        "answer": 2,
+        "explanation": "Bharathi is a specific name of a person, making it a proper noun, and it also starts the sentence."
+      },
+      {
+        "question": "Which month is mentioned in the story 'Appa'?",
+        "options": [
+          "January",
+          "November",
+          "December",
+          "October"
+        ],
+        "answer": 2,
+        "explanation": "The story explicitly states, 'It was a pleasant Sunday morning in December.'"
+      },
+      {
+        "question": "Complete the analogy based on the glossary: \nRecede : go back :: Bang : _______",
+        "options": [
+          "Strike forcefully",
+          "Lose consciousness",
+          "Large or heavy",
+          "Spin rapidly"
+        ],
+        "answer": 0,
+        "explanation": "Recede means to go back. Similarly, bang means to strike forcefully."
+      },
+      {
+        "question": "Choose the correctly punctuated sentence from the following:",
+        "options": [
+          "jain ate an apple.",
+          "Jain ate an apple",
+          "Jain ate an apple.",
+          "jain ate an apple?"
+        ],
+        "answer": 0,
+        "explanation": "It must start with a capital 'J' (Proper noun and start of sentence) and end with a full stop '.'"
+      },
+      {
+        "question": "What happened to Meena's mother when the second massive wave hit?",
+        "options": [
+          "She climbed a tree.",
+          "She was rescued by fishermen.",
+          "She reached home safely.",
+          "She was washed away by the wave."
+        ],
+        "answer": 3,
+        "explanation": "The text tragically notes, 'Meena’s mother was washed away by the wave.'"
+      },
+      {
+        "question": "What does a punctuation full stop (.) look like?",
+        "options": [
+          "A dot with a tail",
+          "A crooked interrogation mark",
+          "A simple dot",
+          "Two dots"
+        ],
+        "answer": 2,
+        "explanation": "The grammar section describes it as: 'I am a full stop. I look like a dot.'"
+      },
+      {
+        "question": "How did the joke between Ramu and Somu help explain punctuation?",
+        "options": [
+          "It showed how to use capital letters.",
+          "It showed how a comma changes the meaning from eating a person to talking to a person.",
+          "It showed how to use a full stop.",
+          "It showed how to write abbreviations."
+        ],
+        "answer": 1,
+        "explanation": "'Can we eat grandpa?' means eating the grandpa. 'Can we eat, grandpa?' means asking grandpa if it is time to eat. Punctuation plays an important role."
+      },
+      {
+        "question": "Find the incorrectly punctuated sentence:",
+        "options": [
+          "I am an NCC cadet.",
+          "We have bull in our house.",
+          "who won the match.",
+          "He completed his MBBS last year."
+        ],
+        "answer": 2,
+        "explanation": "It should start with a capital 'W' and end with a question mark '?'. 'Who won the match?'"
+      },
+      {
+        "question": "What is the meaning of the phrase 'without expression' as given in the glossary?",
+        "options": [
+          "Scream",
+          "Faint",
+          "Blankly",
+          "Massive"
+        ],
+        "answer": 2,
+        "explanation": "Blankly means looking at someone or something 'without expression'."
+      },
+      {
+        "question": "During the disaster, what happened to the huts and boats in the village?",
+        "options": [
+          "They were safe on the shore.",
+          "They were painted.",
+          "They were washed out by the seawater.",
+          "They were taken away by the government."
+        ],
+        "answer": 2,
+        "explanation": "The text states, 'The seawater entered the village and washed out the huts and boats.'"
+      },
+      {
+        "question": "What was the age status of Meena among the children at the rehabilitation centre?",
+        "options": [
+          "She was the oldest.",
+          "She was the tallest.",
+          "She was the youngest.",
+          "She was the smartest."
+        ],
+        "answer": 2,
+        "explanation": "The text mentions, 'Meena was the youngest of all and soon was loved by all.'"
+      },
+      {
+        "question": "What was Meena doing when her teacher was teaching in the 12th standard?",
+        "options": [
+          "She was sleeping.",
+          "She was talking to her friends.",
+          "She was writing her notes.",
+          "She was looking outside the window."
+        ],
+        "answer": 2,
+        "explanation": "The text says, 'The teacher was teaching, and Meena was writing her notes.'"
+      },
+      {
+        "question": "Situation: You are making a list of fruits you want to buy: apple, orange, banana, grapes. Which punctuation mark will you use repeatedly to separate them in a sentence?",
+        "options": [
+          "Full stop",
+          "Question mark",
+          "Capital letter",
+          "Comma"
+        ],
+        "answer": 3,
+        "explanation": "Commas are used to separate words in a list of three or more things."
+      },
+      {
+        "question": "Identify the sentence that uses the comma correctly.",
+        "options": [
+          "Car bus, and bike are vehicles.",
+          "Car, bus and bike are vehicles.",
+          "Car bus and, bike are vehicles.",
+          "Car, bus, and, bike are vehicles."
+        ],
+        "answer": 1,
+        "explanation": "The comma correctly separates 'Car' and 'bus' in the list."
+      },
+      {
+        "question": "Assertion (A): The people of Keeraikuppam lived happily even though they toiled in the sea every day.\nReason (R): They hated the sea and wanted to move to a city.",
+        "options": [
+          "Both A and R are true.",
+          "A is false, but R is true.",
+          "A is true, but R is false.",
+          "Both A and R are false."
+        ],
+        "answer": 2,
+        "explanation": "The text states they lived happily despite the hard work. There is no mention of them hating the sea or wanting to move."
+      },
+      {
+        "question": "Life Situation: If you see the seawater receding (going back) suddenly for hundreds of meters from the shore, what is the safest and most scientific action to take?",
+        "options": [
+          "Run towards the sea to catch fish.",
+          "Stand on the shore to take photos.",
+          "Run immediately to higher ground away from the sea.",
+          "Wait for the bell to ring."
+        ],
+        "answer": 2,
+        "explanation": "Water receding is a clear warning sign of an approaching Tsunami. The safest action is to evacuate to higher ground."
+      },
+      {
+        "question": "Why is the punctuation mark called an 'interrogation mark'?",
+        "options": [
+          "Because it is used to end a statement.",
+          "Because it is used for abbreviations.",
+          "Because it is used to ask questions (interrogate).",
+          "Because it looks like a dot."
+        ],
+        "answer": 2,
+        "explanation": "Interrogation means to ask questions. Hence, a question mark is an interrogation mark."
+      },
+      {
+        "question": "Higher Order Thinking: Why did Meena's cheeks become moist before the official even arrived at the school?",
+        "options": [
+          "She had an eye infection.",
+          "She was remembering her past and her time at the rehabilitation centre.",
+          "The teacher scolded her.",
+          "It was raining."
+        ],
+        "answer": 1,
+        "explanation": "The text says, 'All this seemed like, it happened yesterday... Meena wiped her cheeks.' She was crying while reminiscing about her past."
+      },
+      {
+        "question": "Higher Order Thinking: The story 'Appa' proves that 'Family is not always defined by blood.' Which action from the story BEST supports this statement?",
+        "options": [
+          "Meena's mother trying to save her.",
+          "The villagers gathering to see the wave.",
+          "The official showering fatherly love on an orphan girl and her calling him Appa.",
+          "Meena writing her English notes."
+        ],
+        "answer": 2,
+        "explanation": "The official had no blood relation to Meena, yet he cared for her like a father, proving family can be formed through love and care."
+      },
+      {
+        "question": "Find the grammatically and correctly punctuated sentence among the following:",
+        "options": [
+          "we live in india.",
+          "We live in india.",
+          "we live in India.",
+          "We live in India."
+        ],
+        "answer": 0,
+        "explanation": "'We' starts with a capital 'W' (beginning of sentence), 'India' starts with a capital 'I' (proper noun), and it ends with a full stop."
+      },
+      {
+        "question": "What does a comma look like according to the Let Us Build section?",
+        "options": [
+          "A line",
+          "A dot with a tail",
+          "Two dots",
+          "A crooked mark"
+        ],
+        "answer": 1,
+        "explanation": "The comma introduces itself as: 'I am a comma. I look like a dot with tail.'"
+      }
+    ]
+  }
+}
