@@ -767,6 +767,22 @@
                                     isTestMode: window.IS_TEST_MODE === true
                                 });
                                 console.log('✅ Free exam result saved to Firebase!');
+
+                                // 3️⃣ 📊 தேதி வாரியான tracking (Firebase Console-ல் live பார்க்க)
+                                try {
+                                    const trackRef = db.ref(`paper1_exam_tracking/${date}`);
+                                    // total count-ஐ atomic-ஆ increment பண்ணு
+                                    await trackRef.child('total').transaction(c => (c || 0) + 1);
+                                    // மாணவர் விவரம் (பெயர், மொபைல், score)
+                                    await trackRef.child(`students/${deviceId}`).set({
+                                        studentName,
+                                        phoneNumber: phone,
+                                        category: studentCategory,
+                                        score,
+                                        completedAt: new Date().toISOString()
+                                    });
+                                    console.log('✅ Date-wise tracking updated');
+                                } catch (te) { console.warn('tracking skip:', te); }
                             } else {
                                 // Firebase compat SDK not loaded — try to load it
                                 console.warn('⚠️ Firebase compat SDK not found, loading now...');
@@ -809,6 +825,17 @@
                                     isTestMode: window.IS_TEST_MODE === true
                                 });
                                 console.log('✅ Saved after lazy-loading Firebase SDK');
+
+                                // 3️⃣ 📊 தேதி வாரியான tracking
+                                try {
+                                    const trackRef = db.ref(`paper1_exam_tracking/${date}`);
+                                    await trackRef.child('total').transaction(c => (c || 0) + 1);
+                                    await trackRef.child(`students/${deviceId}`).set({
+                                        studentName, phoneNumber: phone, category: studentCategory,
+                                        score, completedAt: new Date().toISOString()
+                                    });
+                                    console.log('✅ Date-wise tracking updated');
+                                } catch (te) { console.warn('tracking skip:', te); }
                             }
                         } catch (err) {
                             console.error('❌ Firebase save error:', err);

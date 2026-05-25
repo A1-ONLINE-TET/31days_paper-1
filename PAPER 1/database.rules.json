@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "device_sessions": {
+      ".read": true,
+      ".write": true
+    },
+    "free_exam_results": {
+      ".read": true,
+      ".write": true
+    },
+    "device_locks": {
+      ".read": true,
+      ".write": true
+    },
+    "paper1_exam_tracking": {
+      ".read": true,
+      ".write": true,
+      "$date": {
+        "total": { ".validate": "newData.isNumber()" }
+      }
+    }
+  }
+}

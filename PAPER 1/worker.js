@@ -4,7 +4,7 @@
 //   2. Result Auto-Generation (scheduled at 10:15 PM IST daily)
 //   3. Manual generation endpoint for admin backup
 
-const FIREBASE_DB_URL = 'YOUR_PAPER1_FIREBASE_DB_URL'; // உதாரணம்: https://paper1-exam-default-rtdb.asia-southeast1.firebasedatabase.app
+const FIREBASE_DB_URL = 'https://tamil-nanban-default-rtdb.asia-southeast1.firebasedatabase.app';
 const ADMIN_KEY = 'A1ADMIN2025';
 
 // Community-wise pass cutoff percentages (TET standard)

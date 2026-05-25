@@ -1,4 +1,4 @@
-﻿/**
+/**
  * A1 LMS - Firestore Mock / Replacement
  * This file replaces the Firebase connection with local-only logic
  * as the project has moved away from Firebase authentication.
@@ -36,8 +36,10 @@ export async function saveUsersBulk(usersArray) {
     return true;
 }
 
-// Fetch User Profile - Deprecated as we are deterministic now
-export async function verifyUserPin(phoneNumber, pin = null) { return { success: true, user: { name: "மாணவர்", username: phoneNumber } }; }
+// Fetch User Profile - deterministic mock (PIN verification happens in auth.js)
+export async function verifyUserPin(phoneNumber, pin = null) {
+    console.log("Firestore mock: verifyUserPin called - No Firebase lookup.");
+    return { success: true, user: { name: "மாணவர்", username: phoneNumber } };
+}
 
 export const db = null;
-
