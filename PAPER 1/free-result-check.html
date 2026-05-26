@@ -503,7 +503,7 @@
         }
 
         async function downloadMyPDF() {
-            if (!myResult) { alert('முதலில் முடிவை load பண்ணுங்கள்'); return; }
+            if (!myResult) { alert('Please load your result first'); return; }
             const me = myResult;
             const cutoff = me.cutoff ?? getCutoff(me.category);
             const passed = me.passed ?? (me.percentage >= cutoff);
@@ -511,57 +511,56 @@
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF('p', 'mm', 'a4');
             const pageWidth = doc.internal.pageSize.width;
-            const hasTamil = await ensureTamilFont(doc);
-            const TF = hasTamil ? 'NotoTamil' : 'helvetica';
 
             // Header band
             doc.setFillColor(67, 56, 202);
-            doc.rect(0, 0, pageWidth, 36, 'F');
+            doc.rect(0, 0, pageWidth, 34, 'F');
             doc.setTextColor(255, 255, 255);
-            doc.setFont(TF, 'normal');
+            doc.setFont('helvetica', 'bold');
             doc.setFontSize(18);
-            doc.text(hasTamil ? 'தமிழ் நண்பன் கோச்சிங் சென்டர்' : 'TAMIL NANBAN COACHING CENTER', pageWidth/2, 13, { align:'center' });
+            doc.text('TAMIL NANBAN COACHING CENTER', pageWidth/2, 13, { align:'center' });
             doc.setFontSize(11);
             doc.setTextColor(254, 215, 102);
-            doc.text(hasTamil ? 'மெகா டெஸ்ட் சீரியஸ்' : 'MEGA TEST SERIES', pageWidth/2, 21, { align:'center' });
+            doc.text('MEGA TEST SERIES', pageWidth/2, 20, { align:'center' });
             doc.setFontSize(9);
             doc.setTextColor(255,255,255);
-            doc.text('Mobile: 63 69 37 14 52', pageWidth/2, 27, { align:'center' });
-            const titleText = hasTamil ? 'ஆசிரியர் தகுதி தேர்வு - தாள் 1' : 'Teacher Eligibility Test - Paper 1';
-            doc.setFontSize(8.5);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Mobile: 63 69 37 14 52', pageWidth/2, 26, { align:'center' });
+            doc.setFontSize(9);
             doc.setTextColor(220,230,255);
-            doc.text(`${titleText}  |  ${currentData.examDate}`, pageWidth/2, 32.5, { align:'center' });
+            doc.text(`Teacher Eligibility Test - Paper 1   |   ${currentData.examDate}`, pageWidth/2, 31, { align:'center' });
 
             // PASS / FAIL banner
             if (passed) doc.setFillColor(22,163,74); else doc.setFillColor(220,38,38);
-            doc.rect(0, 36, pageWidth, 14, 'F');
+            doc.rect(0, 34, pageWidth, 14, 'F');
             doc.setTextColor(255,255,255);
-            doc.setFontSize(15);
-            doc.text(hasTamil ? (passed ? 'தேர்ச்சி (PASS)' : 'தேர்ச்சியில்லை (FAIL)') : (passed ? 'PASS' : 'FAIL'), pageWidth/2, 45.5, { align:'center' });
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(16);
+            doc.text(passed ? 'PASS' : 'FAIL', pageWidth/2, 43.5, { align:'center' });
 
             // Student name
             doc.setTextColor(30,41,59);
             doc.setFontSize(15);
-            doc.text(me.name || 'Student', pageWidth/2, 60, { align:'center' });
+            doc.text(String(me.name || 'Student'), pageWidth/2, 58, { align:'center' });
 
-            // Detail table (NO community in shared view? keep in personal — it's their own)
+            // Detail table (English labels)
             const rows = [
-                [hasTamil?'தரவரிசை (Rank)':'Rank', String(me.rank || '-')],
-                [hasTamil?'மதிப்பெண் (Score)':'Score', `${me.score} / ${me.total}`],
-                [hasTamil?'சதவீதம் (Percentage)':'Percentage', `${(me.percentage||0).toFixed(1)}%`],
-                [hasTamil?'இனப்பிரிவு (Community)':'Community', me.category || 'OC'],
-                [hasTamil?'தேர்ச்சி வரம்பு (Cutoff)':'Cutoff', `${cutoff}%`],
-                [hasTamil?'சரியான விடைகள்':'Correct', String(me.correct || 0)],
-                [hasTamil?'தவறான விடைகள்':'Wrong', String(me.wrong || 0)],
-                [hasTamil?'விடையளிக்காதவை':'Unanswered', String(me.unanswered || 0)],
-                [hasTamil?'மொத்த பங்கேற்பாளர்கள்':'Total Students', String(currentData.totalStudents || currentData.results.length)]
+                ['Rank', String(me.rank || '-')],
+                ['Score', `${me.score} / ${me.total}`],
+                ['Percentage', `${(me.percentage||0).toFixed(1)}%`],
+                ['Community', String(me.category || 'OC')],
+                ['Pass Cutoff', `${cutoff}%`],
+                ['Correct Answers', String(me.correct || 0)],
+                ['Wrong Answers', String(me.wrong || 0)],
+                ['Unanswered', String(me.unanswered || 0)],
+                ['Total Students', String(currentData.totalStudents || currentData.results.length)]
             ];
             doc.autoTable({
                 body: rows,
-                startY: 68,
-                styles: { font: TF, fontSize: 11, cellPadding: 3.5, lineColor:[226,232,240], lineWidth:0.2 },
+                startY: 66,
+                styles: { font: 'helvetica', fontSize: 11, cellPadding: 3.5, lineColor:[226,232,240], lineWidth:0.2 },
                 columnStyles: {
-                    0: { fillColor:[238,242,255], textColor:[55,48,163], fontStyle:'bold', cellWidth: 95 },
+                    0: { fillColor:[238,242,255], textColor:[55,48,163], fontStyle:'bold', cellWidth: 90 },
                     1: { halign:'center', fillColor:[255,255,255], textColor:[30,41,59], fontStyle:'bold' }
                 },
                 margin: { left: 20, right: 20 }
