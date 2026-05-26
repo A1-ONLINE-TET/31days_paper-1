@@ -92,7 +92,6 @@
         <div class="control-panel">
             <div class="mode-tabs">
                 <button class="mode-tab active" id="modeIndividual" onclick="setMode('individual')">👤 எனது முடிவு</button>
-                <button class="mode-tab" id="modeFull" onclick="setMode('full')">📋 முழு பட்டியல்</button>
             </div>
 
             <div class="control-row">
@@ -275,10 +274,9 @@
         function setMode(mode) {
             currentMode = mode;
             document.getElementById('modeIndividual').classList.toggle('active', mode === 'individual');
-            document.getElementById('modeFull').classList.toggle('active', mode === 'full');
             document.getElementById('mobileRow').style.display = mode === 'individual' ? 'grid' : 'none';
             document.getElementById('individualResult').style.display = 'none';
-            document.getElementById('fullList').style.display = 'none';
+            const fl = document.getElementById('fullList'); if (fl) fl.style.display = 'none';
             document.getElementById('emptyState').style.display = 'none';
         }
 
