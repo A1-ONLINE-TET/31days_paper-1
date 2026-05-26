@@ -94,8 +94,9 @@ export default {
         });
       }
       const examDate = body.examDate || new Date().toISOString().split('T')[0];
+      const includeTest = body.includeTest === true;
       try {
-        const result = await generateAndStore(examDate, env);
+        const result = await generateAndStore(examDate, env, includeTest);
         return new Response(JSON.stringify({ success: true, ...result }), { headers: corsHeaders });
       } catch (err) {
         return new Response(JSON.stringify({ error: err.message }), {
@@ -175,7 +176,7 @@ export default {
 // ═══════════════════════════════════════════════════════
 // 🔥 Core: Read Firebase, generate JSONs, save to KV
 // ═══════════════════════════════════════════════════════
-async function generateAndStore(examDate, env) {
+async function generateAndStore(examDate, env, includeTest = false) {
   // 🚀 OPTIMIZED: Fetch ONLY today's records using Firebase REST query
   // Requires index: { "free_exam_results": { ".indexOn": ["examDate"] } }
   // This avoids downloading the entire (growing) tree — 12x cost reduction.
@@ -198,7 +199,7 @@ async function generateAndStore(examDate, env) {
     const r = allData[id];
     if (!r) continue;
     total++;
-    if (r.isTestMode) { testSkipped++; continue; }
+    if (r.isTestMode && !includeTest) { testSkipped++; continue; }
     if (r.examDate !== examDate) { dateSkipped++; continue; }
     if (!r.examFile) continue;
     

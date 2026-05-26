@@ -152,6 +152,10 @@
                 <h2 style="color:#f59e0b;margin-bottom:15px;">📅 தேர்வு தேதி தேர்வு</h2>
                 <label>Exam Date</label>
                 <input type="date" id="examDate">
+                <label style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:0.9rem;cursor:pointer;">
+                    <input type="checkbox" id="includeTest" style="width:auto;">
+                    🧪 Test results-ஐயும் சேர் (testing-க்கு மட்டும்)
+                </label>
                 <button onclick="generateResults()" id="genBtn">
                     🔥 Firebase-ல் இருந்து Results Generate செய் (Preview + PDF)
                 </button>
@@ -306,10 +310,11 @@
             kvBtn.textContent = '⏳ Publishing...';
             log(`\n🚀 KV Publish தொடங்கியது (${examDate})...`, 'warn');
             try {
+                const includeTest = document.getElementById('includeTest')?.checked === true;
                 const res = await fetch(`${workerUrl}/api/admin-generate-results`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ adminKey: ADMIN_KEY, examDate })
+                    body: JSON.stringify({ adminKey: ADMIN_KEY, examDate, includeTest })
                 });
                 const data = await res.json();
                 if (!res.ok || data.error) throw new Error(data.error || `HTTP ${res.status}`);
@@ -359,7 +364,7 @@
                     if (!r) return;
                     totalRecords++;
                     
-                    if (r.isTestMode) { testModeSkipped++; return; }
+                    if (r.isTestMode && !(document.getElementById('includeTest')?.checked)) { testModeSkipped++; return; }
                     if (r.examDate !== selectedDate) { otherDatesSkipped++; return; }
                     if (!r.examFile) return;
                     
