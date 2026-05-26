@@ -2,12 +2,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "paper1-exam",
   "compatibility_date": "2025-09-27",
-  "main": "worker.js",
+  "main": "PAPER 1/worker.js",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": ".",
+    "directory": "PAPER 1",
     "binding": "ASSETS"
   },
   "compatibility_flags": [

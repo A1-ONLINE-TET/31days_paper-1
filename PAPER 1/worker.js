@@ -42,6 +42,24 @@ export default {
     }
 
     // ───────────────────────────────────────────────────
+    // 🕐 Reliable IST server time (மாணவர் மொபைல் நேரம் நம்பாம)
+    // GET /api/now  →  { date: "YYYY-MM-DD", iso, hour, minute }
+    // ───────────────────────────────────────────────────
+    if (path === '/api/now') {
+      const nowUTC = new Date();
+      // IST = UTC + 5:30
+      const ist = new Date(nowUTC.getTime() + (5 * 60 + 30) * 60 * 1000);
+      const date = ist.toISOString().split('T')[0];   // YYYY-MM-DD (IST)
+      const hour = ist.getUTCHours();
+      const minute = ist.getUTCMinutes();
+      return new Response(JSON.stringify({
+        date, iso: ist.toISOString(), hour, minute
+      }), {
+        headers: { 'Content-Type': 'application/json', ...corsHeaders }
+      });
+    }
+
+    // ───────────────────────────────────────────────────
     // 📊 Serve generated result files (from KV)
     // GET /results/{paperKey}_results_{date}.json
     // ───────────────────────────────────────────────────

@@ -249,14 +249,23 @@
         let currentMode = 'individual';
         let myPhone = '';
 
-        // 📅 Result date: ALWAYS today (DD/MM/YYYY display, locked)
-        const defaultDate = new Date();
+        // 📅 Result date: ALWAYS today (server IST, மாணவர் மொபைல் நேரம் நம்பாம)
         const dateEl = document.getElementById('examDate');
-        const todayISO = defaultDate.toISOString().split('T')[0]; // YYYY-MM-DD for fetch
-        const dd = String(defaultDate.getDate()).padStart(2,'0');
-        const mm = String(defaultDate.getMonth()+1).padStart(2,'0');
-        const yyyy = defaultDate.getFullYear();
-        dateEl.value = `${dd}/${mm}/${yyyy}`;  // DD/MM/YYYY display
+        let todayISO;
+        // device fallback first (instant display)
+        const _dev = new Date();
+        todayISO = _dev.toISOString().split('T')[0];
+        dateEl.value = `${String(_dev.getDate()).padStart(2,'0')}/${String(_dev.getMonth()+1).padStart(2,'0')}/${_dev.getFullYear()}`;
+        // then correct with reliable server time
+        (async () => {
+            try {
+                const r = await fetch('/api/now');
+                const d = await r.json();
+                todayISO = d.date;  // YYYY-MM-DD (IST server)
+                const [yy, mm, dd] = d.date.split('-');
+                dateEl.value = `${dd}/${mm}/${yy}`;  // DD/MM/YYYY display
+            } catch (e) { /* keep device fallback */ }
+        })();
 
         const savedMobile = localStorage.getItem('studentMobile');
         if (savedMobile && /^[0-9]{10}$/.test(savedMobile)) {
@@ -594,7 +603,7 @@
             doc.text('Mobile: 63 69 37 14 52', pageWidth / 2, 28, { align: 'center' });
             const titleText = hasTamil
                 ? (currentData.paper === 'paper1' ? 'பேப்பர் 1 - தமிழ் + கற்பித்தல் முறை' : 'பேப்பர் 1 - குழந்தை மேம்பாடு')
-                : (currentData.paper === 'paper1' ? 'Paper 2 - Mathematics + Science' : 'Paper 1 - Child Development');
+                : 'ஆசிரியர் தகுதி தேர்வு - தாள் 1 (Paper 1)';
             doc.setTextColor(220, 230, 255);
             doc.setFontSize(9);
             doc.text(titleText, pageWidth / 2, 34, { align: 'center' });

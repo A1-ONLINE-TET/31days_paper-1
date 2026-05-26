@@ -411,7 +411,15 @@
             console.log('⏳ Checking registration...');
 
             try {
-                const today = new Date().toISOString().split('T')[0];
+                // 🕐 சரியான IST தேதியை Worker-ல் இருந்து எடு (மாணவர் மொபைல் நேரம் நம்பாம)
+                let today;
+                try {
+                    const tRes = await fetch('/api/now');
+                    const tData = await tRes.json();
+                    today = tData.date;  // YYYY-MM-DD (IST, server)
+                } catch (e) {
+                    today = new Date().toISOString().split('T')[0];  // fallback
+                }
                 const examKey = examFile.replace('.json', '');
                 const deviceId = `${mobile}_${today}_${examKey}`;
                 const deviceLockPath = `device_locks/${DEVICE_FP}_${today}_${examKey}`;
