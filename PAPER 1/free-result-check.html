@@ -210,7 +210,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.0/jspdf.plugin.autotable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/tamil-font.js"></script>
 
     <script>
         const CUTOFFS = { 'OC': 60, 'GENERAL': 60, 'BC': 50, 'BCM': 50, 'MBC': 50, 'DNC': 50, 'SC': 40, 'SCA': 40, 'ST': 40, 'PWD': 40 };
@@ -222,15 +222,11 @@
         async function ensureTamilFont(doc) {
             try {
                 if (!_tamilFontB64) {
-                    const url = 'https://cdn.jsdelivr.net/gh/google/fonts/ofl/notosanstamil/NotoSansTamil%5Bwdth%2Cwght%5D.ttf';
-                    const res = await fetch(url);
-                    if (!res.ok) throw new Error('font fetch failed');
-                    const buf = await res.arrayBuffer();
-                    // arraybuffer → base64
-                    let binary = '';
-                    const bytes = new Uint8Array(buf);
-                    for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
-                    _tamilFontB64 = btoa(binary);
+                    if (window.NOTO_TAMIL_B64) {
+                        _tamilFontB64 = window.NOTO_TAMIL_B64;
+                    } else {
+                        throw new Error('embedded font not loaded');
+                    }
                 }
                 doc.addFileToVFS('NotoTamil.ttf', _tamilFontB64);
                 doc.addFont('NotoTamil.ttf', 'NotoTamil', 'normal');
