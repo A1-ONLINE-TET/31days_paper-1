@@ -187,7 +187,6 @@
                         <tr>
                             <th style="width:50px;text-align:center;">Rank</th>
                             <th>பெயர்</th>
-                            <th style="width:55px;text-align:center;">இனம்</th>
                             <th style="width:70px;text-align:center;">மதிப்பெண்</th>
                             <th style="width:50px;text-align:center;">%</th>
                             <th style="width:60px;text-align:center;">முடிவு</th>
@@ -211,6 +210,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.0/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <script>
         const CUTOFFS = { 'OC': 60, 'GENERAL': 60, 'BC': 50, 'BCM': 50, 'MBC': 50, 'DNC': 50, 'SC': 40, 'SCA': 40, 'ST': 40, 'PWD': 40 };
@@ -405,7 +405,6 @@
                 return `<tr class="${isMe ? 'me-row' : ''}">
                     <td class="rank-cell ${rankClass}">${medal}</td>
                     <td class="name-cell">${r.name || 'மாணவர்'}${isMe ? ' ⭐' : ''}</td>
-                    <td class="comm-cell">${r.category || 'OC'}</td>
                     <td class="score-cell">${r.score}/${r.total}</td>
                     <td class="pct-cell">${(r.percentage || 0).toFixed(1)}%</td>
                     <td class="result-cell ${r.passed ? 'result-pass' : 'result-fail'}">${r.passed ? 'PASS' : 'FAIL'}</td>
@@ -514,70 +513,74 @@
             const me = myResult;
             const cutoff = me.cutoff ?? getCutoff(me.category);
             const passed = me.passed ?? (me.percentage >= cutoff);
-            const examT = currentData.paper === 'paper1'
-                ? 'பேப்பர் 1 - தமிழ் + கற்பித்தல் முறை'
-                : 'பேப்பர் 1 - குழந்தை மேம்பாடு';
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const pageWidth = doc.internal.pageSize.width;
+            const hasTamil = await ensureTamilFont(doc);
+            const TF = hasTamil ? 'NotoTamil' : 'helvetica';
+
+            // Header band
+            doc.setFillColor(67, 56, 202);
+            doc.rect(0, 0, pageWidth, 36, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont(TF, 'normal');
+            doc.setFontSize(18);
+            doc.text(hasTamil ? 'தமிழ் நண்பன் கோச்சிங் சென்டர்' : 'TAMIL NANBAN COACHING CENTER', pageWidth/2, 13, { align:'center' });
+            doc.setFontSize(11);
+            doc.setTextColor(254, 215, 102);
+            doc.text(hasTamil ? 'மெகா டெஸ்ட் சீரியஸ்' : 'MEGA TEST SERIES', pageWidth/2, 21, { align:'center' });
+            doc.setFontSize(9);
+            doc.setTextColor(255,255,255);
+            doc.text('Mobile: 63 69 37 14 52', pageWidth/2, 27, { align:'center' });
+            const titleText = hasTamil ? 'ஆசிரியர் தகுதி தேர்வு - தாள் 1' : 'Teacher Eligibility Test - Paper 1';
+            doc.setFontSize(8.5);
+            doc.setTextColor(220,230,255);
+            doc.text(`${titleText}  |  ${currentData.examDate}`, pageWidth/2, 32.5, { align:'center' });
+
+            // PASS / FAIL banner
+            if (passed) doc.setFillColor(22,163,74); else doc.setFillColor(220,38,38);
+            doc.rect(0, 36, pageWidth, 14, 'F');
+            doc.setTextColor(255,255,255);
+            doc.setFontSize(15);
+            doc.text(hasTamil ? (passed ? 'தேர்ச்சி (PASS)' : 'தேர்ச்சியில்லை (FAIL)') : (passed ? 'PASS' : 'FAIL'), pageWidth/2, 45.5, { align:'center' });
+
+            // Student name
+            doc.setTextColor(30,41,59);
+            doc.setFontSize(15);
+            doc.text(me.name || 'Student', pageWidth/2, 60, { align:'center' });
+
+            // Detail table (NO community in shared view? keep in personal — it's their own)
             const rows = [
-                ['தரவரிசை (Rank)', me.rank || '-'],
-                ['மதிப்பெண் (Score)', `${me.score} / ${me.total}`],
-                ['சதவீதம் (Percentage)', `${(me.percentage || 0).toFixed(1)}%`],
-                ['சமூகம் (Community)', me.category || 'OC'],
-                ['தேர்ச்சி வரம்பு (Cutoff)', `${cutoff}%`],
-                ['சரியான விடைகள்', me.correct || 0],
-                ['தவறான விடைகள்', me.wrong || 0],
-                ['விடையளிக்காதவை', me.unanswered || 0],
-                ['மொத்த பங்கேற்பாளர்கள்', currentData.totalStudents || currentData.results.length]
+                [hasTamil?'தரவரிசை (Rank)':'Rank', String(me.rank || '-')],
+                [hasTamil?'மதிப்பெண் (Score)':'Score', `${me.score} / ${me.total}`],
+                [hasTamil?'சதவீதம் (Percentage)':'Percentage', `${(me.percentage||0).toFixed(1)}%`],
+                [hasTamil?'இனப்பிரிவு (Community)':'Community', me.category || 'OC'],
+                [hasTamil?'தேர்ச்சி வரம்பு (Cutoff)':'Cutoff', `${cutoff}%`],
+                [hasTamil?'சரியான விடைகள்':'Correct', String(me.correct || 0)],
+                [hasTamil?'தவறான விடைகள்':'Wrong', String(me.wrong || 0)],
+                [hasTamil?'விடையளிக்காதவை':'Unanswered', String(me.unanswered || 0)],
+                [hasTamil?'மொத்த பங்கேற்பாளர்கள்':'Total Students', String(currentData.totalStudents || currentData.results.length)]
             ];
-            const rowsHtml = rows.map(([k,v]) => `
-                <tr>
-                    <td style="background:#eef2ff;color:#3730a3;font-weight:700;padding:10px 14px;border:1px solid #e2e8f0;">${k}</td>
-                    <td style="background:#fff;color:#1e293b;font-weight:700;padding:10px 14px;border:1px solid #e2e8f0;text-align:center;">${v}</td>
-                </tr>`).join('');
+            doc.autoTable({
+                body: rows,
+                startY: 68,
+                styles: { font: TF, fontSize: 11, cellPadding: 3.5, lineColor:[226,232,240], lineWidth:0.2 },
+                columnStyles: {
+                    0: { fillColor:[238,242,255], textColor:[55,48,163], fontStyle:'bold', cellWidth: 95 },
+                    1: { halign:'center', fillColor:[255,255,255], textColor:[30,41,59], fontStyle:'bold' }
+                },
+                margin: { left: 20, right: 20 }
+            });
 
-            const html = `
-                <div style="font-family:'Noto Sans Tamil','Segoe UI',sans-serif;width:600px;margin:0 auto;padding:0;">
-                    <!-- Header -->
-                    <div style="background:#4338ca;padding:22px 20px 16px;text-align:center;border-radius:12px 12px 0 0;">
-                        <div style="color:#fff;font-size:22px;font-weight:800;margin-bottom:4px;">தமிழ் நண்பன் கோச்சிங் சென்டர்</div>
-                        <div style="color:#fde68a;font-size:14px;font-weight:700;margin-bottom:4px;">மெகா டெஸ்ட் சீரியஸ்</div>
-                        <div style="color:#fff;font-size:11px;">Mobile: 63 69 37 14 52</div>
-                        <div style="color:#c7d2fe;font-size:11px;margin-top:4px;">${examT} | ${currentData.examDate}</div>
-                    </div>
-                    <!-- PASS/FAIL -->
-                    <div style="background:${passed?'#16a34a':'#dc2626'};padding:14px;text-align:center;">
-                        <span style="color:#fff;font-size:20px;font-weight:800;">
-                            ${passed ? '✅ தேர்ச்சி (PASS)' : '❌ தேர்ச்சியில்லை (FAIL)'}
-                        </span>
-                    </div>
-                    <!-- Name -->
-                    <div style="text-align:center;padding:16px;background:#f8fafc;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;">
-                        <div style="font-size:20px;font-weight:800;color:#1e293b;">${me.name || 'Student'}</div>
-                    </div>
-                    <!-- Table -->
-                    <table style="width:100%;border-collapse:collapse;">
-                        ${rowsHtml}
-                    </table>
-                    <!-- Footer -->
-                    <div style="background:#f1f5f9;padding:10px;text-align:center;border-radius:0 0 12px 12px;border:1px solid #e2e8f0;border-top:none;">
-                        <span style="color:#64748b;font-size:10px;">உருவாக்கியது: ${new Date().toLocaleString('ta-IN')} | தமிழ் நண்பன்</span>
-                    </div>
-                </div>`;
+            // Footer
+            const fy = doc.internal.pageSize.height - 10;
+            doc.setFontSize(8);
+            doc.setTextColor(100,116,139);
+            doc.setFont('helvetica','normal');
+            doc.text(`Generated: ${new Date().toLocaleString('en-IN')}  |  Tamil Nanban`, pageWidth/2, fy, { align:'center' });
 
-            // Create temp element
-            const el = document.createElement('div');
-            el.innerHTML = html;
-            el.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:640px;';
-            document.body.appendChild(el);
-
-            await html2pdf().set({
-                margin: 10,
-                filename: `my_result_${me.phone}_${currentData.paper}_${currentData.examDate}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, logging: false },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }).from(el).save();
-
-            document.body.removeChild(el);
+            doc.save(`my_result_${me.phone}_${currentData.examDate}.pdf`);
         }
 
         async function downloadPDF() {
@@ -621,26 +624,25 @@
                 : [...currentData.results].sort((a,b) => a.rank - b.rank);
 
             const tableData = sortedData.map(r => [
-                r.rank, r.name || 'Student', r.category || 'OC',
+                r.rank, r.name || 'Student',
                 `${r.score}/${r.total}`, r.correct || 0, r.wrong || 0,
                 `${(r.percentage || 0).toFixed(1)}%`, r.passed ? 'PASS' : 'FAIL'
             ]);
 
             doc.autoTable({
-                head: [['Rank', 'Name', 'Comm.', 'Score', 'Correct', 'Wrong', '%', 'Result']],
+                head: [['Rank', 'Name', 'Score', 'Correct', 'Wrong', '%', 'Result']],
                 body: tableData,
                 startY: 50,
                 styles: { fontSize: 8.5, cellPadding: 2.5, lineColor: [200,200,200], lineWidth: 0.15, textColor: [30,41,59] },
                 headStyles: { fillColor: [67,56,202], textColor: 255, fontStyle: 'bold', halign: 'center', fontSize: 9 },
                 columnStyles: {
-                    0: { halign:'center', cellWidth:13, fillColor:[254,240,138], textColor:[113,63,18], fontStyle:'bold' },
-                    1: { cellWidth:46, fillColor:[219,234,254], textColor:[30,58,138], fontStyle:'bold' },
-                    2: { halign:'center', cellWidth:20, fillColor:[243,232,255], textColor:[88,28,135], fontStyle:'bold' },
-                    3: { halign:'center', cellWidth:22, fillColor:[209,250,229], textColor:[6,78,59], fontStyle:'bold' },
-                    4: { halign:'center', cellWidth:18, fillColor:[220,252,231], textColor:[22,101,52] },
-                    5: { halign:'center', cellWidth:16, fillColor:[254,226,226], textColor:[153,27,27] },
-                    6: { halign:'center', cellWidth:18, fillColor:[254,215,170], textColor:[124,45,18], fontStyle:'bold' },
-                    7: { halign:'center', cellWidth:18, fontStyle:'bold' }
+                    0: { halign:'center', cellWidth:15, fillColor:[254,240,138], textColor:[113,63,18], fontStyle:'bold' },
+                    1: { cellWidth:56, fillColor:[219,234,254], textColor:[30,58,138], fontStyle:'bold' },
+                    2: { halign:'center', cellWidth:24, fillColor:[209,250,229], textColor:[6,78,59], fontStyle:'bold' },
+                    3: { halign:'center', cellWidth:20, fillColor:[220,252,231], textColor:[22,101,52] },
+                    4: { halign:'center', cellWidth:18, fillColor:[254,226,226], textColor:[153,27,27] },
+                    5: { halign:'center', cellWidth:20, fillColor:[254,215,170], textColor:[124,45,18], fontStyle:'bold' },
+                    6: { halign:'center', cellWidth:20, fontStyle:'bold' }
                 },
                 didParseCell: function(cd) {
                     const row = sortedData[cd.row.index];
@@ -650,7 +652,7 @@
                         else if (row?.rank === 2) { cd.cell.styles.fillColor=[203,213,225]; cd.cell.styles.textColor=[30,41,59]; }
                         else if (row?.rank === 3) { cd.cell.styles.fillColor=[217,119,6]; cd.cell.styles.textColor=[255,255,255]; }
                     }
-                    if (cd.column.index === 7) {
+                    if (cd.column.index === 6) {
                         if (row?.passed) { cd.cell.styles.fillColor=[34,197,94]; cd.cell.styles.textColor=[255,255,255]; }
                         else { cd.cell.styles.fillColor=[239,68,68]; cd.cell.styles.textColor=[255,255,255]; }
                     }
