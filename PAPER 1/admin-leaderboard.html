@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — தமிழ் நண்பன்</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+Tamil:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit','Noto Sans Tamil',sans-serif;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;min-height:100vh;padding:18px}
+.container{max-width:1100px;margin:0 auto}
+h1{color:#f59e0b;font-size:1.8rem;font-weight:800;margin-bottom:4px}
+.subtitle{color:#94a3b8;margin-bottom:22px;font-size:.92rem}
+.card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.card h2{color:#fbbf24;font-size:1.15rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+label{display:block;color:#cbd5e1;font-weight:600;margin-bottom:5px;font-size:.85rem}
+input,select{width:100%;padding:10px 12px;background:#0f172a;border:1px solid #475569;border-radius:8px;color:#e2e8f0;font-family:inherit;font-size:.92rem}
+input:focus,select:focus{outline:none;border-color:#fbbf24}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+.btn{padding:11px 18px;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-family:inherit;font-size:.92rem;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.btn-primary{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(245,158,11,.4)}
+.btn-secondary{background:#475569;color:#fff}
+.btn-secondary:hover{background:#64748b}
+.btn-success{background:linear-gradient(135deg,#10b981,#059669);color:#fff}
+.btn-success:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(16,185,129,.4)}
+.btn-pink{background:linear-gradient(135deg,#ec4899,#db2777);color:#fff}
+.btn-pink:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(236,72,153,.4)}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:15px 0}
+.stat{background:#0f172a;border:1px solid #334155;border-radius:10px;padding:13px;text-align:center}
+.stat-val{font-size:1.5rem;font-weight:800;color:#fbbf24}
+.stat-lbl{font-size:.78rem;color:#94a3b8;margin-top:3px}
+.table-wrap{background:#0f172a;border-radius:10px;padding:6px;max-height:480px;overflow-y:auto;border:1px solid #334155}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th{background:#334155;color:#fbbf24;padding:9px 8px;text-align:left;position:sticky;top:0;font-weight:700}
+td{padding:8px;border-bottom:1px solid #1e293b;color:#cbd5e1}
+tr:hover td{background:#1e293b}
+.badge-pass{background:#16a34a;color:#fff;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:700}
+.badge-fail{background:#dc2626;color:#fff;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:700}
+.rank-1{color:#fbbf24;font-weight:900}
+.rank-2{color:#cbd5e1;font-weight:800}
+.rank-3{color:#fb923c;font-weight:800}
+.msg{padding:10px 14px;border-radius:8px;margin:10px 0;font-size:.88rem;display:none}
+.msg-info{background:#1e3a8a;color:#bfdbfe;border-left:3px solid #3b82f6;display:block}
+.msg-success{background:#14532d;color:#bbf7d0;border-left:3px solid #10b981}
+.msg-error{background:#7f1d1d;color:#fecaca;border-left:3px solid #ef4444}
+.msg-warn{background:#78350f;color:#fde68a;border-left:3px solid #f59e0b}
+.loader{display:none;text-align:center;padding:20px;color:#fbbf24}
+.loader.active{display:block}
+.login-overlay{position:fixed;inset:0;background:rgba(15,23,42,.97);display:flex;align-items:center;justify-content:center;z-index:9999}
+.login-box{background:#1e293b;border:1px solid #fbbf24;border-radius:14px;padding:30px;max-width:400px;width:90%;text-align:center}
+.login-box h2{color:#fbbf24;margin-bottom:16px}
+.login-box input{margin:10px 0;text-align:center;font-size:1.2rem;letter-spacing:.3em}
+.progress{height:6px;background:#334155;border-radius:3px;overflow:hidden;margin-top:8px;display:none}
+.progress.active{display:block}
+.progress-bar{height:100%;background:linear-gradient(90deg,#f59e0b,#fbbf24);width:0;transition:width .3s}
+a{color:#fbbf24}
+</style>
+</head>
+<body>
+
+<div class="login-overlay" id="loginOverlay">
+    <div class="login-box">
+        <h2>🔐 Admin Login</h2>
+        <p style="color:#94a3b8;font-size:.9rem;margin-bottom:10px">Admin PIN உள்ளிடவும்</p>
+        <input type="password" id="pinInput" placeholder="****" maxlength="6">
+        <button class="btn btn-primary" style="width:100%;margin-top:10px;justify-content:center" onclick="checkPin()">உள் நுழை</button>
+        <p style="color:#64748b;font-size:.78rem;margin-top:14px">PIN தவறானால் இந்த page வேலை செய்யாது</p>
+    </div>
+</div>
+
+<div class="container" id="mainPanel" style="display:none">
+
+<h1>🎯 Admin Dashboard</h1>
+<p class="subtitle">தமிழ் நண்பன் — Live முடிவு மேலாண்மை மற்றும் வெற்றியாளர் கோப்பை</p>
+
+<div class="card">
+    <h2>📅 தேர்வு தேர்ந்தெடு</h2>
+    <div class="row">
+        <div>
+            <label>தேர்வு தேதி</label>
+            <input type="date" id="examDate">
+        </div>
+        <div>
+            <label>பேப்பர்</label>
+            <select id="paperSelect">
+                <option value="paper1">பேப்பர் 1 — தமிழ் + கற்பித்தல் முறை</option>
+                <option value="paper2">பேப்பர் 1 — குழந்தை மேம்பாடு</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn btn-primary" onclick="loadData()">🔄 Live முடிவுகளை ஏற்று</button>
+    <button class="btn btn-secondary" onclick="loadBothPapers()">📊 இரு பேப்பருக்கும் summary</button>
+    <div id="msg" class="msg"></div>
+    <div class="loader" id="loader">⏳ Firebase-ல் இருந்து live data ஏற்றப்படுகிறது...</div>
+</div>
+
+<div class="card" id="summaryCard" style="display:none">
+    <h2>📊 Summary</h2>
+    <div class="stat-grid">
+        <div class="stat"><div class="stat-val" id="sTotal">0</div><div class="stat-lbl">மொத்த மாணவர்</div></div>
+        <div class="stat"><div class="stat-val" id="sPass" style="color:#10b981">0</div><div class="stat-lbl">தேர்ச்சி</div></div>
+        <div class="stat"><div class="stat-val" id="sFail" style="color:#ef4444">0</div><div class="stat-lbl">தேர்ச்சி இல்லை</div></div>
+        <div class="stat"><div class="stat-val" id="sTopScore">0</div><div class="stat-lbl">அதிக மதிப்பெண்</div></div>
+        <div class="stat"><div class="stat-val" id="sAvg">0%</div><div class="stat-lbl">சராசரி %</div></div>
+    </div>
+</div>
+
+<div class="card" id="searchCard" style="display:none">
+    <h2>🔍 மாணவர் தேடு (Phone)</h2>
+    <div class="row">
+        <input type="text" id="phoneSearch" placeholder="10 இலக்க Phone எண்" maxlength="10" inputmode="numeric">
+        <button class="btn btn-secondary" onclick="searchStudent()">இந்த தேதியில் தேடு</button>
+    </div>
+    <button class="btn btn-primary" style="margin-top:8px;width:100%;justify-content:center" onclick="deepSearchStudent()">🔥 Firebase-ல் முழுவதும் தேடு (எல்லா தேதி, paper)</button>
+    <div id="searchResult" style="margin-top:12px"></div>
+</div>
+
+<!-- 📋 MISSING STUDENTS CHECK -->
+<div class="card" id="missingCard" style="display:none">
+    <h2>📋 Missing Students Check (Bulk Compare)</h2>
+    <p style="color:#94a3b8;font-size:.85rem;margin-bottom:10px">எதிர்பார்த்த மாணவர்களின் phone numbers-ஐ கீழே paste செய்யவும் (ஒரு line-க்கு ஒரு phone, அல்லது comma/space-வால் பிரிக்கவும்). யார் submit செய்யவில்லை என்று காட்டும்.</p>
+    <textarea id="expectedPhones" placeholder="9876543210&#10;9876543211&#10;9876543212&#10;..." style="width:100%;padding:10px;background:#0f172a;border:1px solid #475569;border-radius:8px;color:#e2e8f0;font-family:inherit;font-size:.92rem;min-height:120px;resize:vertical"></textarea>
+    <button class="btn btn-primary" style="margin-top:8px;width:100%;justify-content:center" onclick="checkMissing()">📊 Missing மாணவர்களை கண்டுபிடி</button>
+    <div id="missingResult" style="margin-top:12px"></div>
+</div>
+
+<div class="card" id="leaderboardCard" style="display:none">
+    <h2>🏆 முழு பட்டியல் <span style="color:#94a3b8;font-size:.78rem;font-weight:400" id="leaderCount"></span></h2>
+    <div class="btn-row" style="margin-bottom:10px">
+        <button class="btn btn-success" onclick="downloadFullPDF()">📄 முழு PDF (இனம் இல்லை)</button>
+        <button class="btn btn-pink" onclick="downloadCertificateGIF('top1')">🥇 இன்றைய வெற்றியாளர் (Animated)</button>
+        <button class="btn btn-pink" onclick="downloadTop10PDF()">🏆 Top 10 — PDF List</button>
+    </div>
+    <p style="color:#94a3b8;font-size:.78rem;margin-top:-4px;margin-bottom:8px">💡 Animated certificate HTML file-ஆக download ஆகும். Phone-ல் tap செய்தால் browser-ல் animation திறக்கும்.</p>
+    <div class="progress" id="zipProgress"><div class="progress-bar" id="zipBar"></div></div>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>Rank</th><th>பெயர்</th><th>இனம்</th><th>மதிப்பெண்</th><th>%</th><th>முடிவு</th></tr>
+            </thead>
+            <tbody id="leaderTbody"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card" id="bothSummary" style="display:none">
+    <h2>📊 இரு பேப்பர் சுருக்கம்</h2>
+    <div id="bothSummaryContent"></div>
+</div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.0/jspdf.plugin.autotable.min.js"></script>
+<!-- 🎬 gif.js for animated GIF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+<!-- 📦 JSZip for bundling Top 10 GIFs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script>
+const ADMIN_PIN = '8807';
+const SESSION_KEY = 'tn_admin_ok';
+
+function checkPin(){
+    const pin = document.getElementById('pinInput').value.trim();
+    if(pin === ADMIN_PIN){
+        try{sessionStorage.setItem(SESSION_KEY,'1')}catch(_){}
+        document.getElementById('loginOverlay').style.display='none';
+        document.getElementById('mainPanel').style.display='block';
+        initDate();
+    } else {
+        alert('தவறான PIN!');
+    }
+}
+document.getElementById('pinInput').addEventListener('keypress',e=>{if(e.key==='Enter')checkPin()});
+try{
+    if(sessionStorage.getItem(SESSION_KEY)==='1'){
+        document.getElementById('loginOverlay').style.display='none';
+        document.getElementById('mainPanel').style.display='block';
+        setTimeout(initDate, 50);
+    }
+}catch(_){}
+
+function initDate(){
+    const today = new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
+    const el = document.getElementById('examDate');
+    if(el){el.value = today; el.max = today;}
+}
+
+const FREE_EXAM_CONFIG = {
+    apiKey: "AIzaSyBvqXvd5M9GvcLRLFNC7LXeRUWH5ldKvyY",
+    authDomain: "paper-1-31.firebaseapp.com",
+    databaseURL: "https://paper-1-31-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "paper-1-31",
+    storageBucket: "paper-1-31.firebasestorage.app",
+    messagingSenderId: "551864023812",
+    appId: "1:551864023812:web:a5b80f33e9a0fec5ea24b0"
+};
+let _db = null;
+function getDB(){
+    if(_db) return _db;
+    const APP_NAME='free-exam-app';
+    const existing=(firebase.apps||[]).find(a=>a.name===APP_NAME);
+    const app=existing||firebase.initializeApp(FREE_EXAM_CONFIG,APP_NAME);
+    _db=app.database();
+    return _db;
+}
+
+const CUTOFFS={'OC':60,'GENERAL':60,'BC':50,'BCM':50,'MBC':50,'DNC':50,'SC':40,'SCA':40,'ST':40,'PWD':40};
+let currentResults=[], currentDate='', currentPaper='';
+
+function buildResults(allRecords,paperKey,examDate){
+    const byPhone=new Map();
+    for(const id in allRecords){
+        const r=allRecords[id];
+        if(!r||r.isTestMode) continue;
+        if(r.examDate!==examDate) continue;
+        if(!r.examFile) continue;
+        if(r.examFile.replace('.json','')!==paperKey) continue;
+        const phone=r.phoneNumber;
+        if(!phone) continue;
+        const cat=(r.category||'OC').toUpperCase();
+        const cutoff=CUTOFFS[cat]??60;
+        const pct=r.percentage||0;
+        const entry={
+            phone,name:r.studentName||'மாணவர்',category:r.category||'OC',
+            score:r.score||0,total:r.totalQuestions||0,
+            correct:r.correctAnswers||0,wrong:r.wrongAnswers||0,
+            unanswered:r.unanswered||0,percentage:pct,
+            timeTaken:r.timeTaken||0,completedAt:r.completedAt,
+            cutoff,passed:pct>=cutoff
+        };
+        const ex=byPhone.get(phone);
+        if(!ex||entry.score>ex.score||(entry.score===ex.score&&entry.timeTaken<ex.timeTaken)){
+            byPhone.set(phone,entry);
+        }
+    }
+    const arr=Array.from(byPhone.values());
+    arr.sort((a,b)=>b.score!==a.score?b.score-a.score:a.timeTaken-b.timeTaken);
+    arr.forEach((r,i)=>r.rank=i+1);
+    return arr;
+}
+
+function showMsg(text,type){
+    const el=document.getElementById('msg');
+    el.textContent=text;
+    el.className='msg msg-'+type;
+}
+
+async function loadData(){
+    const examDate=document.getElementById('examDate').value;
+    const paper=document.getElementById('paperSelect').value;
+    if(!examDate){alert('தேதியை தேர்வு செய்யவும்');return;}
+    document.getElementById('loader').classList.add('active');
+    document.getElementById('summaryCard').style.display='none';
+    document.getElementById('searchCard').style.display='none';
+    document.getElementById('missingCard').style.display='none';
+    document.getElementById('leaderboardCard').style.display='none';
+    document.getElementById('bothSummary').style.display='none';
+    try{
+        const db=getDB();
+        const snap=await db.ref('free_exam_results').orderByChild('examDate').equalTo(examDate).once('value');
+        const all=snap.val()||{};
+        currentResults=buildResults(all,paper,examDate);
+        currentDate=examDate;
+        currentPaper=paper;
+        document.getElementById('loader').classList.remove('active');
+        if(currentResults.length===0){
+            showMsg('இந்த தேதியில் இந்த பேப்பருக்கு பதிவுகள் இல்லை','warn');
+            return;
+        }
+        showMsg('✅ ' + currentResults.length + ' மாணவர்களின் முடிவுகள் ஏற்றப்பட்டன','success');
+        renderSummary();
+        renderLeaderboard();
+        document.getElementById('searchCard').style.display='block';
+        document.getElementById('missingCard').style.display='block';
+    }catch(err){
+        document.getElementById('loader').classList.remove('active');
+        showMsg('Firebase load failed: '+err.message,'error');
+        console.error(err);
+    }
+}
+
+function renderSummary(){
+    const total=currentResults.length;
+    const pass=currentResults.filter(r=>r.passed).length;
+    const avg=total?(currentResults.reduce((s,r)=>s+r.percentage,0)/total).toFixed(1):0;
+    const topScore=currentResults[0]?.score||0;
+    document.getElementById('sTotal').textContent=total;
+    document.getElementById('sPass').textContent=pass;
+    document.getElementById('sFail').textContent=total-pass;
+    document.getElementById('sTopScore').textContent=topScore;
+    document.getElementById('sAvg').textContent=avg+'%';
+    document.getElementById('summaryCard').style.display='block';
+}
+
+function renderLeaderboard(){
+    const tbody=document.getElementById('leaderTbody');
+    tbody.innerHTML='';
+    currentResults.forEach(r=>{
+        const rankCls=r.rank===1?'rank-1':r.rank===2?'rank-2':r.rank===3?'rank-3':'';
+        const tr=document.createElement('tr');
+        tr.innerHTML='<td class="'+rankCls+'">'+r.rank+'</td>'+
+            '<td><strong>'+escapeHtml(r.name)+'</strong><br><span style="color:#64748b;font-size:.72rem">'+r.phone+'</span></td>'+
+            '<td>'+escapeHtml(r.category)+'</td>'+
+            '<td>'+r.score+'/'+r.total+'</td>'+
+            '<td>'+r.percentage.toFixed(1)+'%</td>'+
+            '<td>'+(r.passed?'<span class="badge-pass">PASS</span>':'<span class="badge-fail">FAIL</span>')+'</td>';
+        tbody.appendChild(tr);
+    });
+    document.getElementById('leaderCount').textContent='('+currentResults.length+' மாணவர்)';
+    document.getElementById('leaderboardCard').style.display='block';
+}
+
+function escapeHtml(s){return (s||'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+function searchStudent(){
+    const phone=document.getElementById('phoneSearch').value.trim();
+    if(!/^\d{10}$/.test(phone)){alert('சரியான 10 இலக்க phone எண்');return;}
+    const r=currentResults.find(x=>x.phone===phone);
+    const out=document.getElementById('searchResult');
+    if(!r){
+        out.innerHTML='<div class="msg msg-error" style="display:block">❌ இந்த phone ('+phone+')-க்கு <strong>இந்த தேதி + paper</strong>-ல் பதிவு இல்லை!<br><br>💡 மேலே <strong>"🔥 Firebase-ல் முழுவதும் தேடு"</strong> button click செய்து வேறு தேதி/paper-ல் record இருக்கிறதா பார்க்கவும்.</div>';
+        return;
+    }
+    out.innerHTML='<div class="msg msg-success" style="display:block">'+
+        '✅ <strong>'+escapeHtml(r.name)+'</strong> ('+r.phone+') — '+escapeHtml(r.category)+'<br>'+
+        'Rank: <strong>#'+r.rank+'</strong> | மதிப்பெண்: <strong>'+r.score+'/'+r.total+'</strong> ('+r.percentage.toFixed(1)+'%) | '+
+        (r.passed?'<span class="badge-pass">PASS</span>':'<span class="badge-fail">FAIL</span>')+'<br>'+
+        '<span style="font-size:.78rem;color:#94a3b8">Completed: '+(r.completedAt||'?')+'</span>'+
+    '</div>';
+}
+
+// ═══════════════════════════════════════════════════════════
+// 🔥 DEEP FIREBASE SEARCH — find a student across ALL dates/papers
+// Uses phoneNumber index. Returns every record for this phone.
+// ═══════════════════════════════════════════════════════════
+async function deepSearchStudent(){
+    const phone=document.getElementById('phoneSearch').value.trim();
+    if(!/^\d{10}$/.test(phone)){alert('சரியான 10 இலக்க phone எண்');return;}
+    const out=document.getElementById('searchResult');
+    out.innerHTML='<div class="msg msg-info" style="display:block">⏳ Firebase-ல் '+phone+'-க்கு எல்லா records-ஐயும் தேடுகிறது...</div>';
+    try{
+        const db=getDB();
+        const snap=await db.ref('free_exam_results').orderByChild('phoneNumber').equalTo(phone).once('value');
+        const all=snap.val()||{};
+        const records=[];
+        for(const id in all){
+            const r=all[id];
+            if(!r) continue;
+            records.push({
+                id,
+                examDate:r.examDate||'?',
+                examFile:r.examFile||'?',
+                studentName:r.studentName||'மாணவர்',
+                category:r.category||'OC',
+                score:r.score||0,
+                totalQuestions:r.totalQuestions||0,
+                percentage:r.percentage||0,
+                isTestMode:!!r.isTestMode,
+                completedAt:r.completedAt||'?'
+            });
+        }
+        if(records.length===0){
+            out.innerHTML='<div class="msg msg-error" style="display:block">'+
+                '❌ <strong>Firebase-ல் '+phone+'-க்கு எந்த record-உம் இல்லை!</strong><br><br>'+
+                '<strong>இதன் அர்த்தம்:</strong><br>'+
+                '• மாணவர் தேர்வே எழுதவில்லை, அல்லது<br>'+
+                '• Submit button அழுத்தும் முன் browser மூடிவிட்டார், அல்லது<br>'+
+                '• Save fail ஆகி retry ஆகவில்லை<br><br>'+
+                '<strong>செய்ய வேண்டியது:</strong> மாணவரிடம் phone சரியா என்று confirm செய்யவும். தவறு என்றால் சரியான phone கொடுக்கச் சொல்லவும்.'+
+                '</div>';
+            return;
+        }
+        records.sort((a,b)=>{
+            if(a.examDate!==b.examDate) return b.examDate.localeCompare(a.examDate);
+            return (a.examFile||'').localeCompare(b.examFile||'');
+        });
+        let html='<div class="msg msg-success" style="display:block">'+
+            '✅ <strong>'+phone+'</strong> ('+escapeHtml(records[0].studentName)+') — Firebase-ல் <strong>'+records.length+' records</strong> கண்டுபிடிக்கப்பட்டன:'+
+            '</div>'+
+            '<div style="background:#0f172a;border:1px solid #334155;border-radius:8px;padding:10px;margin-top:8px;max-height:300px;overflow-y:auto">'+
+            '<table style="width:100%;font-size:.82rem"><thead><tr style="color:#fbbf24;border-bottom:1px solid #334155">'+
+            '<th style="text-align:left;padding:6px">தேதி</th><th style="text-align:left;padding:6px">Paper</th>'+
+            '<th style="text-align:center;padding:6px">Score</th><th style="text-align:center;padding:6px">%</th>'+
+            '<th style="text-align:center;padding:6px">Test?</th>'+
+            '</tr></thead><tbody>';
+        for(const r of records){
+            const paperLabel=r.examFile.replace('.json','').replace('paper1','தமிழ்').replace('paper2','குழந்தை மேம்பாடு');
+            const testBadge=r.isTestMode?'<span style="background:#f59e0b;color:#000;padding:2px 6px;border-radius:3px;font-size:.7rem;font-weight:700">TEST</span>':'<span style="color:#10b981">Real</span>';
+            html+='<tr style="border-bottom:1px solid #1e293b"><td style="padding:6px">'+r.examDate+'</td>'+
+                '<td style="padding:6px">'+paperLabel+'</td>'+
+                '<td style="padding:6px;text-align:center">'+r.score+'/'+r.totalQuestions+'</td>'+
+                '<td style="padding:6px;text-align:center">'+r.percentage.toFixed(1)+'%</td>'+
+                '<td style="padding:6px;text-align:center">'+testBadge+'</td></tr>';
+        }
+        html+='</tbody></table></div>';
+        out.innerHTML=html;
+    }catch(err){
+        console.error(err);
+        out.innerHTML='<div class="msg msg-error" style="display:block">Firebase deep search failed: '+err.message+'</div>';
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// 📋 MISSING STUDENTS CHECK
+// Compares user-pasted phone list against current loaded results.
+// ═══════════════════════════════════════════════════════════
+function checkMissing(){
+    if(!currentResults.length){alert('முதலில் "Live முடிவுகளை ஏற்று" click செய்யவும்');return;}
+    const raw=document.getElementById('expectedPhones').value.trim();
+    if(!raw){alert('Phone numbers பட்டியலை paste செய்யவும்');return;}
+    // Parse: split by any non-digit, then keep 10-digit groups
+    const phones=raw.split(/[^0-9]+/).filter(s=>s.length===10);
+    if(phones.length===0){
+        document.getElementById('missingResult').innerHTML='<div class="msg msg-error" style="display:block">10 இலக்க phone numbers எதுவும் கண்டுபிடிக்கப்படவில்லை!</div>';
+        return;
+    }
+    const expected=new Set(phones);
+    const submitted=new Set(currentResults.map(r=>r.phone));
+    const missing=[];
+    const extra=[];
+    for(const p of expected) if(!submitted.has(p)) missing.push(p);
+    for(const p of submitted) if(!expected.has(p)) extra.push(p);
+    const submittedFromExpected=phones.filter(p=>submitted.has(p));
+
+    let html='<div class="stat-grid" style="margin:8px 0">'+
+        '<div class="stat"><div class="stat-val">'+phones.length+'</div><div class="stat-lbl">எதிர்பார்த்த மாணவர்</div></div>'+
+        '<div class="stat"><div class="stat-val" style="color:#10b981">'+submittedFromExpected.length+'</div><div class="stat-lbl">Submit ஆனவர்</div></div>'+
+        '<div class="stat"><div class="stat-val" style="color:#ef4444">'+missing.length+'</div><div class="stat-lbl">Submit ஆகாதவர்</div></div>'+
+        '<div class="stat"><div class="stat-val" style="color:#f59e0b">'+extra.length+'</div><div class="stat-lbl">List-ல் இல்லாதவர் (extra)</div></div>'+
+        '</div>';
+
+    if(missing.length>0){
+        html+='<h3 style="color:#ef4444;margin:10px 0 6px;font-size:.95rem">❌ Submit செய்யாத '+missing.length+' மாணவர்(கள்):</h3>'+
+            '<div style="background:#7f1d1d;border:1px solid #ef4444;border-radius:8px;padding:10px;max-height:250px;overflow-y:auto">';
+        for(const p of missing){
+            html+='<div style="padding:5px 0;border-bottom:1px solid #991b1b;color:#fecaca;font-family:monospace">📞 '+p+'</div>';
+        }
+        html+='</div>';
+        // Add copy button
+        html+='<button class="btn btn-secondary" style="margin-top:8px" onclick="copyMissingList(\''+missing.join(',')+'\')">📋 Missing list copy செய்</button>';
+    } else {
+        html+='<div class="msg msg-success" style="display:block">🎉 எல்லா '+phones.length+' மாணவர்களும் submit செய்துள்ளனர்! ஒருவரும் missing இல்லை.</div>';
+    }
+
+    if(extra.length>0){
+        html+='<h3 style="color:#f59e0b;margin:14px 0 6px;font-size:.95rem">⚠️ List-ல் இல்லாமல் submit செய்த '+extra.length+' மாணவர்(கள்):</h3>'+
+            '<p style="color:#94a3b8;font-size:.78rem;margin-bottom:6px">(இவர்கள் உங்கள் list-ல் இல்லை, ஆனால் தேர்வு எழுதினார்கள் — guest students-ஆக இருக்கலாம்)</p>'+
+            '<div style="background:#78350f;border:1px solid #f59e0b;border-radius:8px;padding:10px;max-height:200px;overflow-y:auto">';
+        for(const p of extra){
+            const r=currentResults.find(x=>x.phone===p);
+            html+='<div style="padding:5px 0;border-bottom:1px solid #92400e;color:#fde68a;font-family:monospace">📞 '+p+' — '+escapeHtml(r?.name||'')+' (Score: '+(r?.score||0)+'/'+(r?.total||0)+')</div>';
+        }
+        html+='</div>';
+    }
+    document.getElementById('missingResult').innerHTML=html;
+}
+
+function copyMissingList(csv){
+    const text=csv.replace(/,/g,'\n');
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(()=>{
+            showMsg('✅ Missing list clipboard-ல் copy ஆனது! WhatsApp-ல் paste செய்யலாம்.','success');
+        }).catch(()=>fallbackCopy(text));
+    } else fallbackCopy(text);
+}
+function fallbackCopy(text){
+    const ta=document.createElement('textarea');
+    ta.value=text;ta.style.position='fixed';ta.style.top='-9999px';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');showMsg('✅ Copy ஆனது','success');}
+    catch(e){alert(text);}
+    document.body.removeChild(ta);
+}
+
+async function loadBothPapers(){
+    const examDate=document.getElementById('examDate').value;
+    if(!examDate){alert('தேதியை தேர்வு செய்யவும்');return;}
+    document.getElementById('loader').classList.add('active');
+    document.getElementById('bothSummary').style.display='none';
+    try{
+        const db=getDB();
+        const snap=await db.ref('free_exam_results').orderByChild('examDate').equalTo(examDate).once('value');
+        const all=snap.val()||{};
+        const p1=buildResults(all,'paper1',examDate);
+        const p2=buildResults(all,'paper2',examDate);
+        document.getElementById('loader').classList.remove('active');
+        const html=
+            '<div class="row">'+
+                '<div class="stat"><div class="stat-val">'+p1.length+'</div><div class="stat-lbl">பேப்பர் 1 — தமிழ் + கற்பித்தல் முறை</div></div>'+
+                '<div class="stat"><div class="stat-val">'+p2.length+'</div><div class="stat-lbl">பேப்பர் 1 — குழந்தை மேம்பாடு</div></div>'+
+            '</div>'+
+            '<div class="stat-grid" style="margin-top:10px">'+
+                '<div class="stat"><div class="stat-val" style="color:#10b981">'+p1.filter(r=>r.passed).length+'</div><div class="stat-lbl">P1 தேர்ச்சி</div></div>'+
+                '<div class="stat"><div class="stat-val" style="color:#10b981">'+p2.filter(r=>r.passed).length+'</div><div class="stat-lbl">P2 தேர்ச்சி</div></div>'+
+                '<div class="stat"><div class="stat-val">'+(p1[0]?.score||0)+'</div><div class="stat-lbl">P1 Top</div></div>'+
+                '<div class="stat"><div class="stat-val">'+(p2[0]?.score||0)+'</div><div class="stat-lbl">P2 Top</div></div>'+
+            '</div>'+
+            '<p style="color:#94a3b8;font-size:.85rem;margin-top:10px">P1 டாப்பர்: <strong style="color:#fbbf24">'+escapeHtml(p1[0]?.name||'—')+'</strong> | '+
+            'P2 டாப்பர்: <strong style="color:#fbbf24">'+escapeHtml(p2[0]?.name||'—')+'</strong></p>';
+        document.getElementById('bothSummaryContent').innerHTML=html;
+        document.getElementById('bothSummary').style.display='block';
+    }catch(err){
+        document.getElementById('loader').classList.remove('active');
+        showMsg('Both papers load failed: '+err.message,'error');
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// 📄 FULL LEADERBOARD PDF (NO category column)
+// ═══════════════════════════════════════════════════════════
+let _tamilFontB64=null;
+async function ensureTamilFont(doc){
+    try{
+        if(!_tamilFontB64){
+            const url='https://cdn.jsdelivr.net/gh/google/fonts/ofl/notosanstamil/NotoSansTamil%5Bwdth%2Cwght%5D.ttf';
+            const res=await fetch(url);
+            if(!res.ok) throw new Error('font fetch failed');
+            const buf=await res.arrayBuffer();
+            const bytes=new Uint8Array(buf);
+            let s='',chunk=8192;
+            for(let i=0;i<bytes.length;i+=chunk) s+=String.fromCharCode(...bytes.subarray(i,i+chunk));
+            _tamilFontB64=btoa(s);
+        }
+        doc.addFileToVFS('NotoTamil.ttf',_tamilFontB64);
+        doc.addFont('NotoTamil.ttf','NotoTamil','normal');
+        return true;
+    }catch(e){console.warn('Tamil font fail',e);return false;}
+}
+
+async function downloadFullPDF(){
+    if(!currentResults.length){alert('முதலில் முடிவுகளை load பண்ணுங்கள்');return;}
+    const {jsPDF}=window.jspdf;
+    const doc=new jsPDF('p','mm','a4');
+    const W=doc.internal.pageSize.width;
+    const hasTamil=await ensureTamilFont(doc);
+    const TF=hasTamil?'NotoTamil':'helvetica';
+
+    doc.setFillColor(30,41,59);
+    doc.rect(0,0,W,40,'F');
+    doc.setTextColor(251,191,36);
+    doc.setFont(TF,'normal');
+    doc.setFontSize(22);
+    doc.text(hasTamil?'தமிழ் நண்பன்':'TAMIL NANBAN',W/2,14,{align:'center'});
+    doc.setTextColor(255,255,255);
+    doc.setFontSize(11);
+    doc.text('Test Batch Series',W/2,22,{align:'center'});
+    doc.setFontSize(10);
+    doc.setTextColor(203,213,225);
+    const ptitle=currentPaper==='paper1'
+        ?(hasTamil?'ஆசிரியர் தகுதித் தேர்வு - தாள் 1 - தமிழ் மற்றும் கற்பித்தல் முறை':'TET Paper 1 - Tamil & Pedagogy')
+        :(hasTamil?'ஆசிரியர் தகுதித் தேர்வு - தாள் 1 - குழந்தை மேம்பாடு':'TET Paper 1 - Child Development');
+    doc.text(ptitle,W/2,29,{align:'center'});
+    doc.setFontSize(9);
+    doc.text('Mobile: 63 69 37 14 52',W/2,35,{align:'center'});
+
+    doc.setFillColor(254,243,199);
+    doc.rect(0,40,W,8,'F');
+    doc.setTextColor(120,53,15);
+    doc.setFontSize(9);
+    doc.setFont('helvetica','bold');
+    doc.text('Exam Date: '+currentDate,15,45.5);
+    doc.text('Total Students: '+currentResults.length,W-15,45.5,{align:'right'});
+
+    const body=currentResults.map(r=>[
+        r.rank,r.name||'Student',r.score+'/'+r.total,
+        r.correct||0,r.wrong||0,(r.percentage||0).toFixed(1)+'%',
+        r.passed?'PASS':'FAIL'
+    ]);
+    doc.autoTable({
+        head:[['Rank','Name','Score','Correct','Wrong','%','Result']],
+        body,startY:52,
+        styles:{font:TF,fontSize:9,cellPadding:2.5,lineColor:[200,200,200],lineWidth:.15,textColor:[30,41,59]},
+        headStyles:{fillColor:[30,41,59],textColor:[251,191,36],fontStyle:'bold',halign:'center',fontSize:9.5},
+        columnStyles:{
+            0:{halign:'center',cellWidth:15,fontStyle:'bold'},
+            1:{cellWidth:62,fontStyle:'bold'},
+            2:{halign:'center',cellWidth:24,fontStyle:'bold'},
+            3:{halign:'center',cellWidth:20},
+            4:{halign:'center',cellWidth:20},
+            5:{halign:'center',cellWidth:20,fontStyle:'bold'},
+            6:{halign:'center',cellWidth:20,fontStyle:'bold'}
+        },
+        didParseCell:function(cd){
+            if(cd.section!=='body') return;
+            const row=currentResults[cd.row.index];
+            if(cd.column.index===0){
+                if(row?.rank===1){cd.cell.styles.fillColor=[251,191,36];cd.cell.styles.textColor=[120,53,15]}
+                else if(row?.rank===2){cd.cell.styles.fillColor=[203,213,225];cd.cell.styles.textColor=[30,41,59]}
+                else if(row?.rank===3){cd.cell.styles.fillColor=[251,146,60];cd.cell.styles.textColor=[255,255,255]}
+            }
+            if(cd.column.index===6){
+                if(row?.passed){cd.cell.styles.fillColor=[34,197,94];cd.cell.styles.textColor=[255,255,255]}
+                else{cd.cell.styles.fillColor=[239,68,68];cd.cell.styles.textColor=[255,255,255]}
+            }
+        },
+        didDrawPage:(hd)=>{
+            const pc=doc.internal.getNumberOfPages();
+            doc.setFontSize(8);
+            doc.setTextColor(100);
+            doc.setFont('helvetica','normal');
+            doc.text('Page '+hd.pageNumber+'/'+pc+'  |  Generated: '+new Date().toLocaleString('en-IN')+'  |  Tamil Nanban',
+                W/2,doc.internal.pageSize.height-6,{align:'center'});
+        }
+    });
+    // 📝 Mobile-safe ASCII filename (Tamil filenames cause "unusual format" warnings on Android)
+    const [yy, mm, dd] = currentDate.split('-');
+    const paperShort = currentPaper === 'paper1' ? 'Tamil_Pedagogy' : 'Child_Development';
+    const tamilFileName = 'TamilNanban_FullResults_' + paperShort + '_' + dd + mm + yy + '.pdf';
+    doc.save(tamilFileName);
+}
+
+// ═══════════════════════════════════════════════════════════
+// 🏆 WINNER CERTIFICATE — Animated HTML + Static PNG, in ZIP
+// ═══════════════════════════════════════════════════════════
+function buildCertificateHTML(winner, rank, paperTitle, dateStr){
+    const safeName = escapeHtml(winner.name);
+    const score = winner.score+'/'+winner.total;
+    const pct = winner.percentage.toFixed(1);
+    const confetti = Array.from({length:30},(_,i)=>{
+        const colors=['#fbbf24','#f59e0b','#ef4444','#10b981','#3b82f6','#a855f7','#ec4899'];
+        const c=colors[i%colors.length];
+        const left=Math.random()*100;
+        const delay=Math.random()*4;
+        const dur=3+Math.random()*2;
+        return '<div class="confetti" style="left:'+left+'%;background:'+c+';animation-delay:'+delay+'s;animation-duration:'+dur+'s"></div>';
+    }).join('');
+    return '<!DOCTYPE html>\n<html lang="ta"><head><meta charset="UTF-8">'+
+'<title>'+safeName+' - வாழ்த்துக்கள் - Rank '+rank+'</title>'+
+'<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Sans+Tamil:wght@700;800;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">'+
+'<style>'+
+'*{margin:0;padding:0;box-sizing:border-box}'+
+'html,body{width:100%;height:100%;overflow:hidden}'+
+'body{background:radial-gradient(ellipse at center,#1e3a8a 0%,#0c1e4f 60%,#020617 100%);font-family:Outfit,"Noto Sans Tamil",sans-serif;display:flex;align-items:center;justify-content:center;color:#fff;position:relative}'+
+'.particle{position:absolute;border-radius:50%;background:radial-gradient(circle,#fbbf24,transparent 70%);pointer-events:none;opacity:.7;animation:float 6s ease-in-out infinite}'+
+'@keyframes float{0%,100%{transform:translateY(0) translateX(0) scale(1);opacity:.7}50%{transform:translateY(-30px) translateX(15px) scale(1.2);opacity:.3}}'+
+'.confetti{position:absolute;width:10px;height:14px;animation:confetti-fall 4s linear infinite;top:-20px}'+
+'@keyframes confetti-fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}'+
+'.cert{position:relative;width:min(92vw,820px);aspect-ratio:1.4/1;background:linear-gradient(135deg,#fef3c7,#fde68a 50%,#fcd34d);border-radius:20px;padding:40px;box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 0 0 4px #92400e,inset 0 0 0 10px #fbbf24,inset 0 0 0 14px #92400e;color:#451a03;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;animation:cert-in 1s cubic-bezier(.34,1.56,.64,1) both}'+
+'@keyframes cert-in{0%{transform:scale(.5) rotate(-8deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}'+
+'.corner{position:absolute;width:60px;height:60px;border:3px solid #92400e}'+
+'.corner.tl{top:18px;left:18px;border-right:none;border-bottom:none;border-top-left-radius:14px}'+
+'.corner.tr{top:18px;right:18px;border-left:none;border-bottom:none;border-top-right-radius:14px}'+
+'.corner.bl{bottom:18px;left:18px;border-right:none;border-top:none;border-bottom-left-radius:14px}'+
+'.corner.br{bottom:18px;right:18px;border-left:none;border-top:none;border-bottom-right-radius:14px}'+
+'.brand{display:flex;flex-direction:column;align-items:center;gap:2px;animation:slide-down .8s .3s both}'+
+'@keyframes slide-down{from{transform:translateY(-30px);opacity:0}to{transform:translateY(0);opacity:1}}'+
+'.brand-tamil{font-family:"Noto Sans Tamil",sans-serif;font-size:clamp(22px,3.2vw,32px);font-weight:900;color:#7c2d12;letter-spacing:.02em}'+
+'.brand-en{font-family:Outfit,sans-serif;font-size:clamp(12px,1.6vw,16px);font-weight:700;color:#9a3412;letter-spacing:.35em;text-transform:uppercase}'+
+'.paper{font-family:"Noto Sans Tamil",sans-serif;font-size:clamp(12px,1.6vw,15px);color:#78350f;margin-top:6px;font-weight:600}'+
+'.trophy{font-size:clamp(60px,8vw,80px);animation:trophy-shine 2s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(251,191,36,.8))}'+
+'@keyframes trophy-shine{0%,100%{transform:scale(1) rotate(-2deg);filter:drop-shadow(0 0 18px rgba(251,191,36,.8))}50%{transform:scale(1.08) rotate(3deg);filter:drop-shadow(0 0 28px rgba(251,191,36,1))}}'+
+'.congrats{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(20px,2.6vw,28px);color:#7c2d12;font-weight:700;animation:fade-in 1s .6s both}'+
+'@keyframes fade-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}'+
+'.tamil-congrats{font-family:"Noto Sans Tamil",sans-serif;font-size:clamp(18px,2.4vw,24px);color:#92400e;font-weight:700;margin-top:-4px;animation:fade-in 1s .9s both}'+
+'.name-wrap{position:relative;padding:14px 32px;margin:8px 0;animation:name-pop 1.2s 1s both}'+
+'@keyframes name-pop{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}'+
+'.name-wrap::before,.name-wrap::after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:60%;height:3px;background:linear-gradient(90deg,transparent,#92400e,transparent)}'+
+'.name-wrap::before{top:0}.name-wrap::after{bottom:0}'+
+'.winner-name{font-family:"Playfair Display",serif;font-size:clamp(28px,4.5vw,46px);font-weight:900;color:#7c2d12;text-shadow:0 2px 0 rgba(146,64,14,.3);position:relative;display:inline-block}'+
+'.sparkle{position:absolute;width:8px;height:8px;background:#fbbf24;border-radius:50%;box-shadow:0 0 12px #fbbf24,0 0 24px #f59e0b;animation:sparkle-orbit 4s linear infinite}'+
+'@keyframes sparkle-orbit{from{transform:rotate(0deg) translateX(180px) rotate(0deg)}to{transform:rotate(360deg) translateX(180px) rotate(-360deg)}}'+
+'.score-block{display:flex;gap:18px;align-items:stretch;animation:fade-in 1s 1.4s both}'+
+'.score-box{background:linear-gradient(135deg,#7c2d12,#9a3412);color:#fef3c7;padding:10px 18px;border-radius:10px;text-align:center;min-width:90px}'+
+'.score-val{font-family:Outfit,sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:900;color:#fbbf24}'+
+'.score-lbl{font-family:"Noto Sans Tamil",sans-serif;font-size:11px;margin-top:2px;letter-spacing:.05em}'+
+'.rank-badge{position:absolute;top:-20px;right:30px;background:linear-gradient(135deg,#7c2d12,#451a03);color:#fbbf24;padding:8px 16px;border-radius:8px;font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(14px,2vw,18px);box-shadow:0 6px 18px rgba(0,0,0,.4);animation:rank-spin 1s .5s both}'+
+'@keyframes rank-spin{0%{transform:scale(0) rotate(-180deg)}100%{transform:scale(1) rotate(0)}}'+
+'.footer{display:flex;justify-content:space-between;width:100%;align-items:flex-end;font-size:clamp(10px,1.3vw,13px);animation:fade-in 1s 1.7s both}'+
+'.date-pill{background:#7c2d12;color:#fef3c7;padding:5px 14px;border-radius:20px;font-weight:700}'+
+'.signature{font-family:"Playfair Display",serif;font-style:italic;color:#7c2d12;text-align:right}'+
+'.signature small{display:block;font-style:normal;font-size:10px;color:#92400e;letter-spacing:.1em;text-transform:uppercase;margin-top:2px}'+
+'</style></head><body>'+
+'<div class="particle" style="width:200px;height:200px;top:10%;left:5%;animation-delay:0s"></div>'+
+'<div class="particle" style="width:150px;height:150px;top:60%;left:80%;animation-delay:2s"></div>'+
+'<div class="particle" style="width:120px;height:120px;top:30%;left:70%;animation-delay:4s"></div>'+
+'<div class="particle" style="width:180px;height:180px;top:70%;left:10%;animation-delay:1s"></div>'+
+confetti+
+'<div class="cert">'+
+'<div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>'+
+'<div class="rank-badge">RANK #'+rank+'</div>'+
+'<div class="brand"><div class="brand-tamil">தமிழ் நண்பன்</div>'+
+'<div class="brand-en">Test Batch Series</div>'+
+'<div class="paper">'+paperTitle+'</div></div>'+
+'<div class="trophy">🏆</div>'+
+'<div class="congrats">Heartfelt Congratulations</div>'+
+'<div class="tamil-congrats">மனமார்ந்த வாழ்த்துக்கள்!</div>'+
+'<div class="name-wrap"><span class="winner-name">'+safeName+'</span>'+
+'<span class="sparkle" style="animation-delay:0s;top:50%;left:50%;margin-top:-4px;margin-left:-4px"></span>'+
+'<span class="sparkle" style="animation-delay:-1s;top:50%;left:50%;margin-top:-4px;margin-left:-4px"></span>'+
+'<span class="sparkle" style="animation-delay:-2s;top:50%;left:50%;margin-top:-4px;margin-left:-4px"></span>'+
+'<span class="sparkle" style="animation-delay:-3s;top:50%;left:50%;margin-top:-4px;margin-left:-4px"></span></div>'+
+'<div class="score-block">'+
+'<div class="score-box"><div class="score-val">'+score+'</div><div class="score-lbl">மதிப்பெண்</div></div>'+
+'<div class="score-box"><div class="score-val">'+pct+'%</div><div class="score-lbl">சதவீதம்</div></div>'+
+'<div class="score-box"><div class="score-val">#'+rank+'</div><div class="score-lbl">இடம்</div></div>'+
+'</div>'+
+'<div class="footer"><div class="date-pill">'+dateStr+'</div>'+
+'<div class="signature">தமிழ் நண்பன்<small>Test Batch Series</small></div></div>'+
+'</div></body></html>';
+}
+
+
+// ═══════════════════════════════════════════════════════════
+// 🎬 ANIMATED GIF CERTIFICATE — Professional White Design
+// White background, multi-color sections, typewriter winner name,
+// crown above name, 5-sec hold then loop.
+// ═══════════════════════════════════════════════════════════
+const GIF_WIDTH = 800;
+const GIF_HEIGHT = 600;
+const GIF_FPS = 12;
+const GIF_HOLD_SECONDS = 5;          // hold after typewriter completes
+const GIF_TYPE_DURATION = 1.5;       // seconds for typewriter to finish
+const GIF_TOTAL_SECONDS = GIF_TYPE_DURATION + GIF_HOLD_SECONDS;
+const GIF_TOTAL_FRAMES = Math.round(GIF_TOTAL_SECONDS * GIF_FPS);
+const GIF_DELAY = Math.round(1000 / GIF_FPS);
+
+// 🎨 Color palette — each section a distinct matching color
+const PALETTE = {
+    bg: '#FFFFFF',
+    cardBorder: '#E5E7EB',
+    cardShadow: 'rgba(0,0,0,0.08)',
+    brandTamil: '#D97706',           // amber-600 (golden)
+    brandEn: '#1E3A8A',              // blue-900 (deep navy)
+    paperTitle: '#7C3AED',           // violet-600
+    examDate: '#64748B',             // slate-500
+    crown: '#F59E0B',                // amber-500 (gold)
+    crownShadow: '#B45309',          // amber-700
+    nameMain: '#991B1B',             // red-800 (royal maroon)
+    nameCursor: '#DC2626',           // red-600
+    nameUnderline: '#7C2D12',        // orange-900
+    congratsEn: '#0F766E',           // teal-700
+    congratsTa: '#BE185D',           // pink-700
+    scoreBg: '#ECFDF5',              // emerald-50
+    scoreText: '#047857',            // emerald-700
+    scoreLabel: '#065F46',
+    pctBg: '#EFF6FF',                // blue-50
+    pctText: '#1D4ED8',              // blue-700
+    pctLabel: '#1E40AF',
+    rankBg: '#FEF3C7',               // amber-100
+    rankText: '#B45309',             // amber-700
+    rankLabel: '#92400E',
+    sparkle: '#FBBF24',              // amber-400
+    footerLine: '#E5E7EB',
+    footerText: '#475569',           // slate-600
+    signature: '#1E3A8A'             // blue-900
+};
+
+// Tamil font loader (FontFace API)
+let _gifTamilFontLoaded = null;
+async function ensureGifTamilFont() {
+    if (_gifTamilFontLoaded !== null) return _gifTamilFontLoaded;
+    try {
+        const ff = new FontFace('NotoTamilGif',
+            'url(https://cdn.jsdelivr.net/gh/google/fonts/ofl/notosanstamil/NotoSansTamil%5Bwdth%2Cwght%5D.ttf)',
+            { weight: '400 900' });
+        await ff.load();
+        document.fonts.add(ff);
+        _gifTamilFontLoaded = true;
+        return true;
+    } catch (e) {
+        console.warn('Tamil font load failed:', e);
+        _gifTamilFontLoaded = false;
+        return false;
+    }
+}
+
+// Helpers
+function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+}
+
+function drawSpacedText(ctx, text, x, y, spacing) {
+    const chars = text.split('');
+    let totalW = 0;
+    for (const c of chars) totalW += ctx.measureText(c).width + spacing;
+    totalW -= spacing;
+    let curX = x - totalW / 2;
+    for (const c of chars) {
+        const w = ctx.measureText(c).width;
+        ctx.fillText(c, curX + w/2, y);
+        curX += w + spacing;
+    }
+}
+
+// 👑 Draw a crown SVG-style above name
+function drawCrown(ctx, cx, cy, size, bobOffset) {
+    const w = size;
+    const h = size * 0.7;
+    const y = cy - h / 2 + bobOffset;
+    const x = cx - w / 2;
+
+    ctx.save();
+    // Crown body — 5 points with gems
+    ctx.fillStyle = PALETTE.crown;
+    ctx.strokeStyle = PALETTE.crownShadow;
+    ctx.lineWidth = 2;
+
+    ctx.beginPath();
+    // Bottom band
+    ctx.moveTo(x, y + h * 0.7);
+    ctx.lineTo(x + w, y + h * 0.7);
+    ctx.lineTo(x + w, y + h);
+    ctx.lineTo(x, y + h);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    // Crown peaks (3 points: left, center, right)
+    ctx.beginPath();
+    ctx.moveTo(x, y + h * 0.7);
+    ctx.lineTo(x + w * 0.15, y + h * 0.15);     // left peak
+    ctx.lineTo(x + w * 0.3, y + h * 0.55);      // valley
+    ctx.lineTo(x + w * 0.5, y);                 // center peak (tallest)
+    ctx.lineTo(x + w * 0.7, y + h * 0.55);      // valley
+    ctx.lineTo(x + w * 0.85, y + h * 0.15);     // right peak
+    ctx.lineTo(x + w, y + h * 0.7);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    // Gems on peaks (red rubies)
+    ctx.fillStyle = '#DC2626';
+    [[0.15, 0.15], [0.5, 0], [0.85, 0.15]].forEach(([px, py]) => {
+        ctx.beginPath();
+        ctx.arc(x + w * px, y + h * py + 3, 4, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    // Gems on band (blue sapphires)
+    ctx.fillStyle = '#1D4ED8';
+    [0.25, 0.5, 0.75].forEach(px => {
+        ctx.beginPath();
+        ctx.arc(x + w * px, y + h * 0.85, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    ctx.restore();
+}
+
+// 🎨 Draw the full certificate frame at progress t (0..1)
+function drawCertificateFrame(ctx, t, winner, rank, paperTitle, dateStr, examDateStr) {
+    const W = GIF_WIDTH, H = GIF_HEIGHT;
+
+    // Background — clean white
+    ctx.fillStyle = PALETTE.bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Outer card with subtle shadow
+    const cx = 40, cy = 30, cw = W - 80, ch = H - 60;
+
+    // Shadow
+    ctx.save();
+    ctx.shadowColor = PALETTE.cardShadow;
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetY = 4;
+    ctx.fillStyle = '#FFFFFF';
+    roundRect(ctx, cx, cy, cw, ch, 14);
+    ctx.fill();
+    ctx.restore();
+
+    // Card border (subtle)
+    ctx.strokeStyle = PALETTE.cardBorder;
+    ctx.lineWidth = 1.5;
+    roundRect(ctx, cx, cy, cw, ch, 14);
+    ctx.stroke();
+
+    // Top accent bar — gradient of section colors
+    const accentGrad = ctx.createLinearGradient(cx, cy, cx + cw, cy);
+    accentGrad.addColorStop(0, PALETTE.brandTamil);
+    accentGrad.addColorStop(0.5, PALETTE.paperTitle);
+    accentGrad.addColorStop(1, PALETTE.brandEn);
+    ctx.fillStyle = accentGrad;
+    roundRect(ctx, cx, cy, cw, 6, 14);
+    ctx.fill();
+    // Mask bottom of accent (so it's only top)
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(cx, cy + 4, cw, 4);
+    ctx.fillStyle = accentGrad;
+    ctx.fillRect(cx, cy, cw, 4);
+
+    // ─── BRAND: "தமிழ் நண்பன்" in Tamil (golden) ───
+    ctx.fillStyle = PALETTE.brandTamil;
+    ctx.font = 'bold 38px "NotoTamilGif", "Noto Sans Tamil", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('தமிழ் நண்பன்', W / 2, cy + 60);
+
+    // ─── "TEST BATCH SERIES" — capital letters, navy ───
+    ctx.fillStyle = PALETTE.brandEn;
+    ctx.font = 'bold 14px "Arial Black", "Arial", sans-serif';
+    drawSpacedText(ctx, 'TEST BATCH SERIES', W / 2, cy + 92, 6);
+
+    // Small divider
+    ctx.strokeStyle = PALETTE.cardBorder;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(W / 2 - 80, cy + 108);
+    ctx.lineTo(W / 2 + 80, cy + 108);
+    ctx.stroke();
+
+    // ─── Paper title (violet) ───
+    ctx.fillStyle = PALETTE.paperTitle;
+    ctx.font = '600 16px "NotoTamilGif", sans-serif';
+    ctx.fillText(paperTitle, W / 2, cy + 128);
+
+    // ─── Exam date (slate) ───
+    ctx.fillStyle = PALETTE.examDate;
+    ctx.font = '500 12px Arial, sans-serif';
+    ctx.fillText('தேர்வு தேதி: ' + examDateStr, W / 2, cy + 148);
+
+    // ─── CROWN above name (with gentle bob animation) ───
+    const bob = Math.sin(t * Math.PI * 2 * 2) * 3;   // small bob, 2x per loop
+    drawCrown(ctx, W / 2, cy + 195, 60, bob);
+
+    // ─── Congratulations text (teal + pink) ───
+    ctx.fillStyle = PALETTE.congratsEn;
+    ctx.font = 'italic 600 22px "Georgia", serif';
+    ctx.fillText('Heartfelt Congratulations', W / 2, cy + 245);
+
+    ctx.fillStyle = PALETTE.congratsTa;
+    ctx.font = '700 18px "NotoTamilGif", sans-serif';
+    ctx.fillText('மனமார்ந்த வாழ்த்துக்கள்!', W / 2, cy + 273);
+
+    // ─── WINNER NAME (typewriter animation, maroon) ───
+    // Typewriter phase: 0 to GIF_TYPE_DURATION
+    // Hold phase: rest
+    const typeProgress = Math.min(1, (t * GIF_TOTAL_SECONDS) / GIF_TYPE_DURATION);
+    const fullName = winner.name || 'மாணவர்';
+    const nameChars = Array.from(fullName);   // proper Unicode handling
+    const visibleCount = Math.floor(nameChars.length * typeProgress);
+    const visibleName = nameChars.slice(0, visibleCount).join('');
+
+    // Blinking cursor (visible during typing, and continues blinking in hold phase)
+    const cursorOn = Math.floor((t * GIF_TOTAL_SECONDS) * 2) % 2 === 0;
+
+    const nameY = cy + 325;
+
+    // Name text
+    ctx.fillStyle = PALETTE.nameMain;
+    ctx.font = 'bold 42px "Georgia", "NotoTamilGif", serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(visibleName, W / 2, nameY);
+
+    // Cursor — show during typing OR when hold and cursorOn
+    const stillTyping = typeProgress < 1;
+    if (stillTyping || cursorOn) {
+        // Measure visible name to position cursor right after it
+        const nameMetrics = ctx.measureText(visibleName);
+        const cursorX = W / 2 + nameMetrics.width / 2 + 4;
+        ctx.fillStyle = PALETTE.nameCursor;
+        ctx.fillRect(cursorX, nameY - 22, 3, 36);
+    }
+
+    // Name underline (only when fully typed)
+    if (typeProgress >= 1) {
+        const nameMetrics = ctx.measureText(fullName);
+        const underlineW = Math.min(nameMetrics.width + 40, cw - 60);
+        ctx.strokeStyle = PALETTE.nameUnderline;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(W / 2 - underlineW / 2, nameY + 18);
+        ctx.lineTo(W / 2 + underlineW / 2, nameY + 18);
+        ctx.stroke();
+    }
+
+    // ─── SCORE BOXES (3 distinct colors) ───
+    const boxY = cy + 390;
+    const boxW = 150, boxH = 65, gap = 20;
+    const totalBoxW = boxW * 3 + gap * 2;
+    const startX = W / 2 - totalBoxW / 2;
+
+    const boxes = [
+        {
+            label: 'மதிப்பெண்',
+            value: winner.score + ' / ' + winner.total,
+            bg: PALETTE.scoreBg,
+            text: PALETTE.scoreText,
+            labelColor: PALETTE.scoreLabel,
+            borderColor: '#A7F3D0'
+        },
+        {
+            label: 'சதவீதம்',
+            value: winner.percentage.toFixed(1) + '%',
+            bg: PALETTE.pctBg,
+            text: PALETTE.pctText,
+            labelColor: PALETTE.pctLabel,
+            borderColor: '#BFDBFE'
+        },
+        {
+            label: 'இடம்',
+            value: '# ' + rank,
+            bg: PALETTE.rankBg,
+            text: PALETTE.rankText,
+            labelColor: PALETTE.rankLabel,
+            borderColor: '#FCD34D'
+        }
+    ];
+
+    boxes.forEach((box, i) => {
+        const bx = startX + i * (boxW + gap);
+        // Background
+        ctx.fillStyle = box.bg;
+        roundRect(ctx, bx, boxY, boxW, boxH, 10);
+        ctx.fill();
+        // Border
+        ctx.strokeStyle = box.borderColor;
+        ctx.lineWidth = 1.5;
+        roundRect(ctx, bx, boxY, boxW, boxH, 10);
+        ctx.stroke();
+        // Value
+        ctx.fillStyle = box.text;
+        ctx.font = 'bold 22px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(box.value, bx + boxW / 2, boxY + 24);
+        // Label
+        ctx.fillStyle = box.labelColor;
+        ctx.font = '600 12px "NotoTamilGif", sans-serif';
+        ctx.fillText(box.label, bx + boxW / 2, boxY + 48);
+    });
+
+    // ─── SPARKLES orbiting the crown (subtle, gold) ───
+    const sparkleCount = 8;
+    const orbitR = 90;
+    const crownCx = W / 2, crownCy = cy + 195;
+    for (let i = 0; i < sparkleCount; i++) {
+        const angle = (t + i / sparkleCount) * Math.PI * 2;
+        const sx = crownCx + orbitR * Math.cos(angle);
+        const sy = crownCy + (orbitR * 0.5) * Math.sin(angle);
+        if (sy > crownCy + 20) continue;   // hide bottom half so they don't cover text
+        // Glow
+        const sg = ctx.createRadialGradient(sx, sy, 0, sx, sy, 10);
+        sg.addColorStop(0, PALETTE.sparkle);
+        sg.addColorStop(0.5, 'rgba(251,191,36,0.5)');
+        sg.addColorStop(1, 'rgba(251,191,36,0)');
+        ctx.fillStyle = sg;
+        ctx.beginPath();
+        ctx.arc(sx, sy, 10, 0, Math.PI * 2);
+        ctx.fill();
+        // Core
+        ctx.fillStyle = '#FFFFFF';
+        ctx.beginPath();
+        ctx.arc(sx, sy, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    // ─── FOOTER: date pill + signature ───
+    const footerY = cy + ch - 28;
+
+    // Divider line above footer
+    ctx.strokeStyle = PALETTE.footerLine;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(cx + 30, footerY - 14);
+    ctx.lineTo(cx + cw - 30, footerY - 14);
+    ctx.stroke();
+
+    // Date pill
+    ctx.fillStyle = '#F1F5F9';
+    roundRect(ctx, cx + 30, footerY - 4, 160, 26, 13);
+    ctx.fill();
+    ctx.strokeStyle = PALETTE.cardBorder;
+    ctx.lineWidth = 1;
+    roundRect(ctx, cx + 30, footerY - 4, 160, 26, 13);
+    ctx.stroke();
+    ctx.fillStyle = PALETTE.footerText;
+    ctx.font = '600 12px Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('📅 ' + dateStr, cx + 110, footerY + 9);
+
+    // Signature (right side)
+    ctx.fillStyle = PALETTE.signature;
+    ctx.font = 'italic bold 16px "Georgia", serif';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('Tamil Nanban', cx + cw - 30, footerY + 2);
+    ctx.fillStyle = PALETTE.footerText;
+    ctx.font = '600 9px Arial, sans-serif';
+    ctx.fillText('TEST BATCH SERIES', cx + cw - 30, footerY + 18);
+}
+
+// gif.js worker
+const GIF_WORKER_URL = 'https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.worker.js';
+
+async function generateGIF(winner, rank, paperTitle, dateStr, examDateStr, onProgress) {
+    await ensureGifTamilFont();
+    return new Promise((resolve, reject) => {
+        const canvas = document.createElement('canvas');
+        canvas.width = GIF_WIDTH;
+        canvas.height = GIF_HEIGHT;
+        const ctx = canvas.getContext('2d');
+
+        fetch(GIF_WORKER_URL).then(r => r.blob()).then(workerBlob => {
+            const workerUrl = URL.createObjectURL(workerBlob);
+            const gif = new GIF({
+                workers: 2,
+                quality: 10,
+                width: GIF_WIDTH,
+                height: GIF_HEIGHT,
+                workerScript: workerUrl,
+                repeat: 0,
+                background: '#FFFFFF'
+            });
+
+            for (let i = 0; i < GIF_TOTAL_FRAMES; i++) {
+                const t = i / GIF_TOTAL_FRAMES;
+                drawCertificateFrame(ctx, t, winner, rank, paperTitle, dateStr, examDateStr);
+                gif.addFrame(ctx, { copy: true, delay: GIF_DELAY });
+            }
+
+            gif.on('progress', p => { if (onProgress) onProgress(p); });
+            gif.on('finished', blob => {
+                URL.revokeObjectURL(workerUrl);
+                resolve(blob);
+            });
+            gif.on('abort', () => reject(new Error('GIF generation aborted')));
+            gif.render();
+        }).catch(reject);
+    });
+}
+
+async function downloadCertificateGIF(mode) {
+    if (!currentResults.length) { alert('முதலில் முடிவுகளை load பண்ணுங்கள்'); return; }
+    if (mode !== 'top1') { alert('Top 1 மட்டுமே — Top 10 PDF button பயன்படுத்தவும்'); return; }
+    const winner = currentResults[0];
+    if (!winner) { alert('வெற்றியாளர் இல்லை'); return; }
+
+    const paperTitle = currentPaper === 'paper1'
+        ? 'தமிழ் மற்றும் கற்பித்தல் முறை'
+        : 'குழந்தை மேம்பாடு';
+    const dateStr = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+
+    try {
+        // 🎬 Build self-contained HTML certificate (animation runs in browser)
+        const html = buildAnimatedCertificateHTML(winner, paperTitle, dateStr, currentDate);
+        const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+
+        // 📝 Tamil filename — HTML files don't trigger "unusual format" warnings
+        const [yy, mm, dd] = currentDate.split('-');
+        const tamilDate = dd + '-' + mm + '-' + yy;
+        const fname = 'இன்றைய வெற்றியாளர் - ' + paperTitle + ' - ' + tamilDate + '.html';
+
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fname;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+        showMsg('✅ வெற்றியாளர் certificate download ஆனது: ' + fname, 'success');
+    } catch (err) {
+        console.error(err);
+        showMsg('❌ Certificate generation failed: ' + err.message, 'error');
+    }
+}
+
+// ═══════════════════════════════════════════════════════════
+// 🎨 Build self-contained animated HTML certificate
+// White bg, multi-color sections, crown, typewriter name, sparkles
+// ═══════════════════════════════════════════════════════════
+function buildAnimatedCertificateHTML(winner, paperTitle, dateStr, examDateStr) {
+    const safeName = (winner.name || 'மாணவர்').replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+    const score = winner.score + ' / ' + winner.total;
+    const pct = winner.percentage.toFixed(1) + '%';
+    const total = winner.total;
+
+    return '<!DOCTYPE html>\n<html lang="ta"><head><meta charset="UTF-8">' +
+'<meta name="viewport" content="width=device-width,initial-scale=1">' +
+'<title>இன்றைய வெற்றியாளர் - ' + safeName + '</title>' +
+'<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">' +
+'<style>' +
+'*{margin:0;padding:0;box-sizing:border-box}' +
+'html,body{width:100%;min-height:100vh;background:#FFFFFF;font-family:Outfit,"Noto Sans Tamil",sans-serif;overflow-x:hidden}' +
+'body{display:flex;align-items:center;justify-content:center;padding:16px}' +
+'.card{position:relative;width:100%;max-width:820px;aspect-ratio:4/3;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,0.08);padding:32px 36px;display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden}' +
+'@media(max-width:600px){.card{aspect-ratio:auto;padding:24px 20px}}' +
+'.top-accent{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#D97706 0%,#7C3AED 50%,#1E3A8A 100%)}' +
+'.brand-tamil{font-family:"Noto Sans Tamil",sans-serif;font-weight:900;font-size:clamp(28px,4.5vw,42px);color:#D97706;letter-spacing:0.02em;margin-top:18px;animation:fadeDown 0.8s ease-out}' +
+'.brand-en{font-family:"Arial Black",Arial,sans-serif;font-weight:900;font-size:clamp(11px,1.6vw,14px);color:#1E3A8A;letter-spacing:6px;margin-top:6px;animation:fadeDown 0.8s 0.2s both}' +
+'.divider{width:160px;height:1px;background:#E5E7EB;margin:14px auto;animation:expand 0.6s 0.4s both}' +
+'@keyframes expand{from{width:0}to{width:160px}}' +
+'.paper{font-family:"Noto Sans Tamil",sans-serif;font-weight:600;font-size:clamp(14px,2vw,18px);color:#7C3AED;animation:fadeDown 0.8s 0.5s both}' +
+'.exam-date{font-family:Outfit,sans-serif;font-weight:500;font-size:clamp(11px,1.4vw,13px);color:#64748B;margin-top:4px;animation:fadeDown 0.8s 0.6s both}' +
+'.crown-wrap{margin:18px 0 8px;position:relative;animation:fadeIn 1s 0.7s both}' +
+'.crown{font-size:clamp(48px,7vw,68px);display:inline-block;animation:bob 2s ease-in-out infinite;filter:drop-shadow(0 4px 12px rgba(245,158,11,0.5))}' +
+'@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}' +
+'.sparkle{position:absolute;width:8px;height:8px;background:#FBBF24;border-radius:50%;box-shadow:0 0 10px #FBBF24,0 0 20px #F59E0B;top:50%;left:50%;margin:-4px 0 0 -4px;animation:orbit 5s linear infinite}' +
+'@keyframes orbit{from{transform:rotate(0deg) translateX(70px) rotate(0deg)}to{transform:rotate(360deg) translateX(70px) rotate(-360deg)}}' +
+'.sp1{animation-delay:0s}.sp2{animation-delay:-0.83s}.sp3{animation-delay:-1.66s}.sp4{animation-delay:-2.5s}.sp5{animation-delay:-3.33s}.sp6{animation-delay:-4.16s}' +
+'.congrats-en{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(18px,2.6vw,24px);color:#0F766E;margin-top:8px;animation:fadeIn 1s 1s both}' +
+'.congrats-ta{font-family:"Noto Sans Tamil",sans-serif;font-weight:700;font-size:clamp(15px,2.2vw,20px);color:#BE185D;margin-top:2px;animation:fadeIn 1s 1.2s both}' +
+'.name-wrap{position:relative;margin:14px 0 6px;min-height:60px;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.5s 1.4s both}' +
+'.name{font-family:"Playfair Display",Georgia,"Noto Sans Tamil",serif;font-weight:900;font-size:clamp(28px,5vw,46px);color:#991B1B;text-shadow:0 2px 0 rgba(146,64,14,0.15);display:inline-block;position:relative;white-space:nowrap}' +
+'.name::after{content:"";display:inline-block;width:3px;height:0.9em;background:#DC2626;margin-left:4px;vertical-align:middle;animation:blink 0.6s steps(2) infinite}' +
+'.name.done::after{animation:blink 0.8s steps(2) infinite}' +
+'@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}' +
+'.underline{width:0;height:2px;background:#7C2D12;margin:4px auto 0;animation:none}' +
+'.underline.show{animation:expandLine 0.6s ease-out forwards}' +
+'@keyframes expandLine{from{width:0}to{width:min(70%,420px)}}' +
+'.scores{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:18px;animation:fadeIn 0.8s 1.6s both}' +
+'.score-box{padding:12px 18px;border-radius:10px;min-width:130px;border:1.5px solid}' +
+'.score-box.green{background:#ECFDF5;border-color:#A7F3D0}' +
+'.score-box.blue{background:#EFF6FF;border-color:#BFDBFE}' +
+'.score-box.amber{background:#FEF3C7;border-color:#FCD34D}' +
+'.score-val{font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(18px,2.8vw,24px)}' +
+'.score-lbl{font-family:"Noto Sans Tamil",sans-serif;font-weight:600;font-size:11px;margin-top:3px}' +
+'.green .score-val{color:#047857}.green .score-lbl{color:#065F46}' +
+'.blue .score-val{color:#1D4ED8}.blue .score-lbl{color:#1E40AF}' +
+'.amber .score-val{color:#B45309}.amber .score-lbl{color:#92400E}' +
+'.footer{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:auto;padding-top:14px;border-top:1px solid #E5E7EB;flex-wrap:wrap;gap:8px;animation:fadeIn 0.8s 1.8s both}' +
+'.date-pill{background:#F1F5F9;color:#475569;padding:6px 14px;border-radius:13px;font-weight:600;font-size:12px;border:1px solid #E5E7EB}' +
+'.signature{text-align:right}' +
+'.signature-name{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:700;font-size:14px;color:#1E3A8A}' +
+'.signature-sub{font-family:Outfit,sans-serif;font-weight:600;font-size:9px;color:#475569;letter-spacing:2px;margin-top:2px}' +
+'@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}' +
+'@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}' +
+'</style></head><body>' +
+'<div class="card">' +
+'<div class="top-accent"></div>' +
+'<div class="brand-tamil">தமிழ் நண்பன்</div>' +
+'<div class="brand-en">TEST BATCH SERIES</div>' +
+'<div class="divider"></div>' +
+'<div class="paper">' + paperTitle + '</div>' +
+'<div class="exam-date">தேர்வு தேதி: ' + examDateStr + '</div>' +
+'<div class="crown-wrap">' +
+'<span class="crown">👑</span>' +
+'<span class="sparkle sp1"></span><span class="sparkle sp2"></span><span class="sparkle sp3"></span>' +
+'<span class="sparkle sp4"></span><span class="sparkle sp5"></span><span class="sparkle sp6"></span>' +
+'</div>' +
+'<div class="congrats-en">Heartfelt Congratulations</div>' +
+'<div class="congrats-ta">மனமார்ந்த வாழ்த்துக்கள்!</div>' +
+'<div class="name-wrap"><span class="name" id="winnerName"></span></div>' +
+'<div class="underline" id="underline"></div>' +
+'<div class="scores">' +
+'<div class="score-box green"><div class="score-val">' + score + '</div><div class="score-lbl">மதிப்பெண்</div></div>' +
+'<div class="score-box blue"><div class="score-val">' + pct + '</div><div class="score-lbl">சதவீதம்</div></div>' +
+'<div class="score-box amber"><div class="score-val"># 1</div><div class="score-lbl">இடம்</div></div>' +
+'</div>' +
+'<div class="footer">' +
+'<div class="date-pill">📅 ' + dateStr + '</div>' +
+'<div class="signature">' +
+'<div class="signature-name">Tamil Nanban</div>' +
+'<div class="signature-sub">TEST BATCH SERIES</div>' +
+'</div>' +
+'</div>' +
+'</div>' +
+'<scr' + 'ipt>' +
+'const fullName = ' + JSON.stringify(safeName.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&').replace(/&quot;/g,'"')) + ';' +
+'const chars = Array.from(fullName);' +
+'const nameEl = document.getElementById("winnerName");' +
+'const underlineEl = document.getElementById("underline");' +
+'function typewriter() {' +
+'  nameEl.classList.remove("done");' +
+'  nameEl.textContent = "";' +
+'  underlineEl.classList.remove("show");' +
+'  let i = 0;' +
+'  const interval = setInterval(() => {' +
+'    if (i >= chars.length) {' +
+'      clearInterval(interval);' +
+'      nameEl.classList.add("done");' +
+'      setTimeout(() => underlineEl.classList.add("show"), 200);' +
+'      setTimeout(typewriter, 5500);' +
+'    } else {' +
+'      nameEl.textContent += chars[i];' +
+'      i++;' +
+'    }' +
+'  }, 120);' +
+'}' +
+'setTimeout(typewriter, 1500);' +
+'</scr' + 'ipt>' +
+'</body></html>';
+}
+
+
+// ═══════════════════════════════════════════════════════════
+// 🏆 TOP 10 PDF — Ranked list with paper title at top
+// ═══════════════════════════════════════════════════════════
+async function downloadTop10PDF() {
+    if (!currentResults.length) { alert('முதலில் முடிவுகளை load பண்ணுங்கள்'); return; }
+    const top10 = currentResults.slice(0, 10);
+    if (top10.length === 0) { alert('Top 10 மாணவர்கள் இல்லை'); return; }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'mm', 'a4');
+    const W = doc.internal.pageSize.width;
+    const hasTamil = await ensureTamilFont(doc);
+    const TF = hasTamil ? 'NotoTamil' : 'helvetica';
+
+    // ── Header band (dark navy → maroon gradient effect) ──
+    doc.setFillColor(15, 23, 42);       // slate-900
+    doc.rect(0, 0, W, 38, 'F');
+
+    // Brand tamil — gold
+    doc.setTextColor(245, 158, 11);     // amber-500
+    doc.setFont(TF, 'normal');
+    doc.setFontSize(22);
+    doc.text(hasTamil ? 'தமிழ் நண்பன்' : 'TAMIL NANBAN', W / 2, 13, { align: 'center' });
+
+    // Subtitle — white
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(11);
+    doc.text('TEST BATCH SERIES', W / 2, 21, { align: 'center' });
+
+    // Top 10 List Header (gold)
+    doc.setTextColor(251, 191, 36);
+    doc.setFontSize(13);
+    doc.setFont(TF, 'normal');
+    const top10Title = hasTamil ? 'TOP 10 — வெற்றியாளர்கள் பட்டியல்' : 'TOP 10 WINNERS LIST';
+    doc.text(top10Title, W / 2, 31, { align: 'center' });
+
+    // ── Paper title band (violet) ──
+    doc.setFillColor(237, 233, 254);    // violet-100
+    doc.rect(0, 38, W, 12, 'F');
+    doc.setTextColor(91, 33, 182);      // violet-800
+    doc.setFontSize(13);
+    doc.setFont(TF, 'normal');
+    const paperTitleTamil = currentPaper === 'paper1'
+        ? (hasTamil ? 'ஆசிரியர் தகுதித் தேர்வு - தாள் 1 - தமிழ் மற்றும் கற்பித்தல் முறை' : 'TET Paper 1 - Tamil & Pedagogy')
+        : (hasTamil ? 'ஆசிரியர் தகுதித் தேர்வு - தாள் 1 - குழந்தை மேம்பாடு' : 'TET Paper 1 - Child Development');
+    doc.text(paperTitleTamil, W / 2, 46, { align: 'center' });
+
+    // ── Date band ──
+    doc.setFillColor(254, 243, 199);
+    doc.rect(0, 50, W, 8, 'F');
+    doc.setTextColor(120, 53, 15);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Exam Date: ' + currentDate, 15, 55.5);
+    doc.text('Generated: ' + new Date().toLocaleString('en-IN'), W - 15, 55.5, { align: 'right' });
+
+    // ── Table (no category column, as requested) ──
+    const body = top10.map(r => [
+        r.rank,
+        r.name || 'Student',
+        r.score + '/' + r.total,
+        r.correct || 0,
+        r.wrong || 0,
+        (r.percentage || 0).toFixed(1) + '%',
+        r.passed ? 'PASS' : 'FAIL'
+    ]);
+
+    doc.autoTable({
+        head: [['Rank', 'பெயர் (Name)', 'Score', 'Correct', 'Wrong', '%', 'Result']],
+        body,
+        startY: 62,
+        styles: { font: TF, fontSize: 11, cellPadding: 4, lineColor: [200,200,200], lineWidth: 0.2, textColor: [30,41,59] },
+        headStyles: { fillColor: [15,23,42], textColor: [251,191,36], fontStyle: 'bold', halign: 'center', fontSize: 11 },
+        columnStyles: {
+            0: { halign: 'center', cellWidth: 18, fontStyle: 'bold', fontSize: 13 },
+            1: { cellWidth: 65, fontStyle: 'bold' },
+            2: { halign: 'center', cellWidth: 25, fontStyle: 'bold' },
+            3: { halign: 'center', cellWidth: 22 },
+            4: { halign: 'center', cellWidth: 22 },
+            5: { halign: 'center', cellWidth: 20, fontStyle: 'bold' },
+            6: { halign: 'center', cellWidth: 20, fontStyle: 'bold' }
+        },
+        didParseCell: function(cd) {
+            if (cd.section !== 'body') return;
+            const row = top10[cd.row.index];
+            if (cd.column.index === 0) {
+                if (row?.rank === 1) { cd.cell.styles.fillColor = [251,191,36]; cd.cell.styles.textColor = [120,53,15]; }
+                else if (row?.rank === 2) { cd.cell.styles.fillColor = [203,213,225]; cd.cell.styles.textColor = [30,41,59]; }
+                else if (row?.rank === 3) { cd.cell.styles.fillColor = [251,146,60]; cd.cell.styles.textColor = [255,255,255]; }
+            }
+            if (cd.column.index === 1) {
+                if (row?.rank === 1) cd.cell.styles.textColor = [120,53,15];
+            }
+            if (cd.column.index === 6) {
+                if (row?.passed) { cd.cell.styles.fillColor = [34,197,94]; cd.cell.styles.textColor = [255,255,255]; }
+                else { cd.cell.styles.fillColor = [239,68,68]; cd.cell.styles.textColor = [255,255,255]; }
+            }
+        }
+    });
+
+    // Footer signature
+    doc.setFontSize(9);
+    doc.setTextColor(100);
+    doc.setFont('helvetica', 'italic');
+    doc.text('Tamil Nanban — Test Batch Series  |  Mobile: 63 69 37 14 52',
+        W / 2, doc.internal.pageSize.height - 8, { align: 'center' });
+
+    // ── Mobile-safe ASCII filename ──
+    const [yy2, mm2, dd2] = currentDate.split('-');
+    const paperShort = currentPaper === 'paper1' ? 'Tamil_Pedagogy' : 'Child_Development';
+    const filename = 'TamilNanban_Top10_' + paperShort + '_' + dd2 + mm2 + yy2 + '.pdf';
+    doc.save(filename);
+    showMsg('✅ Top 10 PDF download ஆனது: ' + filename, 'success');
+}
+
+
+</script>
+</body>
+</html>
